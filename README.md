@@ -3,3 +3,5 @@
  acadêmica de um laboratório de pesquisa, incluindo informações sobre projetos de pesquisa e
  colaboradores.
  Inplementado em java!
+
+ Para executar o programa Baixe a pasta src, e execure o seguinte comando:

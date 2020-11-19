@@ -8,7 +8,15 @@ public class Colaboradores {
         this.name = name;
     }
 
+    public String getNome() {
+        return this.name;
+    }
+
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getEmail() {
+        return this.email;
     }
 }
