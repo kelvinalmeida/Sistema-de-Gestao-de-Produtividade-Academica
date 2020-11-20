@@ -1,8 +1,8 @@
 package src.colaboradores;
 
 public class Colaboradores {
-    protected String name;
-    protected String email;
+    private String name;
+    private String email;
 
     public void setNome(String name) {
         this.name = name;
