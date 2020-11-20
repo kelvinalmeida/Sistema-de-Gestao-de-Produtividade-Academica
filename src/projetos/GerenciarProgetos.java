@@ -10,7 +10,7 @@ public class GerenciarProgetos {
     GerenciamentoColaboradores GerenColaboradores;
 
     // ponteiro
-    GerenciarProgetos(GerenciamentoColaboradores GerenColaboradores) {
+    public GerenciarProgetos(GerenciamentoColaboradores GerenColaboradores) {
         this.GerenColaboradores = GerenColaboradores;
     }
     

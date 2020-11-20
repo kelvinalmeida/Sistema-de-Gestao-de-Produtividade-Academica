@@ -12,7 +12,7 @@ public class Main {
         
         // Instancias únicas que vão gerenciar!
         GerenciamentoColaboradores GereColaboradores = new GerenciamentoColaboradores();
-        GerenciarProgetos GereProjetos = new GerenciarProgetos();
+        GerenciarProgetos GereProjetos = new GerenciarProgetos(GereColaboradores);
         
         while(0 != 1) {
             
@@ -33,7 +33,7 @@ public class Main {
             if(escolha == 1) GereColaboradores.adicionar();
             
             // Quer adicionar um Projeto!
-            if(escolha == 2) GereProjetos.adicionar(GereColaboradores);
+            if(escolha == 2) GereProjetos.adicionar();
 
             // Quer consultar um colaborador!
             else if(escolha == 3) GereColaboradores.consultar();
