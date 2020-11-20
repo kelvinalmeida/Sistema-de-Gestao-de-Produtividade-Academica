@@ -9,7 +9,7 @@ public class Main {
         System.out.println("## Bem vindo, ao Sistema de Produtividade Academica! ##");
         System.out.println("#######################################################");
         
-        Cadastro cadastro = new Cadastro();
+        GerenciamentoColaboradores GereColaboradores = new GerenciamentoColaboradores();
         
         while(0 != 1) {
             
@@ -19,19 +19,18 @@ public class Main {
             System.out.println("##            [1] Cadastrar Colaboradores!           ##");
             System.out.println("##             [2] Consultar Colaborador!            ##");
             System.out.println("#######################################################");
-            System.out.println("## ");
             
+            System.out.print("## ");
             Scanner teclado = new Scanner(System.in);
             int escolha = Integer.parseInt(teclado.nextLine());
 
             // Quer adicionar um colaborador!
-            if(escolha == 1) cadastro.adicionar();
+            if(escolha == 1) GereColaboradores.adicionar();
 
             // Quer consultar um colaborador!
-            else if(escolha == 2) cadastro.consultar();
+            else if(escolha == 2) GereColaboradores.consultar();
 
         }
-
 
     }
 } 
