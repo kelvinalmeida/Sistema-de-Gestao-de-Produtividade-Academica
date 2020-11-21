@@ -234,5 +234,24 @@ public class GerenciamentoColaboradores {
         System.out.println("##  Nome: " + alunoPes.getNome());
         System.out.println("## Email: " + alunoPes.getEmail());  
     } 
+
+    //////////////////////////////////////
+    // Parte de comunicacao com outro objetos.
+
+    public Professores list() {
+        for(int i = 0; i < ConjProfessores.size(); ++i) {
+            Professores prof = ConjProfessores.get(i);
+            System.out.println("## " + "["+(i+1)+"]" + prof.getNome());
+        }
+
+        int escoProf = Integer.parseInt(teclado.nextLine());
+
+        return ConjProfessores.get(escoProf - 1);
+    }
+
+    public boolean sizeProf() {
+        if(ConjProfessores.size() == 0) return true;
+        else return false;
+    } 
     
 }

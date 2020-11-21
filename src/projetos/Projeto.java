@@ -56,4 +56,10 @@ public class Projeto {
     Vector<AlunosDeDoutorado> ConjAlunosDeDoutorado = new Vector<AlunosDeDoutorado>();
     Vector<Professores> ConjProfessores = new Vector<Professores>();
     Vector<Pesquisadores> ConjPesquisadores = new Vector<Pesquisadores>();
+
+    public void addProf(Professores prof) {
+        ConjProfessores.add(prof);
+    }
+
+
 }

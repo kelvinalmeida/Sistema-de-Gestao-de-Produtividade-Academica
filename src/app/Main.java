@@ -21,7 +21,8 @@ public class Main {
             System.out.println("##             Escolha uma opcao abaixo!             ##");
             System.out.println("##            [1] Cadastrar Colaboradores!           ##");
             System.out.println("##               [2] Cadastrar Projeto!              ##");
-            System.out.println("##             [3] Consultar Colaborador!            ##");
+            System.out.println("##               [3] Alocar Colaborador!             ##");
+            System.out.println("##             [4] Consultar Colaborador!            ##");
             System.out.println("##               [0] Finalizar Programa!             ##");
             System.out.println("#######################################################");
 
@@ -33,10 +34,13 @@ public class Main {
             if(escolha == 1) GereColaboradores.adicionar();
             
             // Quer adicionar um Projeto!
-            if(escolha == 2) GereProjetos.adicionar();
+            else if(escolha == 2) GereProjetos.adicionar();
 
+            // Alocar colaborador!
+            else if(escolha == 3) GereProjetos.alocar();
+            
             // Quer consultar um colaborador!
-            else if(escolha == 3) GereColaboradores.consultar();
+            else if(escolha == 4) GereColaboradores.consultar();
             
             
             

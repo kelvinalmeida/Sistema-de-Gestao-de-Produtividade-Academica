@@ -5,10 +5,10 @@ import src.colaboradores.*;
 
 public class GerenciarProgetos {
 
-    Vector<Projeto> Projetos = new Vector<Projeto>();
+    Vector<Projeto> TodosOsProjetos = new Vector<Projeto>();
     Scanner teclado = new Scanner(System.in);
     GerenciamentoColaboradores GerenColaboradores;
-
+    
     // ponteiro
     public GerenciarProgetos(GerenciamentoColaboradores GerenColaboradores) {
         this.GerenColaboradores = GerenColaboradores;
@@ -16,8 +16,14 @@ public class GerenciarProgetos {
     
     public void adicionar() {
         System.out.println("#######################################################");
-        System.out.println("##          Digite as Informacoes do Projeto:        ##");
 
+        if(GerenColaboradores.sizeProf()) {
+            System.out.println("##     Por Favor Adicione um professor ao Sistema!   ##");
+            return;
+        } 
+
+        System.out.println("##          Digite as Informacoes do Projeto:        ##");
+        
         Projeto projeto = new Projeto();
         
         System.out.print("## Titulo: ");
@@ -45,14 +51,28 @@ public class GerenciarProgetos {
         System.out.println("#######################################################");
         System.out.println("##      Qual professor vai particiar do projeto?     ##");
 
-        this.adicionarProfessor();
+        this.adicionarProfessor(projeto);
         
         System.out.println("## **PROJETO ADICIONADO! ");
     }
 
-    public void adicionarProfessor() {
-        // while(0 != 1) {
+    public void adicionarProfessor(Projeto projeto) {
+        System.out.println("#######################################################");
+        System.out.println("##      Qual professor quer adicionar no projeto?    ##");
+        Professores professor = GerenColaboradores.list();
 
-        // }
+        // Projeto(ponteiro) criado no adicionar();
+        projeto.addProf(professor);
+
+        System.out.println("## **Professor: " + professor.getNome() + "   **ADICIONADO!");
+
     }
+
+    /////////////////////////////
+    // Alucacao de Participantes!
+
+    public void alocar() {
+        
+    }
+
 }
