@@ -238,7 +238,18 @@ public class GerenciamentoColaboradores {
     //////////////////////////////////////
     // Parte de comunicacao com outro objetos.
 
-    public Professores list() {
+    public AlunosDeGraduacao ReturnAlunosGrad() {
+        for(int i = 0; i < ConjAlunosDeGraduacao.size(); ++i) {
+            AlunosDeGraduacao AlunosGrad = ConjAlunosDeGraduacao.get(i);
+            System.out.println("## " + "["+(i+1)+"]" + AlunosGrad.getNome());
+        }
+
+        int escoAlunosGrad = Integer.parseInt(teclado.nextLine());
+
+        return ConjAlunosDeGraduacao.get(escoAlunosGrad - 1);
+    }
+
+    public Professores ReturnProf() {
         for(int i = 0; i < ConjProfessores.size(); ++i) {
             Professores prof = ConjProfessores.get(i);
             System.out.println("## " + "["+(i+1)+"]" + prof.getNome());
