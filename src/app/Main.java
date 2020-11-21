@@ -23,6 +23,7 @@ public class Main {
             System.out.println("##               [2] Cadastrar Projeto!              ##");
             System.out.println("##               [3] Alocar Colaborador!             ##");
             System.out.println("##             [4] Consultar Colaborador!            ##");
+            System.out.println("##                [5] Consultar projeto!             ##");
             System.out.println("##               [0] Finalizar Programa!             ##");
             System.out.println("#######################################################");
 
@@ -41,6 +42,9 @@ public class Main {
             
             // Quer consultar um colaborador!
             else if(escolha == 4) GereColaboradores.consultar();
+            
+            // Quer consultar um projeto!
+            else if(escolha == 5) GereColaboradores.consultar();
             
             
             

@@ -17,10 +17,10 @@ public class GerenciarProgetos {
     public void adicionar() {
         System.out.println("#######################################################");
 
-        if(GerenColaboradores.sizeProf()) {
-            System.out.println("##     Por Favor Adicione um professor ao Sistema!   ##");
-            return;
-        } 
+        // if(GerenColaboradores.sizeProf()) {
+        //     System.out.println("##     Por Favor Adicione um professor ao Sistema!   ##");
+        //     return;
+        // } 
 
         System.out.println("##          Digite as Informacoes do Projeto:        ##");
         
@@ -51,7 +51,7 @@ public class GerenciarProgetos {
         System.out.println("#######################################################");
         System.out.println("##      Qual professor vai particiar do projeto?     ##");
 
-        this.adicionarProfessor(projeto);
+        // this.adicionarProfessor(projeto);
 
         TodosOsProjetos.add(projeto);
         
@@ -71,6 +71,11 @@ public class GerenciarProgetos {
     }
 
     /////////////////////////////
+    // Consultando projetos
+
+
+
+    /////////////////////////////
     // Alucacao de Participantes!
 
     public void alocar() {
@@ -84,6 +89,10 @@ public class GerenciarProgetos {
         int escolha = Integer.parseInt(teclado.nextLine());
 
         if(escolha == 1) alocarAlunosGraduacao(); 
+        if(escolha == 2) alocarAlunosMestrado(); 
+        if(escolha == 3) alocarAlunosDoutorado(); 
+        if(escolha == 4) alocarProfessores(); 
+        // if(escolha == 5) alocarPesquisadores(); 
     }
 
     public void alocarAlunosGraduacao() {
@@ -103,8 +112,87 @@ public class GerenciarProgetos {
             
             System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
         }
-
     }
+
+    public void alocarAlunosMestrado() {
+        System.out.println("#######################################################");
+        System.out.println("##             Qual Alu. de Mest. Alocar?            ##");
+        
+        AlunosDeMestado AlunoMestrado = GerenColaboradores.ReturnAlunosMest();
+
+        System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
+        int escolha = Integer.parseInt(teclado.nextLine());
+
+        if(escolha == 1) {
+            System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
+            Projeto proj = this.projetList();
+            
+            proj.addAlunoMest(AlunoMestrado);
+            
+            System.out.println("## Aluno: " + AlunoMestrado.getNome() + "** AlOCADO!");
+        }
+    }
+
+    public void alocarAlunosDoutorado() {
+        System.out.println("#######################################################");
+        System.out.println("##             Qual Alu. de Dout. Alocar?            ##");
+        
+        AlunosDeDoutorado AlunoDoutorado = GerenColaboradores.ReturnAlunosDout();
+
+        System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
+        int escolha = Integer.parseInt(teclado.nextLine());
+
+        if(escolha == 1) {
+            System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
+            Projeto proj = this.projetList();
+            
+            proj.addAlunoDout(AlunoDoutorado);
+            
+            System.out.println("## Aluno: " + AlunoDoutorado.getNome() + "** AlOCADO!");
+        }
+    }
+
+    public void alocarProfessores() {
+        System.out.println("#######################################################");
+        System.out.println("##                  Qual Prof. Alocar?               ##");
+        
+        Professores professor = GerenColaboradores.ReturnProf();
+
+        System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
+        int escolha = Integer.parseInt(teclado.nextLine());
+
+        if(escolha == 1) {
+            System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
+            Projeto proj = this.projetList();
+            
+            proj.addProfessor(professor);
+            
+            System.out.println("## Aluno: " + professor.getNome() + "** AlOCADO!");
+        }
+    }
+
+    public void alocarPesquisadores() {
+        System.out.println("#######################################################");
+        System.out.println("##                  Qual Pesq. Alocar?               ##");
+        
+        // Escolhendo o colaborador
+        Pesquisadores pesquisador = GerenColaboradores.ReturnPesq();
+
+        System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
+        int escolha = Integer.parseInt(teclado.nextLine());
+
+        if(escolha == 1) {
+            System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
+            // Escolhendo o projeto.
+            Projeto proj = this.projetList();
+            
+            proj.addPesquisador(pesquisador);
+            
+            System.out.println("## Aluno: " + pesquisador.getNome() + "** AlOCADO!");
+        }
+    }
+
+
 
 
 

@@ -61,6 +61,25 @@ public class Projeto {
         ConjAlunosDeGraduacao.add(alunoG);
     }
 
+    public void addAlunoMest(AlunosDeMestado alunoM) {
+        ConjAlunosDeMestrado.add(alunoM);
+    }
+
+    public void addAlunoDout(AlunosDeDoutorado alunoD) {
+        ConjAlunosDeDoutorado.add(alunoD);
+    }
+
+    public void addProfessor(Professores professor) {
+        ConjProfessores.add(professor);
+    }
+
+    public void addPesquisador(Pesquisadores Pesquisador) {
+        ConjPesquisadores.add(Pesquisador);
+    }
+
+
+    
+
     public void addProf(Professores prof) {
         ConjProfessores.add(prof);
     }

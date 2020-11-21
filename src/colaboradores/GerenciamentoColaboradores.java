@@ -249,6 +249,28 @@ public class GerenciamentoColaboradores {
         return ConjAlunosDeGraduacao.get(escoAlunosGrad - 1);
     }
 
+    public AlunosDeMestado ReturnAlunosMest() {
+        for(int i = 0; i < ConjAlunosDeMestrado.size(); ++i) {
+            AlunosDeMestado AlunosMest = ConjAlunosDeMestrado.get(i);
+            System.out.println("## " + "["+(i+1)+"]" + AlunosMest.getNome());
+        }
+
+        int escoAlunosMest = Integer.parseInt(teclado.nextLine());
+
+        return ConjAlunosDeMestrado.get(escoAlunosMest - 1);
+    }
+
+    public AlunosDeDoutorado ReturnAlunosDout() {
+        for(int i = 0; i < ConjAlunosDeDoutorado.size(); ++i) {
+            AlunosDeDoutorado AlunosDout = ConjAlunosDeDoutorado.get(i);
+            System.out.println("## " + "["+(i+1)+"]" + AlunosDout.getNome());
+        }
+
+        int escoAlunosDout = Integer.parseInt(teclado.nextLine());
+
+        return ConjAlunosDeDoutorado.get(escoAlunosDout - 1);
+    }
+
     public Professores ReturnProf() {
         for(int i = 0; i < ConjProfessores.size(); ++i) {
             Professores prof = ConjProfessores.get(i);
@@ -258,6 +280,17 @@ public class GerenciamentoColaboradores {
         int escoProf = Integer.parseInt(teclado.nextLine());
 
         return ConjProfessores.get(escoProf - 1);
+    }
+
+    public Pesquisadores ReturnPesq() {
+        for(int i = 0; i < ConjPesquisadores.size(); ++i) {
+            Pesquisadores pesq = ConjPesquisadores.get(i);
+            System.out.println("## " + "["+(i+1)+"]" + pesq.getNome());
+        }
+
+        int escoPesq = Integer.parseInt(teclado.nextLine());
+
+        return ConjPesquisadores.get(escoPesq - 1);
     }
 
     public boolean sizeProf() {
