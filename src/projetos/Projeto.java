@@ -15,6 +15,8 @@ public class Projeto {
     private String objetivo;
     private String descricao;
 
+    private Boolean emElaboracao, emAndamento, concluido;
+
     public void setTitulo(String titulo) { this.titulo = titulo; }
     public String getTitulo() { return this.titulo; }
 
@@ -25,7 +27,7 @@ public class Projeto {
     public int getMesStart() { return this.mesStart; }
 
     public void setAnoStart(int anoStart) { this.anoStart = anoStart; }
-    public int getaAnoStart() { return this.anoStart; }
+    public int getAnoStart() { return this.anoStart; }
 
     public void setDiaEnd(int diaEnd) { this.diaEnd = diaEnd; }
     public int getDiaEnd() { return this.diaEnd; }
@@ -50,6 +52,14 @@ public class Projeto {
     public void setDescricao(String descricao) { this.descricao = descricao; }
     public String getDescricao() { return this.descricao; }
 
+    public void setEmElaboracao(Boolean emElaboracao) { this.emElaboracao = emElaboracao; }
+    public Boolean getEmElaboracao() { return this.emElaboracao; }
+    
+    public void setEmAndamento(Boolean emAndamento) { this.emAndamento = emAndamento; }
+    public Boolean getEmAndamento() { return this.emAndamento; }
+
+    public void setConcluido(Boolean concluido) { this.concluido = concluido; }
+    public Boolean getConcluido() { return this.concluido; }
     
     Vector<AlunosDeGraduacao> ConjAlunosDeGraduacao = new Vector<AlunosDeGraduacao>();
     Vector<AlunosDeMestado> ConjAlunosDeMestrado = new Vector<AlunosDeMestado>();
@@ -76,9 +86,6 @@ public class Projeto {
     public void addPesquisador(Pesquisadores Pesquisador) {
         ConjPesquisadores.add(Pesquisador);
     }
-
-
-    
 
     public void addProf(Professores prof) {
         ConjProfessores.add(prof);

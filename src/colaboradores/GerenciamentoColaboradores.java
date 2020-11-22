@@ -41,7 +41,7 @@ public class GerenciamentoColaboradores {
         String nome = teclado.nextLine();
         aluno.setNome(nome);
 
-        System.out.println("## Informe o email: ");
+        System.out.print("## Informe o email: ");
         String email = teclado.nextLine();
         aluno.setEmail(email);
 

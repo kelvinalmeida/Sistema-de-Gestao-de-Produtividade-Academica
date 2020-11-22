@@ -24,6 +24,7 @@ public class Main {
             System.out.println("##               [3] Alocar Colaborador!             ##");
             System.out.println("##             [4] Consultar Colaborador!            ##");
             System.out.println("##                [5] Consultar projeto!             ##");
+            System.out.println("##            [6] Mudar status do projeto!           ##");
             System.out.println("##               [0] Finalizar Programa!             ##");
             System.out.println("#######################################################");
 
@@ -44,8 +45,10 @@ public class Main {
             else if(escolha == 4) GereColaboradores.consultar();
             
             // Quer consultar um projeto!
-            else if(escolha == 5) GereColaboradores.consultar();
+            else if(escolha == 5) GereProjetos.consultar();
             
+            // Mudar status projeto!
+            else if(escolha == 6) GereProjetos.mudarStatus();
             
             
             else if(escolha == 0) {
