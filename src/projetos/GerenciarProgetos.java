@@ -79,6 +79,7 @@ public class GerenciarProgetos {
 
         // Projeto(ponteiro) criado no adicionar();
         projeto.addProf(professor);
+        professor.setProjeto(projeto);
 
         System.out.println("## **Professor: " + professor.getNome() + "   **ADICIONADO!");
 
@@ -104,8 +105,14 @@ public class GerenciarProgetos {
         System.out.println("#######################################################");
         System.out.println("##            Dados do Projeto Escolhido:            ##");
         
-        System.out.println("## Titulo: " + projCons.getTitulo());
+        System.out.println("## ---------------------------");
 
+        System.out.println("## Status: " + projCons.getStatus());
+        
+        System.out.println("## ---------------------------");
+        
+        System.out.println("## Titulo: " + projCons.getTitulo());
+        
         System.out.println("## ---------------------------");
         
         System.out.println("## Data de Inicio: " + 
@@ -226,7 +233,7 @@ public class GerenciarProgetos {
         Projeto proj = projetList();
 
         if(proj.getEmElaboracao() == true){
-            System.out.print("## Este projeto esta em Elaboracao.");
+            System.out.println("## Este projeto esta em Elaboracao.");
             System.out.println("## Deseja mudar para Em Andamento?");
             System.out.println("## [1] SIM OU [2] NAO");
             int escolha = Integer.parseInt(teclado.nextLine());
@@ -298,7 +305,8 @@ public class GerenciarProgetos {
             }
             
             proj.addAlunoGrad(AlunoGraduacao);
-            
+            AlunoGraduacao.setProjeto(proj);
+
             System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
         }
     }
@@ -323,7 +331,7 @@ public class GerenciarProgetos {
             }
             
             proj.addAlunoMest(AlunoMestrado);
-            
+            AlunoMestrado.setProjeto(proj);
             System.out.println("## Aluno: " + AlunoMestrado.getNome() + "** AlOCADO!");
         }
     }
@@ -348,6 +356,7 @@ public class GerenciarProgetos {
             }
             
             proj.addAlunoDout(AlunoDoutorado);
+            AlunoDoutorado.setProjeto(proj);
             
             System.out.println("## Aluno: " + AlunoDoutorado.getNome() + "** AlOCADO!");
         }
@@ -373,6 +382,7 @@ public class GerenciarProgetos {
             }
             
             proj.addProfessor(professor);
+            professor.setProjeto(proj);
             
             System.out.println("## Aluno: " + professor.getNome() + "** AlOCADO!");
         }
@@ -400,6 +410,7 @@ public class GerenciarProgetos {
             }
             
             proj.addPesquisador(pesquisador);
+            pesquisador.setProjeto(proj);
             
             System.out.println("## Aluno: " + pesquisador.getNome() + "     ** AlOCADO!");
         }
@@ -411,10 +422,11 @@ public class GerenciarProgetos {
     public Projeto projetList() {
         for (int i = 0; i < TodosOsProjetos.size(); i++) {
             Projeto proj = TodosOsProjetos.get(i);
-            System.out.println("## " + "["+(i+1)+"]" + proj.getTitulo());
+            System.out.println("## " + "["+(i+1)+"] - Titulo:" + proj.getTitulo() + "  *Status: " + proj.getStatus());
         }
 
         int escolha = Integer.parseInt(teclado.nextLine());
+        System.out.println("## ");
         return TodosOsProjetos.get(escolha - 1);
     }
 

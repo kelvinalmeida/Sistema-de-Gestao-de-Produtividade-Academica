@@ -161,7 +161,9 @@ public class GerenciamentoColaboradores {
         AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(AlunoEscolhido - 1);
         System.out.println("##  Nome: " + aluno.getNome());
         System.out.println("## Email: " + aluno.getEmail());
-        
+
+        // Mostrar os projetos deste aluno!
+        aluno.mostrarProjetos();
     }  
     
     public void listAlunosDeMestrado() {

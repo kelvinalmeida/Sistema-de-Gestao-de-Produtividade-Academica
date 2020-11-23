@@ -60,6 +60,14 @@ public class Projeto {
 
     public void setConcluido(Boolean concluido) { this.concluido = concluido; }
     public Boolean getConcluido() { return this.concluido; }
+
+    public String getStatus() {
+        if(getEmElaboracao()) return "Em Elaboracao";
+        if(getEmAndamento()) return "Em Andamento";
+        if(getConcluido()) return "Concluido";
+
+        return "ERRO!";
+    }
     
     Vector<AlunosDeGraduacao> ConjAlunosDeGraduacao = new Vector<AlunosDeGraduacao>();
     Vector<AlunosDeMestado> ConjAlunosDeMestrado = new Vector<AlunosDeMestado>();
