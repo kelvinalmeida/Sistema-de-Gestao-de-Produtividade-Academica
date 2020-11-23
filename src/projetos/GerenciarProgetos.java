@@ -19,10 +19,10 @@ public class GerenciarProgetos {
     public void adicionar() {
         System.out.println("#######################################################");
 
-        // if(GerenColaboradores.sizeProf()) {
-        //     System.out.println("##     Por Favor Adicione um professor ao Sistema!   ##");
-        //     return;
-        // } 
+        if(GerenColaboradores.sizeProf()) {
+            System.out.println("##     Por Favor Adicione um professor ao Sistema!   ##");
+            return;
+        } 
 
         System.out.println("##          Digite as Informacoes do Projeto:        ##");
         
@@ -60,7 +60,7 @@ public class GerenciarProgetos {
         System.out.println("#######################################################");
         System.out.println("##      Qual professor vai particiar do projeto?     ##");
 
-        // this.adicionarProfessor(projeto);
+        this.adicionarProfessor(projeto);
 
         projeto.setEmElaboracao(true);
         projeto.setEmAndamento(false);
@@ -221,7 +221,33 @@ public class GerenciarProgetos {
     // Mudar status de projetos
 
     public void mudarStatus() {
-        
+        System.out.println("#######################################################");
+        System.out.println("##                    Qual projeto?                  ##");
+        Projeto proj = projetList();
+
+        if(proj.getEmElaboracao() == true){
+            System.out.print("## Este projeto esta em Elaboracao.");
+            System.out.println("## Deseja mudar para Em Andamento?");
+            System.out.println("## [1] SIM OU [2] NAO");
+            int escolha = Integer.parseInt(teclado.nextLine());
+            if(escolha == 1) {
+                proj.setEmElaboracao(false);
+                proj.setEmAndamento(true);
+                System.out.println("## **Mudado para Em Andamento!");
+            }
+        }
+        // else if(proj.getEmAndamento() == true){
+        //     System.out.print("## Este projeto esta Em Andamento.");
+        //     System.out.println("## Deseja mudar para Concluido?");
+        //     System.out.println("## [1] SIM OU [2] NAO");
+        //     int escolha = Integer.parseInt(teclado.nextLine());
+        //     if(escolha == 1) {
+        //         proj.setEmElaboracao() = false;
+        //         proj.getEmAndamento() = true;
+        //         System.out.println("## **Mudado Em Andamento!");
+        //     }
+        // }
+                
     }
 
 

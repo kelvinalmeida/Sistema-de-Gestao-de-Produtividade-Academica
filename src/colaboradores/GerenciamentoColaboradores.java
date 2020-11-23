@@ -139,6 +139,13 @@ public class GerenciamentoColaboradores {
     }
 
     public void listAlunosDeGraduacao() {
+
+        if(ConjAlunosDeGraduacao.size() == 0){
+            System.out.println("## 0 Alunos de graduacao! Cadastre alguns!");
+            return;
+        }
+
+
         System.out.println("##              Qual aluno de graduacao?             ##");
         
         // Listando os alunos de graduação!
@@ -153,11 +160,17 @@ public class GerenciamentoColaboradores {
         // Obtendo o aluno escolhido!
         AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(AlunoEscolhido - 1);
         System.out.println("##  Nome: " + aluno.getNome());
-        System.out.println("## Email: " + aluno.getEmail());  
-
+        System.out.println("## Email: " + aluno.getEmail());
+        
     }  
     
     public void listAlunosDeMestrado() {
+
+        if(ConjAlunosDeMestrado.size() == 0) {
+            System.out.println("## 0 Alunos de Mestrado! Cadastre alguns!");
+            return;
+        }
+
         // System.out.println("#######################################################");
         System.out.println("##               Qual aluno de Mestrado?             ##");
         
@@ -178,6 +191,12 @@ public class GerenciamentoColaboradores {
     } 
     
     public void listAlunosDeDoutorado() {
+
+        if(ConjAlunosDeDoutorado.size() == 0) {
+            System.out.println("## 0 Alunos de Doutorado! Cadastre alguns!");
+            return;
+        }
+
         // System.out.println("#######################################################");
         System.out.println("##              Qual aluno de Doutorado?             ##");
         
@@ -198,6 +217,12 @@ public class GerenciamentoColaboradores {
     }  
 
     public void listProfessores() {
+
+        if(ConjProfessores.size() == 0){
+            System.out.println("## 0 Professores! Cadastre alguns!");
+            return;
+        } 
+
         System.out.println("#######################################################");
         System.out.println("##                   Qual Professor?                 ##");
         
@@ -217,6 +242,12 @@ public class GerenciamentoColaboradores {
     }  
 
     public void listPesquisadores() {
+
+        if(ConjPesquisadores.size() == 0){
+            System.out.println("## 0 Pesquisadores! Cadastre alguns!");
+            return;
+        }
+
         // System.out.println("#######################################################");
         System.out.println("##                  Qual pesquisador?                ##");
         
