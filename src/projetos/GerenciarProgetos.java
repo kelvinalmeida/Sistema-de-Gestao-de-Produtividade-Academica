@@ -309,6 +309,23 @@ public class GerenciarProgetos {
 
             System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
         }
+
+        if(escolha == 2) {
+
+            System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
+            // Projeto proj = this.projetList();
+            
+            // Regra!
+            // if(proj.getEmElaboracao() == false) {
+            //     System.out.println("## Pojeto Precisa esta em elaboracao! ##");
+            //     return;   
+            // }
+            
+            // proj.addAlunoGrad(AlunoGraduacao);
+            // AlunoGraduacao.setProjeto(proj);
+
+            // System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
+        }
     }
 
     public void alocarAlunosMestrado() {
