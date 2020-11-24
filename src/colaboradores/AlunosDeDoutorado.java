@@ -4,8 +4,6 @@ import src.projetos.*;
 import java.util.Vector;
 
 public class AlunosDeDoutorado extends Colaboradores {
-
-    Vector<Projeto> projG = new Vector<Projeto>();
     
     public void setProjeto(Projeto proj) {
         if(projG.size() == 2){
@@ -14,17 +12,6 @@ public class AlunosDeDoutorado extends Colaboradores {
         }
 
         this.projG.add(proj);
-    }
-
-    public int getQntProjetos() {
-        return projG.size();
-    }
-
-    public void projList() {
-        for (int i = 0; i < projG.size(); i++) {
-            Projeto projL = projG.get(i);
-            System.out.println("## " + "["+(i+1)+"]" + projL.getTitulo());            
-        }
     }
 
 }

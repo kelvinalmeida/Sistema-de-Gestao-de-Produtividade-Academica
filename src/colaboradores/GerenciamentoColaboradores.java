@@ -190,6 +190,7 @@ public class GerenciamentoColaboradores {
         System.out.println("##  Nome: " + alunoM.getNome());
         System.out.println("## Email: " + alunoM.getEmail());  
 
+        alunoM.mostrarProjetos();
     } 
     
     public void listAlunosDeDoutorado() {
@@ -214,7 +215,9 @@ public class GerenciamentoColaboradores {
         // Obtendo o aluno escolhido!
         AlunosDeDoutorado alunoD = ConjAlunosDeDoutorado.get(AlunoEscolhido - 1);
         System.out.println("##  Nome: " + alunoD.getNome());
-        System.out.println("## Email: " + alunoD.getEmail());  
+        System.out.println("## Email: " + alunoD.getEmail()); 
+        
+        alunoD.mostrarProjetos();
 
     }  
 
@@ -241,6 +244,8 @@ public class GerenciamentoColaboradores {
         Professores alunoP = ConjProfessores.get(AlunoEscolhido - 1);
         System.out.println("##  Nome: " + alunoP.getNome());
         System.out.println("## Email: " + alunoP.getEmail());  
+
+        alunoP.mostrarProjetos();
     }  
 
     public void listPesquisadores() {
@@ -266,6 +271,8 @@ public class GerenciamentoColaboradores {
         Pesquisadores alunoPes = ConjPesquisadores.get(AlunoEscolhido - 1);
         System.out.println("##  Nome: " + alunoPes.getNome());
         System.out.println("## Email: " + alunoPes.getEmail());  
+
+        alunoPes.mostrarProjetos();
     } 
 
     //////////////////////////////////////
