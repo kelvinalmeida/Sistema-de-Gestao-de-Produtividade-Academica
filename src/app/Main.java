@@ -2,6 +2,7 @@ package src.app;
 import java.util.Scanner;
 import src.colaboradores.*;
 import src.projetos.*;
+import src.producaoAcademica.*;
 
 public class Main {
 
@@ -13,6 +14,7 @@ public class Main {
         // Instancias únicas que vão gerenciar!
         GerenciamentoColaboradores GereColaboradores = new GerenciamentoColaboradores();
         GerenciarProgetos GereProjetos = new GerenciarProgetos(GereColaboradores);
+        GerenProducaoAcad GereProdAcad = new GerenProducaoAcad();
         
         while(0 != 1) {
             
@@ -25,6 +27,7 @@ public class Main {
             System.out.println("##             [4] Consultar Colaborador!            ##");
             System.out.println("##                [5] Consultar projeto!             ##");
             System.out.println("##            [6] Mudar status do projeto!           ##");
+            System.out.println("##         [7] Cadastrar Producao Academica!         ##");
             System.out.println("##               [0] Finalizar Programa!             ##");
             System.out.println("#######################################################");
 
@@ -49,6 +52,9 @@ public class Main {
             
             // Mudar status projeto!
             else if(escolha == 6) GereProjetos.mudarStatus();
+
+            // Cadastrar Prod. Acad.
+            else if(escolha == 7) GereProdAcad.adicionar();
             
             
             else if(escolha == 0) {

@@ -10,6 +10,30 @@ public class Publicacao {
     private int anoAtual;
     Projeto projAssociado;
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+    public void setConferenciaAondeFoiPublicada(String conferenciaAondeFoiPublicada) {
+        this.conferenciaAondeFoiPublicada = conferenciaAondeFoiPublicada;
+    }
+
+    public String getConferenciaAondeFoiPublicada() {
+        return this.conferenciaAondeFoiPublicada;
+    }
+
+    public void setAnoAtual(int anoAtual) {
+        this.anoAtual = anoAtual;
+    }
+
+    public int getAnoAtual() {
+        return this.anoAtual;
+    }
+
     Vector<AlunosDeGraduacao> ConjAlunosDeGraduacao = new Vector<AlunosDeGraduacao>();
     Vector<AlunosDeMestado> ConjAlunosDeMestrado = new Vector<AlunosDeMestado>();
     Vector<AlunosDeDoutorado> ConjAlunosDeDoutorado = new Vector<AlunosDeDoutorado>();
