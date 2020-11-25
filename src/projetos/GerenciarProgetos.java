@@ -447,4 +447,9 @@ public class GerenciarProgetos {
         return TodosOsProjetos.get(escolha - 1);
     }
 
+    public boolean getSize() {
+        if(TodosOsProjetos.size() == 0) return true;
+        else return false;
+    }
+
 }

@@ -4,7 +4,7 @@ import src.projetos.*;
 import src.colaboradores.*;
 import java.util.Vector;
 
-public class Publicacao { 
+public class Publicacao {
     private String titulo;
     private String conferenciaAondeFoiPublicada;
     private int anoAtual;
@@ -39,7 +39,7 @@ public class Publicacao {
     Vector<AlunosDeDoutorado> ConjAlunosDeDoutorado = new Vector<AlunosDeDoutorado>();
     Vector<Professores> ConjProfessores = new Vector<Professores>();
     Vector<Pesquisadores> ConjPesquisadores = new Vector<Pesquisadores>();
-    
+
     public void addAlunoGrad(AlunosDeGraduacao alunoG) {
         ConjAlunosDeGraduacao.add(alunoG);
     }
@@ -58,9 +58,5 @@ public class Publicacao {
 
     public void addPesquisador(Pesquisadores Pesquisador) {
         ConjPesquisadores.add(Pesquisador);
-    }
-
-    public void addProf(Professores prof) {
-        ConjProfessores.add(prof);
     }
 }

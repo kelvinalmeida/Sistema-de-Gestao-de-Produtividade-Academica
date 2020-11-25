@@ -1,6 +1,10 @@
 package src.projetos;
+
 import java.util.Vector;
 import src.colaboradores.*;
+import src.producaoAcademica.*;
+import java.util.Vector;
+import java.util.Scanner;
 
 public class Projeto {
     private String titulo;
@@ -14,6 +18,8 @@ public class Projeto {
     private float valorFinanciado;
     private String objetivo;
     private String descricao;
+
+    Scanner teclado = new Scanner(System.in);
 
     private Boolean emElaboracao, emAndamento, concluido;
 
@@ -99,5 +105,26 @@ public class Projeto {
         ConjProfessores.add(prof);
     }
 
+    Vector<Orientacao> ConjOrientacao = new Vector<Orientacao>();
+    Vector<Publicacao> ConjPublicacoes = new Vector<Publicacao>();
+
+    public void setPublicacao(Publicacao Publicacao) { 
+        ConjPublicacoes.add(Publicacao); 
+    }
+
+
+    ///////////////////////
+    // help
+
+    public Professores profList() {
+        for (int i = 0; i < ConjProfessores.size(); i++) {
+            Professores peofEscol = ConjProfessores.get(i);
+            System.out.println("## " + "["+(i+1)+"] - Nome:" + peofEscol.getNome());
+        }
+
+        int escolha = Integer.parseInt(teclado.nextLine());
+        System.out.println("## ");
+        return ConjProfessores.get(escolha - 1);
+    }
 
 }

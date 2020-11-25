@@ -1,4 +1,5 @@
 package src.app;
+
 import java.util.Scanner;
 import src.colaboradores.*;
 import src.projetos.*;
@@ -10,14 +11,14 @@ public class Main {
         System.out.println("#######################################################");
         System.out.println("## Bem vindo, ao Sistema de Produtividade Academica! ##");
         System.out.println("#######################################################");
-        
+
         // Instancias únicas que vão gerenciar!
         GerenciamentoColaboradores GereColaboradores = new GerenciamentoColaboradores();
         GerenciarProgetos GereProjetos = new GerenciarProgetos(GereColaboradores);
-        GerenProducaoAcad GereProdAcad = new GerenProducaoAcad();
-        
-        while(0 != 1) {
-            
+        GerenProducaoAcad GereProdAcad = new GerenProducaoAcad(GereColaboradores, GereProjetos);
+
+        while (0 != 1) {
+
             System.out.println("#######################################################");
             System.out.println("##             O que gostaria de Fazer?              ##");
             System.out.println("##             Escolha uma opcao abaixo!             ##");
@@ -36,28 +37,34 @@ public class Main {
             int escolha = Integer.parseInt(teclado.nextLine());
 
             // Quer adicionar um colaborador!
-            if(escolha == 1) GereColaboradores.adicionar();
-            
+            if (escolha == 1)
+                GereColaboradores.adicionar();
+
             // Quer adicionar um Projeto!
-            else if(escolha == 2) GereProjetos.adicionar();
+            else if (escolha == 2)
+                GereProjetos.adicionar();
 
             // Alocar colaborador!
-            else if(escolha == 3) GereProjetos.alocar();
-            
+            else if (escolha == 3)
+                GereProjetos.alocar();
+
             // Quer consultar um colaborador!
-            else if(escolha == 4) GereColaboradores.consultar();
-            
+            else if (escolha == 4)
+                GereColaboradores.consultar();
+
             // Quer consultar um projeto!
-            else if(escolha == 5) GereProjetos.consultar();
-            
+            else if (escolha == 5)
+                GereProjetos.consultar();
+
             // Mudar status projeto!
-            else if(escolha == 6) GereProjetos.mudarStatus();
+            else if (escolha == 6)
+                GereProjetos.mudarStatus();
 
             // Cadastrar Prod. Acad.
-            else if(escolha == 7) GereProdAcad.adicionar();
-            
-            
-            else if(escolha == 0) {
+            else if (escolha == 7)
+                GereProdAcad.adicionar();
+
+            else if (escolha == 0) {
                 System.out.println("## **FINALIZADO!");
                 System.out.println("#######################################################");
                 break;
@@ -66,4 +73,4 @@ public class Main {
         }
 
     }
-} 
+}
