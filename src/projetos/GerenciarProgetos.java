@@ -140,6 +140,10 @@ public class GerenciarProgetos {
         System.out.println("## Descricao: " + projCons.getDescricao());
         
         System.out.println("## ---------------------------");
+
+        mostrarProducaoAcademica(projCons);
+
+        System.out.println("## ---------------------------");
         
         mostrarAlunosDeGraduacao(projCons);
         System.out.println("## ---------------------------");
@@ -221,6 +225,21 @@ public class GerenciarProgetos {
                 System.out.println("## " + (i+1) + "- " + pesq.getNome());
             }
         }
+    }
+
+    public void mostrarProducaoAcademica(Projeto projCons) {
+        
+        System.out.println("## PRODUCAO ACADEMICA DO PROJETO!");
+        
+        System.out.println("## PUBLICACOES");
+        projCons.publicacoesList();
+        
+        System.out.println("## ---------------------------------");
+
+        System.out.println("## ORIENTACOES");
+        projCons.orientacoesList();
+
+        System.out.println("## ---------------------------------");
     }
 
 

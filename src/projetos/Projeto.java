@@ -112,6 +112,10 @@ public class Projeto {
         ConjPublicacoes.add(Publicacao); 
     }
 
+    public void setOrientacoes(Orientacao orientacoes) { 
+        ConjOrientacao.add(orientacoes); 
+    }
+
 
     ///////////////////////
     // help
@@ -127,4 +131,61 @@ public class Projeto {
         return ConjProfessores.get(escolha - 1);
     }
 
+    public void publicacoesList() {
+
+        if(ConjPublicacoes.size() >= 2) this.ordenarPublicacoes();
+
+        for (int i = 0; i < ConjPublicacoes.size(); i++) {
+            Publicacao publicEsco = ConjPublicacoes.get(i);
+            System.out.println("## " + "["+(i+1)+"] - Nome:" + publicEsco.getTitulo() + " Ano: " + publicEsco.getAnoAtual());
+        }
+    }
+
+    public void orientacoesList() {
+
+        if(ConjOrientacao.size() >= 2) this.ordenarOrientacoes();
+
+        for (int i = 0; i < ConjOrientacao.size(); i++) {
+            Orientacao Orient = ConjOrientacao.get(i);
+            Professores ProfEscolhido = Orient.getProf();
+            System.out.println("## Orientacao" + "["+(i+1)+"] - Professor: " + ProfEscolhido.getNome() + " Ano: " + Orient.getAno());
+            System.out.println("## Nota: " + Orient.getOri());
+        }
+    }
+
+    public void ordenarPublicacoes() {
+        for (int j = 0; j < ConjPublicacoes.size(); j++) {
+            for (int i = 0; i < (ConjPublicacoes.size() - 1); i++) {
+                Publicacao publi1 = ConjPublicacoes.get(i);
+                Publicacao publi2 = ConjPublicacoes.get(i+1);
+                Publicacao publi3;
+                
+                if(publi1.getAnoAtual() < publi2.getAnoAtual()) {
+                    publi3 = publi1;
+                    ConjPublicacoes.remove(i);
+                    ConjPublicacoes.add(i, publi2);
+                    ConjPublicacoes.remove(i+1);
+                    ConjPublicacoes.add((i+1), publi3);
+                }
+            }
+        }
+    }
+
+    public void ordenarOrientacoes() {
+        for (int j = 0; j < ConjOrientacao.size(); j++) {
+            for (int i = 0; i < (ConjOrientacao.size() - 1); i++) {
+                Orientacao ori1 = ConjOrientacao.get(i);
+                Orientacao ori2 = ConjOrientacao.get(i+1);
+                Orientacao ori3;
+                
+                if(ori1.getAno() < ori2.getAno()) {
+                    ori3 = ori1;
+                    ConjOrientacao.remove(i);
+                    ConjOrientacao.add(i, ori2);
+                    ConjOrientacao.remove(i+1);
+                    ConjOrientacao.add((i+1), ori3);
+                }
+            }
+        }
+    }
 }

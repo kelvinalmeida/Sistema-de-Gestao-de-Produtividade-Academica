@@ -65,12 +65,17 @@ public class GerenProducaoAcad {
             System.out.println("## Por favor, adicione um projeto antes!.");    
         }
 
-        System.out.print("## Escreva a Orientacao? - ");
+        System.out.print("## Escreva a Orientacao: - ");
         String orient = teclado.nextLine();
         orientacao.setOri(orient);
+
+        System.out.print("## Ano da Orientacao - ");
+        int ano = Integer.parseInt(teclado.nextLine());
+        orientacao.setAno(ano);
         
         System.out.println("## Qual projeto vai a orientacao?");
         Projeto proj = gerencProj.projetList();
+        proj.setOrientacoes(orientacao);
         
         // Professor do projeto;
         System.out.println("## Qual Professor deste proj vai fazer a Orientacao?");
@@ -79,6 +84,14 @@ public class GerenProducaoAcad {
         prof.setOri(orientacao);
 
         System.out.println("## -" + prof.getNome() + " **ADICIONADO!");
+    }
+
+
+    ////////////////////////
+    // Alocar public. para algum projeto.
+
+    public void alocar() {
+
     }
 
 }

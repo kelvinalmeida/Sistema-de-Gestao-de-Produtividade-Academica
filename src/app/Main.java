@@ -29,6 +29,7 @@ public class Main {
             System.out.println("##                [5] Consultar projeto!             ##");
             System.out.println("##            [6] Mudar status do projeto!           ##");
             System.out.println("##         [7] Cadastrar Producao Academica!         ##");
+            System.out.println("##             [8] Alocar Publicacao!                ##");
             System.out.println("##               [0] Finalizar Programa!             ##");
             System.out.println("#######################################################");
 
@@ -63,6 +64,10 @@ public class Main {
             // Cadastrar Prod. Acad.
             else if (escolha == 7)
                 GereProdAcad.adicionar();
+            
+            // aLOCAR PUBLI. PRO PROJETO
+            else if (escolha == 7)
+                GereProdAcad.alocar();
 
             else if (escolha == 0) {
                 System.out.println("## **FINALIZADO!");
