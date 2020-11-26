@@ -2,16 +2,19 @@ package src.projetos;
 import java.util.Scanner;
 import java.util.Vector;
 import src.colaboradores.*;
+import src.producaoAcademica.*;
 
 public class GerenciarProgetos {
 
     Vector<Projeto> TodosOsProjetos = new Vector<Projeto>();
     Scanner teclado = new Scanner(System.in);
     GerenciamentoColaboradores GerenColaboradores;
+    GerenProducaoAcad GerenProdAcademica;
     
     // ponteiro
-    public GerenciarProgetos(GerenciamentoColaboradores GerenColaboradores) {
+    public GerenciarProgetos(GerenciamentoColaboradores GerenColaboradores, GerenProducaoAcad GerenProdAcademica) {
         this.GerenColaboradores = GerenColaboradores;
+        this.GerenProdAcademica = GerenProdAcademica;
     }
     
     ///////////////////////////////////////
@@ -330,18 +333,11 @@ public class GerenciarProgetos {
         }
 
         if(escolha == 2) {
-
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
-            // Projeto proj = this.projetList();
+            Publicacao probEsco = GerenProdAcademica.publicacaoList();
             
-            // Regra!
-            // if(proj.getEmElaboracao() == false) {
-            //     System.out.println("## Pojeto Precisa esta em elaboracao! ##");
-            //     return;   
-            // }
-            
-            // proj.addAlunoGrad(AlunoGraduacao);
-            // AlunoGraduacao.setProjeto(proj);
+            probEsco.addAlunoGrad(AlunoGraduacao);
+            AlunoGraduacao.setProjeto(proj);
 
             // System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
         }

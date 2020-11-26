@@ -14,7 +14,7 @@ public class Main {
 
         // Instancias únicas que vão gerenciar!
         GerenciamentoColaboradores GereColaboradores = new GerenciamentoColaboradores();
-        GerenciarProgetos GereProjetos = new GerenciarProgetos(GereColaboradores);
+        GerenciarProgetos GereProjetos = new GerenciarProgetos(GereColaboradores, GereProdAcad);
         GerenProducaoAcad GereProdAcad = new GerenProducaoAcad(GereColaboradores, GereProjetos);
 
         while (0 != 1) {
@@ -65,8 +65,8 @@ public class Main {
             else if (escolha == 7)
                 GereProdAcad.adicionar();
             
-            // aLOCAR PUBLI. PRO PROJETO
-            else if (escolha == 7)
+            // ALOCAR PUBLI. PRO PROJETO
+            else if (escolha == 8)
                 GereProdAcad.alocar();
 
             else if (escolha == 0) {

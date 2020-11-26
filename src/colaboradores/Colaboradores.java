@@ -1,12 +1,14 @@
 package src.colaboradores;
 import src.projetos.*;
 import java.util.Vector;
+import src.producaoAcademica.*;
 
 public class Colaboradores {
     private String name;
     private String email;
 
     Vector<Projeto> projG = new Vector<Projeto>();
+    Vector<Publicacao> publicacaoG = new Vector<Publicacao>();
 
     public void setNome(String name) {
         this.name = name;
@@ -60,7 +62,7 @@ public class Colaboradores {
             Projeto proj = projG.get(l);
 
             if(l == 0) 
-                System.out.println("##   Projetos em Andamento Cadastrados!             ##");
+                System.out.println("##   Projetos Concluidos!             ##");
             if(proj.getConcluido()) {
                 System.out.println("## " + "["+(l+1)+"] - Titulo:" + proj.getTitulo() + "  *Status: " + proj.getStatus());
             }
