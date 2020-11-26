@@ -13,8 +13,8 @@ public class GerenProducaoAcad {
     GerenciarProgetos gerencProj;
     Scanner teclado = new Scanner(System.in);
 
-
-    public GerenProducaoAcad(GerenciamentoColaboradores gerencColab, GerenciarProgetos gerencProj) {
+    // Ponteiro
+    public void setar(GerenciamentoColaboradores gerencColab, GerenciarProgetos gerencProj) {
         this.gerencColab = gerencColab;
         this.gerencProj = gerencProj;
     }
@@ -123,6 +123,11 @@ public class GerenProducaoAcad {
 
     //////////////////////////
     // help
+
+    public boolean publicacaoSize() {
+        if(ConjPublicacoes.size() == 0) return true;
+        else return false;
+    }
 
     public Publicacao publicacaoList() {
         for (int i = 0; i < ConjPublicacoes.size(); i++) {

@@ -14,8 +14,12 @@ public class Main {
 
         // Instancias únicas que vão gerenciar!
         GerenciamentoColaboradores GereColaboradores = new GerenciamentoColaboradores();
-        GerenciarProgetos GereProjetos = new GerenciarProgetos(GereColaboradores, GereProdAcad);
-        GerenProducaoAcad GereProdAcad = new GerenProducaoAcad(GereColaboradores, GereProjetos);
+        GerenciarProgetos GereProjetos = new GerenciarProgetos();
+        GerenProducaoAcad GereProdAcad = new GerenProducaoAcad();
+
+        GereProjetos.setar(GereColaboradores, GereProdAcad);
+        GereProdAcad.setar(GereColaboradores, GereProjetos);
+
 
         while (0 != 1) {
 
