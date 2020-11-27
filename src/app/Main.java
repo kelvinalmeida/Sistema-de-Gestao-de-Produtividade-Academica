@@ -39,7 +39,7 @@ public class Main {
 
             System.out.print("## ");
             Scanner teclado = new Scanner(System.in);
-            int escolha = Integer.parseInt(teclado.nextLine());
+            int escolha = teclado.nextInt();
 
             // Quer adicionar um colaborador!
             if (escolha == 1)
