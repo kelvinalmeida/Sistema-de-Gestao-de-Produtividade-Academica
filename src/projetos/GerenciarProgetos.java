@@ -95,17 +95,23 @@ public class GerenciarProgetos {
     public void consultar() {
         System.out.println("#######################################################");
 
-        if(TodosOsProjetos.size() == 0) 
-                    System.out.println("##               **Nao existe projetos!              ##");
+        if(TodosOsProjetos.size() == 0) {
+            System.out.println("##               **Nao existe projetos!              ##");
+            return;
+        }
 
         System.out.println("##               Qual projeto consultar?             ##");
-
+        
         Projeto projetoConsulta = projetList();
-
-        mostarPojeto(projetoConsulta);
+        
+        try {
+            mostrarPojeto(projetoConsulta);
+        } catch (NumberFormatException nfe) {
+            System.err.println("[" + nfe + "] is not an integer" + " and will not be included in the sum.");
+        }
     }
 
-    public void mostarPojeto(Projeto projCons) {
+    public void mostrarPojeto(Projeto projCons) {
         System.out.println("#######################################################");
         System.out.println("##            Dados do Projeto Escolhido:            ##");
         
@@ -259,33 +265,39 @@ public class GerenciarProgetos {
             System.out.println("## Este projeto esta em Elaboracao.");
             System.out.println("## Deseja mudar para Em Andamento?");
             System.out.println("## [1] SIM OU [2] NAO");
-            int escolha = Integer.parseInt(teclado.nextLine());
+            int escolha = teclado.nextInt();
             if(escolha == 1) {
                 proj.setEmElaboracao(false);
                 proj.setEmAndamento(true);
                 System.out.println("## **Mudado para Em Andamento!");
             }
         }
-        // else if(proj.getEmAndamento() == true){
-        //     System.out.print("## Este projeto esta Em Andamento.");
-        //     System.out.println("## Deseja mudar para Concluido?");
-        //     System.out.println("## [1] SIM OU [2] NAO");
-        //     int escolha = Integer.parseInt(teclado.nextLine());
-        //     if(escolha == 1) {
-        //         proj.setEmElaboracao() = false;
-        //         proj.getEmAndamento() = true;
-        //         System.out.println("## **Mudado Em Andamento!");
-        //     }
-        // }
+        else if(proj.getEmAndamento() == true){
+            System.out.print("## Este projeto esta Em Andamento.");
+            System.out.println("## Deseja mudar para Concluido?");
+            System.out.println("## [1] SIM OU [2] NAO");
+            
+            int escolha = teclado.nextInt();
+            
+            if(proj.publiacacoesSize()) {
+                System.out.println("## Adicione uma publicacao ao projeto antes!");
+                return;
+            }
+
+            if(escolha == 1) {
+                proj.setEmAndamento(false);
+                proj.setConcluido(true);
+                System.out.println("## **Mudado Para Concluido!");
+            }
+        }
                 
     }
-
 
     /////////////////////////////
     // Alucacao de Participantes para projetos!
 
     public void alocar() {
-        
+
         if(TodosOsProjetos.size() == 0) {
             System.out.println("##  **Nao existe projeto Para alocar colaboradores!  ##");
             System.out.println("##  **Crie um.                                       ##");
@@ -520,7 +532,7 @@ public class GerenciarProgetos {
             System.out.println("## " + "["+(i+1)+"] - Titulo:" + proj.getTitulo() + "  *Status: " + proj.getStatus());
         }
 
-        int escolha = Integer.parseInt(teclado.nextLine());
+        int escolha = teclado.nextInt();
         System.out.println("## ");
         return TodosOsProjetos.get(escolha - 1);
     }
@@ -528,6 +540,10 @@ public class GerenciarProgetos {
     public boolean getSize() {
         if(TodosOsProjetos.size() == 0) return true;
         else return false;
+    }
+
+    public Vector<Projeto> TodosProjetos() {
+        return TodosOsProjetos;
     }
 
 }

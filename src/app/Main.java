@@ -16,6 +16,7 @@ public class Main {
         GerenciamentoColaboradores GereColaboradores = new GerenciamentoColaboradores();
         GerenciarProgetos GereProjetos = new GerenciarProgetos();
         GerenProducaoAcad GereProdAcad = new GerenProducaoAcad();
+        RelatorioGeral RG = new RelatorioGeral(GereColaboradores, GereProjetos, GereProdAcad);
 
         GereProjetos.setar(GereColaboradores, GereProdAcad);
         GereProdAcad.setar(GereColaboradores, GereProjetos);
@@ -34,11 +35,13 @@ public class Main {
             System.out.println("##            [6] Mudar status do projeto!           ##");
             System.out.println("##         [7] Cadastrar Producao Academica!         ##");
             System.out.println("##             [8] Alocar Publicacao!                ##");
+            System.out.println("##            [9] Relatorio do laboratório!          ##");
             System.out.println("##               [0] Finalizar Programa!             ##");
             System.out.println("#######################################################");
 
             System.out.print("## ");
             Scanner teclado = new Scanner(System.in);
+
             int escolha = teclado.nextInt();
 
             // Quer adicionar um colaborador!
@@ -72,6 +75,10 @@ public class Main {
             // ALOCAR PUBLI. PRO PROJETO
             else if (escolha == 8)
                 GereProdAcad.alocar();
+
+            // Relatorio geral
+            else if (escolha == 9)
+                RG.show();
 
             else if (escolha == 0) {
                 System.out.println("## **FINALIZADO!");

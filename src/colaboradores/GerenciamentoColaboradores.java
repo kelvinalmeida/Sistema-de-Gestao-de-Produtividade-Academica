@@ -343,5 +343,16 @@ public class GerenciamentoColaboradores {
         if(ConjProfessores.size() == 0) return true;
         else return false;
     } 
+
+    public int totalDeColaboradores() {
+        int total = 0;
+        total += ConjAlunosDeGraduacao.size();
+        total += ConjAlunosDeDoutorado.size();
+        total += ConjAlunosDeMestrado.size();
+        total += ConjPesquisadores.size();
+        total += ConjProfessores.size();
+
+        return total;
+    }
     
 }

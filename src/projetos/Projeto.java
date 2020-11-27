@@ -69,10 +69,10 @@ public class Projeto {
 
     public String getStatus() {
         if(getEmElaboracao()) return "Em Elaboracao";
-        if(getEmAndamento()) return "Em Andamento";
-        if(getConcluido()) return "Concluido";
+        else if(getEmAndamento()) return "Em Andamento";
+        else if(getConcluido()) return "Concluido";
 
-        return "ERRO!";
+        return "Erro!";
     }
     
     Vector<AlunosDeGraduacao> ConjAlunosDeGraduacao = new Vector<AlunosDeGraduacao>();
@@ -187,5 +187,10 @@ public class Projeto {
                 }
             }
         }
+    }
+
+    public boolean publiacacoesSize() {
+        if(ConjPublicacoes.size() == 0) return true;
+        else return false;
     }
 }

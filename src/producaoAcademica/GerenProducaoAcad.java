@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class GerenProducaoAcad {
 
+    
     Vector<Publicacao> ConjPublicacoes = new Vector<Publicacao>();
     Vector<Orientacao> ConjOrientacao = new Vector<Orientacao>();
     GerenciamentoColaboradores gerencColab;
@@ -85,6 +86,7 @@ public class GerenProducaoAcad {
         orientacao.setProf(prof);
         orientacao.setProj(proj);
         prof.setOri(orientacao);
+        ConjOrientacao.add(orientacao);
 
         System.out.println("## -" + prof.getNome() + " **ADICIONADO!");
     }
@@ -125,6 +127,14 @@ public class GerenProducaoAcad {
     public boolean publicacaoSize() {
         if(ConjPublicacoes.size() == 0) return true;
         else return false;
+    }
+    
+    public int publicacaoQnt() {
+        return ConjPublicacoes.size();
+    }
+
+    public int orientacaoQnt() {
+        return ConjOrientacao.size();
     }
 
     public Publicacao publicacaoList() {
