@@ -13,8 +13,8 @@ public class GerenProducaoAcad {
     GerenciarProgetos gerencProj;
     Scanner teclado = new Scanner(System.in);
 
-
-    public GerenProducaoAcad(GerenciamentoColaboradores gerencColab, GerenciarProgetos gerencProj) {
+    // Ponteiro
+    public void setar(GerenciamentoColaboradores gerencColab, GerenciarProgetos gerencProj) {
         this.gerencColab = gerencColab;
         this.gerencProj = gerencProj;
     }
@@ -59,10 +59,12 @@ public class GerenProducaoAcad {
 
         if(gerencColab.sizeProf()) {
             System.out.println("## Por favor, adicione um professor antes!.");
+            return;
         }
 
         if(gerencProj.getSize()) {
             System.out.println("## Por favor, adicione um projeto antes!.");    
+            return;
         }
 
         System.out.print("## Escreva a Orientacao: - ");
@@ -91,7 +93,51 @@ public class GerenProducaoAcad {
     // Alocar public. para algum projeto.
 
     public void alocar() {
+        if(gerencProj.getSize()){
+            System.out.println("## ** Por favor, adicione um projeto antes!");
+            return;
+        }
 
+        if(ConjPublicacoes.size() == 0) {
+            System.out.println("## ** Por favor, adicione uma publicacao antes!");
+            return;
+        }
+
+        System.out.println("## Escolha a Publicacao:");
+        Publicacao publicEscolhida = this.publicacaoList();
+
+        System.out.println("## Escolha um projeto para Inserir a Publicacao:");
+        Projeto projetoEscolhido = gerencProj.projetList();
+        
+        // REGRA!
+        if(projetoEscolhido.getEmAndamento() == false) {
+            System.out.println("## O projeto precisa está em andamento!");
+            return;
+        } 
+        
+        projetoEscolhido.setPublicacao(publicEscolhida);
+        System.out.println("## O Publicacao **" + publicEscolhida.getTitulo() + "  **ADICIONADA!");
+    } 
+
+
+
+    //////////////////////////
+    // help
+
+    public boolean publicacaoSize() {
+        if(ConjPublicacoes.size() == 0) return true;
+        else return false;
+    }
+
+    public Publicacao publicacaoList() {
+        for (int i = 0; i < ConjPublicacoes.size(); i++) {
+            Publicacao proj = ConjPublicacoes.get(i);
+            System.out.println("## " + "["+(i+1)+"] - Titulo:" + proj.getTitulo());
+        }
+
+        int escolha = Integer.parseInt(teclado.nextLine());
+        System.out.println("## ");
+        return ConjPublicacoes.get(escolha - 1);
     }
 
 }

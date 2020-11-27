@@ -1,12 +1,14 @@
 package src.colaboradores;
 import src.projetos.*;
 import java.util.Vector;
+import src.producaoAcademica.*;
 
 public class Colaboradores {
     private String name;
     private String email;
 
     Vector<Projeto> projG = new Vector<Projeto>();
+    Vector<Publicacao> publicacaoG = new Vector<Publicacao>();
 
     public void setNome(String name) {
         this.name = name;
@@ -22,6 +24,22 @@ public class Colaboradores {
 
     public String getEmail() {
         return this.email;
+    }
+
+    public void setPublicacao(Publicacao publicacaoIns) {
+        publicacaoG.add(publicacaoIns);
+    }
+
+    public void mostrarPublic() { 
+        
+        if(publicacaoG.size() >= 2) this.ordenarPublicacoes();
+         
+        System.out.println("## Producao Academica(Publicacoes)! ");  
+
+        for (int i = 0; i < publicacaoG.size(); i++) {
+            Publicacao publicList = publicacaoG.get(i);
+            System.out.println("## " + "["+(i+1)+"]" + publicList.getTitulo());            
+        }
     }
 
     public void mostrarProjetos() {
@@ -60,7 +78,7 @@ public class Colaboradores {
             Projeto proj = projG.get(l);
 
             if(l == 0) 
-                System.out.println("##   Projetos em Andamento Cadastrados!             ##");
+                System.out.println("##   Projetos Concluidos!             ##");
             if(proj.getConcluido()) {
                 System.out.println("## " + "["+(l+1)+"] - Titulo:" + proj.getTitulo() + "  *Status: " + proj.getStatus());
             }
@@ -85,6 +103,24 @@ public class Colaboradores {
         }
     }
 
+    public void ordenarPublicacoes() {
+        for (int j = 0; j < publicacaoG.size(); j++) {
+            for (int i = 0; i < (publicacaoG.size() - 1); i++) {
+                Publicacao publi1 = publicacaoG.get(i);
+                Publicacao publi2 = publicacaoG.get(i+1);
+                Publicacao publi3;
+                
+                if(publi1.getAnoAtual() < publi2.getAnoAtual()) {
+                    publi3 = publi1;
+                    publicacaoG.remove(i);
+                    publicacaoG.add(i, publi2);
+                    publicacaoG.remove(i+1);
+                    publicacaoG.add((i+1), publi3);
+                }
+            }
+        }
+    }
+
     public void projList() {
 
         for (int i = 0; i < projG.size(); i++) {
@@ -96,4 +132,5 @@ public class Colaboradores {
     public int getQntProjetos() {
         return projG.size();
     }
+    
 }

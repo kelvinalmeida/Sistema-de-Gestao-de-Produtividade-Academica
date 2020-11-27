@@ -164,6 +164,7 @@ public class GerenciamentoColaboradores {
 
         // Mostrar os projetos deste aluno!
         aluno.mostrarProjetos();
+        aluno.mostrarPublic();
     }  
     
     public void listAlunosDeMestrado() {
@@ -191,6 +192,7 @@ public class GerenciamentoColaboradores {
         System.out.println("## Email: " + alunoM.getEmail());  
 
         alunoM.mostrarProjetos();
+        alunoM.mostrarPublic();
     } 
     
     public void listAlunosDeDoutorado() {
@@ -218,6 +220,7 @@ public class GerenciamentoColaboradores {
         System.out.println("## Email: " + alunoD.getEmail()); 
         
         alunoD.mostrarProjetos();
+        alunoD.mostrarPublic();
 
     }  
 
@@ -246,6 +249,8 @@ public class GerenciamentoColaboradores {
         System.out.println("## Email: " + alunoP.getEmail());  
 
         alunoP.mostrarProjetos();
+        alunoP.mostrarPublic();
+        // aluno.mostrarOrientacao();
     }  
 
     public void listPesquisadores() {
@@ -273,6 +278,7 @@ public class GerenciamentoColaboradores {
         System.out.println("## Email: " + alunoPes.getEmail());  
 
         alunoPes.mostrarProjetos();
+        alunoPes.mostrarPublic();
     } 
 
     //////////////////////////////////////

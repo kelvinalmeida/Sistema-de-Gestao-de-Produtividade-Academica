@@ -2,16 +2,20 @@ package src.projetos;
 import java.util.Scanner;
 import java.util.Vector;
 import src.colaboradores.*;
+import src.producaoAcademica.*;
 
 public class GerenciarProgetos {
 
     Vector<Projeto> TodosOsProjetos = new Vector<Projeto>();
     Scanner teclado = new Scanner(System.in);
     GerenciamentoColaboradores GerenColaboradores;
+    GerenProducaoAcad GerenProdAcademica;
     
     // ponteiro
-    public GerenciarProgetos(GerenciamentoColaboradores GerenColaboradores) {
+
+    public void setar(GerenciamentoColaboradores GerenColaboradores, GerenProducaoAcad GerenProdAcademica) {
         this.GerenColaboradores = GerenColaboradores;
+        this.GerenProdAcademica = GerenProdAcademica;
     }
     
     ///////////////////////////////////////
@@ -331,19 +335,17 @@ public class GerenciarProgetos {
 
         if(escolha == 2) {
 
+            if(GerenProdAcademica.publicacaoSize()) {
+                System.out.println("##  Adicione uma publicacao antes!   ##");
+            }
+            
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
-            // Projeto proj = this.projetList();
+            Publicacao pubEsco = GerenProdAcademica.publicacaoList();
             
-            // Regra!
-            // if(proj.getEmElaboracao() == false) {
-            //     System.out.println("## Pojeto Precisa esta em elaboracao! ##");
-            //     return;   
-            // }
-            
-            // proj.addAlunoGrad(AlunoGraduacao);
-            // AlunoGraduacao.setProjeto(proj);
+            pubEsco.addAlunoGrad(AlunoGraduacao);
+            AlunoGraduacao.setPublicacao(pubEsco);
 
-            // System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
+            System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
         }
     }
 
@@ -368,6 +370,21 @@ public class GerenciarProgetos {
             
             proj.addAlunoMest(AlunoMestrado);
             AlunoMestrado.setProjeto(proj);
+            System.out.println("## Aluno: " + AlunoMestrado.getNome() + "** AlOCADO!");
+        }
+        
+        if(escolha == 2) {
+
+            if(GerenProdAcademica.publicacaoSize()) {
+                System.out.println("##  Adicione uma publicacao antes!   ##");
+            }
+            
+            System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
+            Publicacao pubEsco = GerenProdAcademica.publicacaoList();
+            
+            pubEsco.addAlunoMest(AlunoMestrado);
+            AlunoMestrado.setPublicacao(pubEsco);
+
             System.out.println("## Aluno: " + AlunoMestrado.getNome() + "** AlOCADO!");
         }
     }
@@ -396,6 +413,20 @@ public class GerenciarProgetos {
             
             System.out.println("## Aluno: " + AlunoDoutorado.getNome() + "** AlOCADO!");
         }
+        if(escolha == 2) {
+
+            if(GerenProdAcademica.publicacaoSize()) {
+                System.out.println("##  Adicione uma publicacao antes!   ##");
+            }
+            
+            System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
+            Publicacao pubEsco = GerenProdAcademica.publicacaoList();
+            
+            pubEsco.addAlunoDout(AlunoDoutorado);
+            AlunoDoutorado.setPublicacao(pubEsco);
+
+            System.out.println("## Aluno: " + AlunoDoutorado.getNome() + "** AlOCADO!");
+        }
     }
 
     public void alocarProfessores() {
@@ -420,6 +451,20 @@ public class GerenciarProgetos {
             proj.addProfessor(professor);
             professor.setProjeto(proj);
             
+            System.out.println("## Aluno: " + professor.getNome() + "** AlOCADO!");
+        }
+        if(escolha == 2) {
+
+            if(GerenProdAcademica.publicacaoSize()) {
+                System.out.println("##  Adicione uma publicacao antes!   ##");
+            }
+            
+            System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
+            Publicacao pubEsco = GerenProdAcademica.publicacaoList();
+            
+            pubEsco.addProfessor(professor);
+            professor.setPublicacao(pubEsco);
+
             System.out.println("## Aluno: " + professor.getNome() + "** AlOCADO!");
         }
     }
@@ -449,6 +494,20 @@ public class GerenciarProgetos {
             pesquisador.setProjeto(proj);
             
             System.out.println("## Aluno: " + pesquisador.getNome() + "     ** AlOCADO!");
+        }
+        if(escolha == 2) {
+
+            if(GerenProdAcademica.publicacaoSize()) {
+                System.out.println("##  Adicione uma publicacao antes!   ##");
+            }
+            
+            System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
+            Publicacao pubEsco = GerenProdAcademica.publicacaoList();
+            
+            pubEsco.addPesquisador(pesquisador);
+            pesquisador.setPublicacao(pubEsco);
+
+            System.out.println("## Aluno: " + pesquisador.getNome() + "** AlOCADO!");
         }
     }
 
