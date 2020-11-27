@@ -57,10 +57,10 @@ public class GerenProducaoAcad {
 
         Orientacao orientacao = new Orientacao();
 
-        if(gerencColab.sizeProf()) {
-            System.out.println("## Por favor, adicione um professor antes!.");
-            return;
-        }
+        // if(gerencColab.sizeProf()) {
+        //     System.out.println("## Por favor, adicione um professor antes!.");
+        //     return;
+        // }
 
         if(gerencProj.getSize()) {
             System.out.println("## Por favor, adicione um projeto antes!.");    
@@ -83,11 +83,11 @@ public class GerenProducaoAcad {
         System.out.println("## Qual Professor deste proj vai fazer a Orientacao?");
         Professores prof = proj.profList();
         orientacao.setProf(prof);
+        orientacao.setProj(proj);
         prof.setOri(orientacao);
 
         System.out.println("## -" + prof.getNome() + " **ADICIONADO!");
     }
-
 
     ////////////////////////
     // Alocar public. para algum projeto.
@@ -118,8 +118,6 @@ public class GerenProducaoAcad {
         projetoEscolhido.setPublicacao(publicEscolhida);
         System.out.println("## O Publicacao **" + publicEscolhida.getTitulo() + "  **ADICIONADA!");
     } 
-
-
 
     //////////////////////////
     // help

@@ -9,9 +9,18 @@ public class Orientacao {
     private Professores professor;
     private String orientacao;
     private int ano; 
+    private Projeto proj;
 
     public void setProf(Professores professor) {
         this.professor = professor;
+    }
+
+    public void setProj(Projeto proj) {
+        this.proj = proj;
+    }
+
+    public Projeto getProj() {
+        return this.proj;
     }
 
     public Professores getProf() {

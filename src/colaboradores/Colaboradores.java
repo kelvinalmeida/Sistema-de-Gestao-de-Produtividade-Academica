@@ -34,7 +34,7 @@ public class Colaboradores {
         
         if(publicacaoG.size() >= 2) this.ordenarPublicacoes();
          
-        System.out.println("## Producao Academica(Publicacoes)! ");  
+        System.out.println("## PUBLICACOES: ");  
 
         for (int i = 0; i < publicacaoG.size(); i++) {
             Publicacao publicList = publicacaoG.get(i);

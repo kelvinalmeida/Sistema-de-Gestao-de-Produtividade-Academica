@@ -250,7 +250,7 @@ public class GerenciamentoColaboradores {
 
         alunoP.mostrarProjetos();
         alunoP.mostrarPublic();
-        // aluno.mostrarOrientacao();
+        alunoP.mostrarOrientacao();
     }  
 
     public void listPesquisadores() {

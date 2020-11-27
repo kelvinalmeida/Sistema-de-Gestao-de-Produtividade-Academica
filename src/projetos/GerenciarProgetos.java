@@ -282,7 +282,7 @@ public class GerenciarProgetos {
 
 
     /////////////////////////////
-    // Alucacao de Participantes!
+    // Alucacao de Participantes para projetos!
 
     public void alocar() {
         
