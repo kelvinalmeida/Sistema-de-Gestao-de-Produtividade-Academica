@@ -42,7 +42,8 @@ public class Main {
             System.out.print("## ");
             Scanner teclado = new Scanner(System.in);
 
-            int escolha = teclado.nextInt();
+            int escolha = Integer.parseInt(teclado.nextLine());
+            clearBuffer(teclado);
 
             // Quer adicionar um colaborador!
             if (escolha == 1)
@@ -87,6 +88,12 @@ public class Main {
             }
 
         }
+    }
 
+    private static void clearBuffer(Scanner scanner) {
+        if(scanner.hasNextLine()) {
+            System.out.println("## ++");
+            scanner.nextLine();
+        }
     }
 }

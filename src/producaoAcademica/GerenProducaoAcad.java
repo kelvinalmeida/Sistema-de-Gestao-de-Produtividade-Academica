@@ -28,6 +28,8 @@ public class GerenProducaoAcad {
         int escolha = Integer.parseInt(teclado.nextLine());
         System.out.println("## ");
 
+        clearBuffer(teclado);
+
         if (escolha == 1)
             this.addPublicacao();
         if (escolha == 2)
@@ -49,6 +51,7 @@ public class GerenProducaoAcad {
         System.out.print("## Ano Atual - ");
         int anoAtual = Integer.parseInt(teclado.nextLine());
         publi.setAnoAtual(anoAtual);
+        clearBuffer(teclado);
 
         ConjPublicacoes.add(publi);
         System.out.println("## **PUBLICACAO ADICIONADA!");
@@ -123,6 +126,13 @@ public class GerenProducaoAcad {
 
     //////////////////////////
     // help
+
+    public void clearBuffer(Scanner scanner) {
+        if(scanner.hasNextLine()) {
+            System.out.println("## ++");
+            scanner.nextLine();
+        }
+    }
 
     public boolean publicacaoSize() {
         if(ConjPublicacoes.size() == 0) return true;

@@ -28,6 +28,8 @@ public class GerenciarProgetos {
             return;
         } 
 
+        clearBuffer(teclado);
+
         System.out.println("##          Digite as Informacoes do Projeto:        ##");
         
         Projeto projeto = new Projeto();
@@ -103,6 +105,8 @@ public class GerenciarProgetos {
         System.out.println("##               Qual projeto consultar?             ##");
         
         Projeto projetoConsulta = projetList();
+
+        clearBuffer(teclado);
         
         try {
             mostrarPojeto(projetoConsulta);
@@ -265,7 +269,7 @@ public class GerenciarProgetos {
             System.out.println("## Este projeto esta em Elaboracao.");
             System.out.println("## Deseja mudar para Em Andamento?");
             System.out.println("## [1] SIM OU [2] NAO");
-            int escolha = teclado.nextInt();
+            int escolha = Integer.parseInt(teclado.nextLine());
             if(escolha == 1) {
                 proj.setEmElaboracao(false);
                 proj.setEmAndamento(true);
@@ -277,7 +281,7 @@ public class GerenciarProgetos {
             System.out.println("## Deseja mudar para Concluido?");
             System.out.println("## [1] SIM OU [2] NAO");
             
-            int escolha = teclado.nextInt();
+            int escolha = Integer.parseInt(teclado.nextLine());
             
             if(proj.publiacacoesSize()) {
                 System.out.println("## Adicione uma publicacao ao projeto antes!");
@@ -525,6 +529,13 @@ public class GerenciarProgetos {
 
     //////////////////////////
     // Listando projetos
+    
+    public void clearBuffer(Scanner scanner) {
+        if(scanner.hasNextLine()) {
+            System.out.println("## ++");
+            scanner.nextLine();
+        }
+    }
 
     public Projeto projetList() {
         for (int i = 0; i < TodosOsProjetos.size(); i++) {
@@ -532,7 +543,7 @@ public class GerenciarProgetos {
             System.out.println("## " + "["+(i+1)+"] - Titulo:" + proj.getTitulo() + "  *Status: " + proj.getStatus());
         }
 
-        int escolha = teclado.nextInt();
+        int escolha = Integer.parseInt(teclado.nextLine());
         System.out.println("## ");
         return TodosOsProjetos.get(escolha - 1);
     }

@@ -25,6 +25,7 @@ public class GerenciamentoColaboradores {
 
         System.out.print("## ");
         int escolha = Integer.parseInt(teclado.nextLine());
+        clearBuffer(teclado);
 
         // Cadastrando os alunos de graduacao!
         if(escolha == 1) casdAlunosDeGraduacao();
@@ -130,6 +131,7 @@ public class GerenciamentoColaboradores {
 
         System.out.print("## ");
         int consulta = Integer.parseInt(teclado.nextLine());
+        clearBuffer(teclado);
 
         if(consulta == 1) listAlunosDeGraduacao();
         if(consulta == 2) listAlunosDeMestrado();
@@ -283,6 +285,13 @@ public class GerenciamentoColaboradores {
 
     //////////////////////////////////////
     // Parte de comunicacao com outro objetos.
+
+    public void clearBuffer(Scanner scanner) {
+        if(scanner.hasNextLine()) {
+            System.out.println("## ++");
+            scanner.nextLine();
+        }
+    }
 
     public AlunosDeGraduacao ReturnAlunosGrad() {
         for(int i = 0; i < ConjAlunosDeGraduacao.size(); ++i) {
