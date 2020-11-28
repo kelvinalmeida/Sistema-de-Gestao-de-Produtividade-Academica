@@ -86,14 +86,14 @@ public class Main {
                 System.out.println("#######################################################");
                 break;
             }
-
+            
         }
     }
-
-    private static void clearBuffer(Scanner scanner) {
-        if(scanner.hasNextLine()) {
-            System.out.println("## ++");
-            scanner.nextLine();
+    
+    private static void clearBuffer(Scanner teclado) {
+        System.out.println("## press[ENTER]...");
+        if(teclado.hasNextLine()) {
+            teclado.nextLine();
         }
     }
 }

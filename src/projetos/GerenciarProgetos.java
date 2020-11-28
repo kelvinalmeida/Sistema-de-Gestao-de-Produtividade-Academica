@@ -28,7 +28,7 @@ public class GerenciarProgetos {
             return;
         } 
 
-        clearBuffer(teclado);
+        // clearBuffer(teclado);
 
         System.out.println("##          Digite as Informacoes do Projeto:        ##");
         
@@ -270,6 +270,7 @@ public class GerenciarProgetos {
             System.out.println("## Deseja mudar para Em Andamento?");
             System.out.println("## [1] SIM OU [2] NAO");
             int escolha = Integer.parseInt(teclado.nextLine());
+            clearBuffer(teclado);
             if(escolha == 1) {
                 proj.setEmElaboracao(false);
                 proj.setEmAndamento(true);
@@ -282,6 +283,7 @@ public class GerenciarProgetos {
             System.out.println("## [1] SIM OU [2] NAO");
             
             int escolha = Integer.parseInt(teclado.nextLine());
+            clearBuffer(teclado);
             
             if(proj.publiacacoesSize()) {
                 System.out.println("## Adicione uma publicacao ao projeto antes!");
@@ -529,13 +531,6 @@ public class GerenciarProgetos {
 
     //////////////////////////
     // Listando projetos
-    
-    public void clearBuffer(Scanner scanner) {
-        if(scanner.hasNextLine()) {
-            System.out.println("## ++");
-            scanner.nextLine();
-        }
-    }
 
     public Projeto projetList() {
         for (int i = 0; i < TodosOsProjetos.size(); i++) {
@@ -545,6 +540,7 @@ public class GerenciarProgetos {
 
         int escolha = Integer.parseInt(teclado.nextLine());
         System.out.println("## ");
+        clearBuffer(teclado);
         return TodosOsProjetos.get(escolha - 1);
     }
 
@@ -557,4 +553,11 @@ public class GerenciarProgetos {
         return TodosOsProjetos;
     }
 
+
+    public void clearBuffer(Scanner scanner) {
+        System.out.println("## press[ENTER]...");
+        if(scanner.hasNextLine()) {
+            scanner.nextLine();
+        }
+    }
 }

@@ -286,10 +286,10 @@ public class GerenciamentoColaboradores {
     //////////////////////////////////////
     // Parte de comunicacao com outro objetos.
 
-    public void clearBuffer(Scanner scanner) {
-        if(scanner.hasNextLine()) {
-            System.out.println("## ++");
-            scanner.nextLine();
+    public void clearBuffer(Scanner teclado) {
+        System.out.println("## press[ENTER]...");
+        if(teclado.hasNextLine()) {
+            teclado.nextLine();
         }
     }
 
