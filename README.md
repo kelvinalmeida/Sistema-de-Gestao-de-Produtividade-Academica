@@ -6,7 +6,7 @@
 
 # Para executar o programa Baixe a pasta src, e execure o seguinte comando:
  
-  javac src/app/*.java
+  javac src/app/*.java 
   javac src/colaboradores/*.java
   javac src/producaoAcademica/*.java
   javac src/projetos/*.java
