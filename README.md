@@ -4,7 +4,7 @@
  colaboradores.
  Implementado em java!
 
-# Para executar o programa Baixe a pasta src, e execure o seguinte comando:
+# Para executar o programa Baixe a pasta src, e execure os seguintes comandos:
  
   - javac src/app/*.java 
   - javac src/colaboradores/*.java
