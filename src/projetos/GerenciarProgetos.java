@@ -111,8 +111,7 @@ public class GerenciarProgetos {
         System.out.println("##               Qual projeto consultar?             ##");
         
         Projeto projetoConsulta = projetList();
-
-        clearBuffer(teclado);
+        // clearBuffer(teclado);
         
         try {
             mostrarPojeto(projetoConsulta);
