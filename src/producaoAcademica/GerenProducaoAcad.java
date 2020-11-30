@@ -28,7 +28,8 @@ public class GerenProducaoAcad {
         int escolha = Integer.parseInt(teclado.nextLine());
         System.out.println("## ");
 
-        clearBuffer(teclado);
+        System.out.println("## press[ENTER]...");
+        teclado.nextLine();
 
         if (escolha == 1)
             this.addPublicacao();
@@ -51,10 +52,10 @@ public class GerenProducaoAcad {
         System.out.print("## Ano Atual - ");
         int anoAtual = Integer.parseInt(teclado.nextLine());
         publi.setAnoAtual(anoAtual);
-        clearBuffer(teclado);
-
+        
         ConjPublicacoes.add(publi);
         System.out.println("## **PUBLICACAO ADICIONADA!");
+        clearBuffer(teclado);
     }
 
     public void addOrientacao() {
@@ -67,7 +68,9 @@ public class GerenProducaoAcad {
         // }
 
         if(gerencProj.getSize()) {
-            System.out.println("## Por favor, adicione um projeto antes!.");    
+            System.out.println("## Por favor, adicione um projeto antes!.");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
             return;
         }
 
@@ -91,7 +94,9 @@ public class GerenProducaoAcad {
         prof.setOri(orientacao);
         ConjOrientacao.add(orientacao);
 
-        System.out.println("## -" + prof.getNome() + " **ADICIONADO!");
+        System.out.println("## Nota do pefessor " + prof.getNome() + "  **ADICIONADO!");
+        System.out.println("## press[ENTER]...");
+        teclado.nextLine();
     }
 
     ////////////////////////
@@ -117,11 +122,15 @@ public class GerenProducaoAcad {
         // REGRA!
         if(projetoEscolhido.getEmAndamento() == false) {
             System.out.println("## O projeto precisa está em andamento!");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
             return;
         } 
         
         projetoEscolhido.setPublicacao(publicEscolhida);
         System.out.println("## O Publicacao **" + publicEscolhida.getTitulo() + "  **ADICIONADA!");
+        System.out.println("## press[ENTER]...");
+        teclado.nextLine();
     } 
 
     //////////////////////////
@@ -129,7 +138,7 @@ public class GerenProducaoAcad {
 
     public void clearBuffer(Scanner scanner) {
         if(scanner.hasNextLine()) {
-            System.out.println("## ++");
+            // System.out.println("## ++");
             scanner.nextLine();
         }
     }

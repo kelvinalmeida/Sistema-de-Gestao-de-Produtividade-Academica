@@ -25,6 +25,8 @@ public class GerenciarProgetos {
 
         if(GerenColaboradores.sizeProf()) {
             System.out.println("##     Por Favor Adicione um professor ao Sistema!   ##");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
             return;
         } 
 
@@ -75,6 +77,8 @@ public class GerenciarProgetos {
         TodosOsProjetos.add(projeto);
 
         System.out.println("## **PROJETO ADICIONADO! ");
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
     }
 
     public void adicionarProfessor(Projeto projeto) {
@@ -99,6 +103,8 @@ public class GerenciarProgetos {
 
         if(TodosOsProjetos.size() == 0) {
             System.out.println("##               **Nao existe projetos!              ##");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
             return;
         }
 
@@ -169,6 +175,9 @@ public class GerenciarProgetos {
         System.out.println("## ---------------------------");
         mostrarPesquisadores(projCons);
         System.out.println("## ---------------------------");
+
+        System.out.println("## press[ENTER]...");
+        teclado.nextLine();
     }
     
     public void mostrarAlunosDeGraduacao(Projeto projCons) {
@@ -270,12 +279,14 @@ public class GerenciarProgetos {
             System.out.println("## Deseja mudar para Em Andamento?");
             System.out.println("## [1] SIM OU [2] NAO");
             int escolha = Integer.parseInt(teclado.nextLine());
-            clearBuffer(teclado);
             if(escolha == 1) {
                 proj.setEmElaboracao(false);
                 proj.setEmAndamento(true);
                 System.out.println("## **Mudado para Em Andamento!");
             }
+
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
         }
         else if(proj.getEmAndamento() == true){
             System.out.print("## Este projeto esta Em Andamento.");
@@ -283,7 +294,6 @@ public class GerenciarProgetos {
             System.out.println("## [1] SIM OU [2] NAO");
             
             int escolha = Integer.parseInt(teclado.nextLine());
-            clearBuffer(teclado);
             
             if(proj.publiacacoesSize()) {
                 System.out.println("## Adicione uma publicacao ao projeto antes!");
@@ -295,6 +305,9 @@ public class GerenciarProgetos {
                 proj.setConcluido(true);
                 System.out.println("## **Mudado Para Concluido!");
             }
+
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
         }
                 
     }
@@ -345,14 +358,14 @@ public class GerenciarProgetos {
                 System.out.println("## press[ENTER]... ");
                 teclado.nextLine();
                 return;   
+            } else {
+                proj.addAlunoGrad(AlunoGraduacao);
+                AlunoGraduacao.setProjeto(proj);
+    
+                System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
             }
-            
-            proj.addAlunoGrad(AlunoGraduacao);
-            AlunoGraduacao.setProjeto(proj);
-
-            System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
         }
 
         if(escolha == 2) {

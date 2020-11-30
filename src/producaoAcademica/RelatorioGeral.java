@@ -3,8 +3,10 @@ package src.producaoAcademica;
 import src.projetos.*;
 import src.colaboradores.*;
 import java.util.Vector;
+import java.util.Scanner;
 
 public class RelatorioGeral { 
+        Scanner teclado = new Scanner(System.in);
         GerenciamentoColaboradores GereColaboradores;
         GerenciarProgetos GereProjetos;
         GerenProducaoAcad GereProdAcad;
@@ -52,9 +54,9 @@ public class RelatorioGeral {
         System.out.println("## Total de Orientacoes: " + GereProdAcad.orientacaoQnt());
 
         System.out.println("## ----------------------------------");
-        
-    }
-    
-    
+
+        System.out.println("## press[ENTER]...");
+        teclado.nextLine();
+    }  
 }
 

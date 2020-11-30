@@ -169,18 +169,23 @@ public class GerenciamentoColaboradores {
             AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + aluno.getNome());
         }
-
+        
         System.out.print("## ");
         int AlunoEscolhido = Integer.parseInt(teclado.nextLine());
         
         // Obtendo o aluno escolhido!
         AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(AlunoEscolhido - 1);
+
+        System.out.println("##  ---------------------------------------");
         System.out.println("##  Nome: " + aluno.getNome());
         System.out.println("## Email: " + aluno.getEmail());
-
+        System.out.println("##  ---------------------------------------");
+        
         // Mostrar os projetos deste aluno!
         aluno.mostrarProjetos();
+        System.out.println("##  ---------------------------------------");
         aluno.mostrarPublic();
+        System.out.println("##  ---------------------------------------");
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
