@@ -342,6 +342,8 @@ public class GerenciarProgetos {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
                 return;   
             }
             
@@ -349,12 +351,17 @@ public class GerenciarProgetos {
             AlunoGraduacao.setProjeto(proj);
 
             System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
 
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
+                return;
             }
             
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
@@ -364,6 +371,8 @@ public class GerenciarProgetos {
             AlunoGraduacao.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
     }
 
@@ -383,18 +392,25 @@ public class GerenciarProgetos {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
                 return;   
             }
             
             proj.addAlunoMest(AlunoMestrado);
             AlunoMestrado.setProjeto(proj);
             System.out.println("## Aluno: " + AlunoMestrado.getNome() + "** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
         
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
+                return;
             }
             
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
@@ -404,6 +420,8 @@ public class GerenciarProgetos {
             AlunoMestrado.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + AlunoMestrado.getNome() + "** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
     }
 
@@ -423,18 +441,25 @@ public class GerenciarProgetos {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
-                return;   
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
+                return;  
             }
             
             proj.addAlunoDout(AlunoDoutorado);
             AlunoDoutorado.setProjeto(proj);
             
             System.out.println("## Aluno: " + AlunoDoutorado.getNome() + "** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
+                return;
             }
             
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
@@ -444,6 +469,8 @@ public class GerenciarProgetos {
             AlunoDoutorado.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + AlunoDoutorado.getNome() + "** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
     }
 
@@ -463,6 +490,8 @@ public class GerenciarProgetos {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
                 return;   
             }
             
@@ -470,11 +499,16 @@ public class GerenciarProgetos {
             professor.setProjeto(proj);
             
             System.out.println("## Aluno: " + professor.getNome() + "** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
+                return;
             }
             
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
@@ -484,6 +518,8 @@ public class GerenciarProgetos {
             professor.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + professor.getNome() + "** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
     }
 
@@ -505,18 +541,25 @@ public class GerenciarProgetos {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
-                return;   
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();   
+                return;
             }
             
             proj.addPesquisador(pesquisador);
             pesquisador.setProjeto(proj);
             
             System.out.println("## Aluno: " + pesquisador.getNome() + "     ** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
+                return;
             }
             
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
@@ -526,6 +569,8 @@ public class GerenciarProgetos {
             pesquisador.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + pesquisador.getNome() + "** AlOCADO!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
         }
     }
 

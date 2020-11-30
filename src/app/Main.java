@@ -25,17 +25,18 @@ public class Main {
         while (0 != 1) {
 
             System.out.println("#######################################################");
-            System.out.println("##             O que gostaria de Fazer?              ##");
             System.out.println("##             Escolha uma opcao abaixo!             ##");
-            System.out.println("##            [1] Cadastrar Colaboradores!           ##");
-            System.out.println("##               [2] Cadastrar Projeto!              ##");
-            System.out.println("##               [3] Alocar Colaborador!             ##");
-            System.out.println("##             [4] Consultar Colaborador!            ##");
-            System.out.println("##                [5] Consultar projeto!             ##");
+            System.out.println("## ------------------------------------------------- ##");
+            System.out.println("## [1] Cadast. Colaboradores! [3] Alocar Colaborador ##");
+            System.out.println("##              [2] Consult. Colaborador!            ##");
+            System.out.println("## ------------------------------------------------- ##");
+            System.out.println("##   [4] Cadast. Projeto!  [5] Consult. projeto!     ##");
             System.out.println("##            [6] Mudar status do projeto!           ##");
+            System.out.println("## ------------------------------------------------- ##");
             System.out.println("##         [7] Cadastrar Producao Academica!         ##");
-            System.out.println("##             [8] Alocar Publicacao!                ##");
-            System.out.println("##            [9] Relatorio do laboratório!          ##");
+            System.out.println("##              [8] Alocar Publicacao!               ##");
+            System.out.println("## ------------------------------------------------- ##");
+            System.out.println("##            [9] Relatorio do laboratorio!          ##");
             System.out.println("##               [0] Finalizar Programa!             ##");
             System.out.println("#######################################################");
 
@@ -50,7 +51,7 @@ public class Main {
                 GereColaboradores.adicionar();
 
             // Quer adicionar um Projeto!
-            else if (escolha == 2)
+            else if (escolha == 4)
                 GereProjetos.adicionar();
 
             // Alocar colaborador!
@@ -58,7 +59,7 @@ public class Main {
                 GereProjetos.alocar();
 
             // Quer consultar um colaborador!
-            else if (escolha == 4)
+            else if (escolha == 2)
                 GereColaboradores.consultar();
 
             // Quer consultar um projeto!

@@ -49,6 +49,9 @@ public class GerenciamentoColaboradores {
         // Foi para a ultima posicao do array.
         ConjAlunosDeGraduacao.add(aluno);
 
+        System.out.println("## **Adicionado! ");
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
         System.out.println("#######################################################");
     }
 
@@ -65,7 +68,9 @@ public class GerenciamentoColaboradores {
 
         // Foi para a ultima posicao do array.
         ConjAlunosDeMestrado.add(alunoM);
-
+        System.out.println("## **Adicionado! ");
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
         System.out.println("#######################################################");
     }
 
@@ -83,6 +88,9 @@ public class GerenciamentoColaboradores {
         // Foi para a ultima posicao do array.
         ConjAlunosDeDoutorado.add(alunoD);
 
+        System.out.println("## **Adicionado! ");
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
         System.out.println("#######################################################");
     }
 
@@ -100,6 +108,9 @@ public class GerenciamentoColaboradores {
         // Foi para a ultima posicao do array.
         ConjProfessores.add(alunoP);
 
+        System.out.println("## **Adicionado! ");
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
         System.out.println("#######################################################");
     }
 
@@ -117,6 +128,9 @@ public class GerenciamentoColaboradores {
         // Foi para a ultima posicao do array.
         ConjPesquisadores.add(alunoPes);
 
+        System.out.println("## **Adicionado! ");
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
         System.out.println("#######################################################");
     }
 
@@ -153,7 +167,7 @@ public class GerenciamentoColaboradores {
         // Listando os alunos de graduação!
         for (int i = 0; i < ConjAlunosDeGraduacao.size(); i++) {
             AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(i);
-            System.out.println("##" + "["+(i+1)+"]" + aluno.getNome());
+            System.out.println("## " + "["+(i+1)+"] - " + aluno.getNome());
         }
 
         System.out.print("## ");
@@ -167,6 +181,9 @@ public class GerenciamentoColaboradores {
         // Mostrar os projetos deste aluno!
         aluno.mostrarProjetos();
         aluno.mostrarPublic();
+
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
     }  
     
     public void listAlunosDeMestrado() {
@@ -182,7 +199,7 @@ public class GerenciamentoColaboradores {
         // Listando os alunos de Mestrado!
         for (int i = 0; i < ConjAlunosDeMestrado.size(); i++) {
             AlunosDeMestado alunoM = ConjAlunosDeMestrado.get(i);
-            System.out.println("##" + "["+(i+1)+"]" + alunoM.getNome());
+            System.out.println("## " + "["+(i+1)+"] - " + alunoM.getNome());
         }
 
         System.out.print("## ");
@@ -195,6 +212,9 @@ public class GerenciamentoColaboradores {
 
         alunoM.mostrarProjetos();
         alunoM.mostrarPublic();
+
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
     } 
     
     public void listAlunosDeDoutorado() {
@@ -210,7 +230,7 @@ public class GerenciamentoColaboradores {
         // Listando os alunos de Douturado!
         for (int i = 0; i < ConjAlunosDeDoutorado.size(); i++) {
             AlunosDeDoutorado alunoD = ConjAlunosDeDoutorado.get(i);
-            System.out.println("##" + "["+(i+1)+"]" + alunoD.getNome());
+            System.out.println("## " + "["+(i+1)+"] - " + alunoD.getNome());
         }
 
         System.out.print("## ");
@@ -224,6 +244,8 @@ public class GerenciamentoColaboradores {
         alunoD.mostrarProjetos();
         alunoD.mostrarPublic();
 
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
     }  
 
     public void listProfessores() {
@@ -239,7 +261,7 @@ public class GerenciamentoColaboradores {
         // Listando os alunos de Douturado!
         for (int i = 0; i < ConjProfessores.size(); i++) {
             Professores alunoP = ConjProfessores.get(i);
-            System.out.println("##" + "["+(i+1)+"]" + alunoP.getNome());
+            System.out.println("## " + "["+(i+1)+"] - "+ alunoP.getNome());
         }
 
         System.out.print("## ");
@@ -253,6 +275,9 @@ public class GerenciamentoColaboradores {
         alunoP.mostrarProjetos();
         alunoP.mostrarPublic();
         alunoP.mostrarOrientacao();
+
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
     }  
 
     public void listPesquisadores() {
@@ -268,7 +293,7 @@ public class GerenciamentoColaboradores {
         // Listando os alunos de Douturado!
         for (int i = 0; i < ConjPesquisadores.size(); i++) {
             Pesquisadores alunoPes = ConjPesquisadores.get(i);
-            System.out.println("##" + "["+(i+1)+"]" + alunoPes.getNome());
+            System.out.println("## " + "["+(i+1)+"] - " + alunoPes.getNome());
         }
 
         System.out.print("## ");
@@ -281,6 +306,9 @@ public class GerenciamentoColaboradores {
 
         alunoPes.mostrarProjetos();
         alunoPes.mostrarPublic();
+
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
     } 
 
     //////////////////////////////////////
