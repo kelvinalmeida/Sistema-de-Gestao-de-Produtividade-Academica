@@ -27,8 +27,8 @@ public class Main {
             System.out.println("#######################################################");
             System.out.println("##             Escolha uma opcao abaixo!             ##");
             System.out.println("## ------------------------------------------------- ##");
-            System.out.println("## [1] Cadast. Colaboradores! [3] Alocar Colaborador ##");
-            System.out.println("##              [2] Consult. Colaborador!            ##");
+            System.out.println("##             [1] Cadast. Colaboradores!            ##");
+            System.out.println("##  [2] Consult. Colaborador! [3] Alocar Colaborador ##");
             System.out.println("## ------------------------------------------------- ##");
             System.out.println("##   [4] Cadast. Projeto!  [5] Consult. projeto!     ##");
             System.out.println("##            [6] Mudar status do projeto!           ##");

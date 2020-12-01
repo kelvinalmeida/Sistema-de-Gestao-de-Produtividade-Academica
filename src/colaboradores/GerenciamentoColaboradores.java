@@ -216,7 +216,9 @@ public class GerenciamentoColaboradores {
         System.out.println("## Email: " + alunoM.getEmail());  
 
         alunoM.mostrarProjetos();
+        System.out.println("## -----------------------------------");
         alunoM.mostrarPublic();
+        System.out.println("## -----------------------------------");
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
@@ -247,7 +249,9 @@ public class GerenciamentoColaboradores {
         System.out.println("## Email: " + alunoD.getEmail()); 
         
         alunoD.mostrarProjetos();
+        System.out.println("## -----------------------------------");
         alunoD.mostrarPublic();
+        System.out.println("## -----------------------------------");
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
@@ -278,8 +282,11 @@ public class GerenciamentoColaboradores {
         System.out.println("## Email: " + alunoP.getEmail());  
 
         alunoP.mostrarProjetos();
+        System.out.println("## -----------------------------------");
         alunoP.mostrarPublic();
+        System.out.println("## -----------------------------------");
         alunoP.mostrarOrientacao();
+        System.out.println("## -----------------------------------");
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
@@ -310,7 +317,9 @@ public class GerenciamentoColaboradores {
         System.out.println("## Email: " + alunoPes.getEmail());  
 
         alunoPes.mostrarProjetos();
+        System.out.println("## -----------------------------------");
         alunoPes.mostrarPublic();
+        System.out.println("## -----------------------------------");
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();

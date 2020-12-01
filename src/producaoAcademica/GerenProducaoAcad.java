@@ -95,6 +95,7 @@ public class GerenProducaoAcad {
         ConjOrientacao.add(orientacao);
 
         System.out.println("## Nota do pefessor " + prof.getNome() + "  **ADICIONADO!");
+        System.out.println("## **ORIENTACAO ADICIONADA!");
         System.out.println("## press[ENTER]...");
         teclado.nextLine();
     }
@@ -121,7 +122,7 @@ public class GerenProducaoAcad {
         
         // REGRA!
         if(projetoEscolhido.getEmAndamento() == false) {
-            System.out.println("## O projeto precisa está em andamento!");
+            System.out.println("## O projeto precisa esta em andamento!");
             System.out.println("## press[ENTER]...");
             teclado.nextLine();
             return;

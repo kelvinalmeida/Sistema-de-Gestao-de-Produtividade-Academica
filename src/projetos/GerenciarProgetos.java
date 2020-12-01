@@ -283,6 +283,9 @@ public class GerenciarProgetos {
                 proj.setEmAndamento(true);
                 System.out.println("## **Mudado para Em Andamento!");
             }
+            if(escolha == 2) {
+                System.out.println("## **Continua em elaboracao!");
+            }
 
             System.out.println("## press[ENTER]...");
             teclado.nextLine();
@@ -303,6 +306,9 @@ public class GerenciarProgetos {
                 proj.setEmAndamento(false);
                 proj.setConcluido(true);
                 System.out.println("## **Mudado Para Concluido!");
+            }
+            if(escolha == 2) {
+                System.out.println("## **Continua em andamento!");
             }
 
             System.out.println("## press[ENTER]...");

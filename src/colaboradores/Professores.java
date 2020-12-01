@@ -20,7 +20,7 @@ public class Professores extends Colaboradores {
 
         for(int i = 0; i < ConjOrientacao.size(); ++i) {
             Orientacao oriEsco = ConjOrientacao.get(i);
-            System.out.println("## Orientacao " + "["+(i+1)+"] Projeto: " + oriEsco.getProj().getTitulo());
+            System.out.println("## Orientacao " + "["+(i+1)+"] Projeto: " + oriEsco.getProj().getTitulo() + "  Ano: " + oriEsco.getAno());
             System.out.println("## Nota: " + oriEsco.getOri());
             System.out.println("## ----------------------------- ");
         }

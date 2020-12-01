@@ -38,8 +38,8 @@ public class Colaboradores {
 
         for (int i = 0; i < publicacaoG.size(); i++) {
             Publicacao publicList = publicacaoG.get(i);
-            System.out.println("## " + "["+(i+1)+"] - Titulo: " + publicList.getTitulo());
-            System.out.println("## ----------------------------- ");            
+            System.out.println("## " + "["+(i+1)+"] - Titulo: " + publicList.getTitulo() + " Ano: " + publicList.getAnoAtual());
+            // System.out.println("## ----------------------------- ");            
         }
     }
 
@@ -57,7 +57,7 @@ public class Colaboradores {
             if(i == 0) 
                 System.out.println("##   Projetos em Elaboracao Cadastrados!             ##");
             if(proj.getEmElaboracao()) {
-                System.out.println("## " + "["+(i+1)+"] - Titulo: " + proj.getTitulo() + "  *Status: " + proj.getStatus());
+                System.out.println("## - Titulo: " + proj.getTitulo() + "  *Status: " + proj.getStatus() + "  Ano de Termino: " + proj.getAnoEnd());
             }
         }
 
@@ -69,7 +69,7 @@ public class Colaboradores {
             if(j == 0) 
                 System.out.println("##   Projetos em Andamento Cadastrados!             ##");
             if(proj.getEmAndamento()) {
-                System.out.println("## " + "["+(j+1)+"] - Titulo: " + proj.getTitulo() + "  *Status: " + proj.getStatus());
+                System.out.println("## - Titulo: " + proj.getTitulo() + "  *Status: " + proj.getStatus() + "  Ano de Termino: " + proj.getAnoEnd());
             }
         }
 
@@ -81,7 +81,7 @@ public class Colaboradores {
             if(l == 0) 
                 System.out.println("##   Projetos Concluidos!             ##");
             if(proj.getConcluido()) {
-                System.out.println("## " + "["+(l+1)+"] - Titulo: " + proj.getTitulo() + "  *Status: " + proj.getStatus());
+                System.out.println("## - Titulo: " + proj.getTitulo() + "  *Status: " + proj.getStatus() + "  Ano de Termino: " + proj.getAnoEnd());
             }
         }
     }
