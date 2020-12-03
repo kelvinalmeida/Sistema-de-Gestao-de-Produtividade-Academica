@@ -46,7 +46,6 @@ public class Main {
             int escolha = Integer.parseInt(teclado.nextLine());
             clearBuffer(teclado);
 
-
             // Quer adicionar um colaborador!
             if (escolha == 1)
                 GereColaboradores.adicionar();
@@ -84,7 +83,7 @@ public class Main {
                 RG.show();
 
             else if (escolha == 0) {
-                System.out.println("## **FINALIZADO!");
+                System.out.println("## **PROGRAMA FINALIZADO!");
                 System.out.println("#######################################################");
                 break;
             }
