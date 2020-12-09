@@ -176,16 +176,16 @@ public class GerenciamentoColaboradores {
         // Obtendo o aluno escolhido!
         AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(AlunoEscolhido - 1);
 
-        System.out.println("##  ---------------------------------------");
-        System.out.println("##  Nome: " + aluno.getNome());
+        System.out.println("## ---------------------------------------");
+        System.out.println("## Nome: " + aluno.getNome());
         System.out.println("## Email: " + aluno.getEmail());
-        System.out.println("##  ---------------------------------------");
+        System.out.println("## ---------------------------------------");
         
         // Mostrar os projetos deste aluno!
         aluno.mostrarProjetos();
-        System.out.println("##  ---------------------------------------");
+        System.out.println("## ---------------------------------------");
         aluno.mostrarPublic();
-        System.out.println("##  ---------------------------------------");
+        System.out.println("## ---------------------------------------");
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
@@ -212,7 +212,7 @@ public class GerenciamentoColaboradores {
         
         // Obtendo o aluno escolhido!
         AlunosDeMestado alunoM = ConjAlunosDeMestrado.get(AlunoEscolhido - 1);
-        System.out.println("##  Nome: " + alunoM.getNome());
+        System.out.println("## Nome: " + alunoM.getNome());
         System.out.println("## Email: " + alunoM.getEmail());  
 
         alunoM.mostrarProjetos();
@@ -245,7 +245,7 @@ public class GerenciamentoColaboradores {
         
         // Obtendo o aluno escolhido!
         AlunosDeDoutorado alunoD = ConjAlunosDeDoutorado.get(AlunoEscolhido - 1);
-        System.out.println("##  Nome: " + alunoD.getNome());
+        System.out.println("## Nome: " + alunoD.getNome());
         System.out.println("## Email: " + alunoD.getEmail()); 
         
         alunoD.mostrarProjetos();
@@ -278,7 +278,7 @@ public class GerenciamentoColaboradores {
         
         // Obtendo o aluno escolhido!
         Professores alunoP = ConjProfessores.get(AlunoEscolhido - 1);
-        System.out.println("##  Nome: " + alunoP.getNome());
+        System.out.println("## Nome: " + alunoP.getNome());
         System.out.println("## Email: " + alunoP.getEmail());  
 
         alunoP.mostrarProjetos();
@@ -313,7 +313,7 @@ public class GerenciamentoColaboradores {
         
         // Obtendo o aluno escolhido!
         Pesquisadores alunoPes = ConjPesquisadores.get(AlunoEscolhido - 1);
-        System.out.println("##  Nome: " + alunoPes.getNome());
+        System.out.println("## Nome: " + alunoPes.getNome());
         System.out.println("## Email: " + alunoPes.getEmail());  
 
         alunoPes.mostrarProjetos();

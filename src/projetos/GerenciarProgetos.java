@@ -291,7 +291,7 @@ public class GerenciarProgetos {
             teclado.nextLine();
         }
         else if(proj.getEmAndamento() == true){
-            System.out.print("## Este projeto esta Em Andamento.");
+            System.out.println("## Este projeto esta Em Andamento.");
             System.out.println("## Deseja mudar para Concluido?");
             System.out.println("## [1] SIM OU [2] NAO");
             
