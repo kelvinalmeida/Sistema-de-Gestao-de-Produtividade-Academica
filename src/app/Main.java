@@ -43,7 +43,17 @@ public class Main {
             System.out.print("## ");
             Scanner teclado = new Scanner(System.in);
 
-            int escolha = Integer.parseInt(teclado.nextLine());
+            int escolha = 0;
+            boolean stop = true;
+            while(stop) {
+                try {
+                    escolha = Integer.parseInt(teclado.nextLine());
+                    stop = false;
+                } catch(Exception erro) {
+                    System.out.println("Digite um valor válido!");
+                }
+            }
+
             clearBuffer(teclado);
 
             // Quer adicionar um colaborador!
