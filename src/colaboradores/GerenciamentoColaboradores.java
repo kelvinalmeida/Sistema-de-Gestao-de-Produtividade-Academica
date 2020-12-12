@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class GerenciamentoColaboradores {
-    
+
     // Vai ficar todos os alunso da graduação!
     Vector<AlunosDeGraduacao> ConjAlunosDeGraduacao = new Vector<AlunosDeGraduacao>();
     Vector<AlunosDeMestado> ConjAlunosDeMestrado = new Vector<AlunosDeMestado>();
@@ -24,7 +24,18 @@ public class GerenciamentoColaboradores {
         System.out.println("##                [5] pesquisadores                  ##");
 
         System.out.print("## ");
-        int escolha = Integer.parseInt(teclado.nextLine());
+
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
         clearBuffer(teclado);
 
         // Cadastrando os alunos de graduacao!
@@ -38,12 +49,33 @@ public class GerenciamentoColaboradores {
 
     public void casdAlunosDeGraduacao() {
         AlunosDeGraduacao aluno = new AlunosDeGraduacao();
+
         System.out.print("## Informe o nome: ");
-        String nome = teclado.nextLine();
+        String nome = "nome";
+        boolean stop = true;
+        while(stop) {
+            try {
+                nome = teclado.nextLine();
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
         aluno.setNome(nome);
 
         System.out.print("## Informe o email: ");
-        String email = teclado.nextLine();
+        String email = "email";
+        stop = true;
+        while(stop) {
+            try {
+                email = teclado.nextLine();
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
         aluno.setEmail(email);
 
         // Foi para a ultima posicao do array.
@@ -144,7 +176,18 @@ public class GerenciamentoColaboradores {
         System.out.println("##                [5] pesquisadores                  ##");
 
         System.out.print("## ");
-        int consulta = Integer.parseInt(teclado.nextLine());
+
+        int consulta = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                consulta = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
         clearBuffer(teclado);
 
         if(consulta == 1) listAlunosDeGraduacao();
@@ -163,16 +206,27 @@ public class GerenciamentoColaboradores {
 
 
         System.out.println("##              Qual aluno de graduacao?             ##");
-        
+
         // Listando os alunos de graduação!
         for (int i = 0; i < ConjAlunosDeGraduacao.size(); i++) {
             AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + aluno.getNome());
         }
-        
+
         System.out.print("## ");
-        int AlunoEscolhido = Integer.parseInt(teclado.nextLine());
-        
+        int AlunoEscolhido = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                AlunoEscolhido = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
+
+
         // Obtendo o aluno escolhido!
         AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(AlunoEscolhido - 1);
 
@@ -180,7 +234,7 @@ public class GerenciamentoColaboradores {
         System.out.println("## Nome: " + aluno.getNome());
         System.out.println("## Email: " + aluno.getEmail());
         System.out.println("## ---------------------------------------");
-        
+
         // Mostrar os projetos deste aluno!
         aluno.mostrarProjetos();
         System.out.println("## ---------------------------------------");
@@ -189,8 +243,8 @@ public class GerenciamentoColaboradores {
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
-    }  
-    
+    }
+
     public void listAlunosDeMestrado() {
 
         if(ConjAlunosDeMestrado.size() == 0) {
@@ -200,7 +254,7 @@ public class GerenciamentoColaboradores {
 
         // System.out.println("#######################################################");
         System.out.println("##               Qual aluno de Mestrado?             ##");
-        
+
         // Listando os alunos de Mestrado!
         for (int i = 0; i < ConjAlunosDeMestrado.size(); i++) {
             AlunosDeMestado alunoM = ConjAlunosDeMestrado.get(i);
@@ -208,12 +262,22 @@ public class GerenciamentoColaboradores {
         }
 
         System.out.print("## ");
-        int AlunoEscolhido = Integer.parseInt(teclado.nextLine());
-        
+        int AlunoEscolhido = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                AlunoEscolhido = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
+
         // Obtendo o aluno escolhido!
         AlunosDeMestado alunoM = ConjAlunosDeMestrado.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoM.getNome());
-        System.out.println("## Email: " + alunoM.getEmail());  
+        System.out.println("## Email: " + alunoM.getEmail());
 
         alunoM.mostrarProjetos();
         System.out.println("## -----------------------------------");
@@ -222,8 +286,8 @@ public class GerenciamentoColaboradores {
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
-    } 
-    
+    }
+
     public void listAlunosDeDoutorado() {
 
         if(ConjAlunosDeDoutorado.size() == 0) {
@@ -233,7 +297,7 @@ public class GerenciamentoColaboradores {
 
         // System.out.println("#######################################################");
         System.out.println("##              Qual aluno de Doutorado?             ##");
-        
+
         // Listando os alunos de Douturado!
         for (int i = 0; i < ConjAlunosDeDoutorado.size(); i++) {
             AlunosDeDoutorado alunoD = ConjAlunosDeDoutorado.get(i);
@@ -241,13 +305,23 @@ public class GerenciamentoColaboradores {
         }
 
         System.out.print("## ");
-        int AlunoEscolhido = Integer.parseInt(teclado.nextLine());
-        
+        int AlunoEscolhido = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                AlunoEscolhido = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
+
         // Obtendo o aluno escolhido!
         AlunosDeDoutorado alunoD = ConjAlunosDeDoutorado.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoD.getNome());
-        System.out.println("## Email: " + alunoD.getEmail()); 
-        
+        System.out.println("## Email: " + alunoD.getEmail());
+
         alunoD.mostrarProjetos();
         System.out.println("## -----------------------------------");
         alunoD.mostrarPublic();
@@ -255,18 +329,18 @@ public class GerenciamentoColaboradores {
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
-    }  
+    }
 
     public void listProfessores() {
 
         if(ConjProfessores.size() == 0){
             System.out.println("## 0 Professores! Cadastre alguns!");
             return;
-        } 
+        }
 
         System.out.println("#######################################################");
         System.out.println("##                   Qual Professor?                 ##");
-        
+
         // Listando os alunos de Douturado!
         for (int i = 0; i < ConjProfessores.size(); i++) {
             Professores alunoP = ConjProfessores.get(i);
@@ -274,12 +348,22 @@ public class GerenciamentoColaboradores {
         }
 
         System.out.print("## ");
-        int AlunoEscolhido = Integer.parseInt(teclado.nextLine());
-        
+        int AlunoEscolhido = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                AlunoEscolhido = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
+
         // Obtendo o aluno escolhido!
         Professores alunoP = ConjProfessores.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoP.getNome());
-        System.out.println("## Email: " + alunoP.getEmail());  
+        System.out.println("## Email: " + alunoP.getEmail());
 
         alunoP.mostrarProjetos();
         System.out.println("## -----------------------------------");
@@ -290,7 +374,7 @@ public class GerenciamentoColaboradores {
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
-    }  
+    }
 
     public void listPesquisadores() {
 
@@ -301,7 +385,7 @@ public class GerenciamentoColaboradores {
 
         // System.out.println("#######################################################");
         System.out.println("##                  Qual pesquisador?                ##");
-        
+
         // Listando os alunos de Douturado!
         for (int i = 0; i < ConjPesquisadores.size(); i++) {
             Pesquisadores alunoPes = ConjPesquisadores.get(i);
@@ -309,12 +393,22 @@ public class GerenciamentoColaboradores {
         }
 
         System.out.print("## ");
-        int AlunoEscolhido = Integer.parseInt(teclado.nextLine());
-        
+        int AlunoEscolhido = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                AlunoEscolhido = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
+
         // Obtendo o aluno escolhido!
         Pesquisadores alunoPes = ConjPesquisadores.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoPes.getNome());
-        System.out.println("## Email: " + alunoPes.getEmail());  
+        System.out.println("## Email: " + alunoPes.getEmail());
 
         alunoPes.mostrarProjetos();
         System.out.println("## -----------------------------------");
@@ -323,7 +417,7 @@ public class GerenciamentoColaboradores {
 
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
-    } 
+    }
 
     //////////////////////////////////////
     // Parte de comunicacao com outro objetos.
@@ -341,7 +435,17 @@ public class GerenciamentoColaboradores {
             System.out.println("## " + "["+(i+1)+"]" + AlunosGrad.getNome());
         }
 
-        int escoAlunosGrad = Integer.parseInt(teclado.nextLine());
+        // int escoAlunosGrad = Integer.parseInt(teclado.nextLine());
+        int escoAlunosGrad = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escoAlunosGrad = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
 
         return ConjAlunosDeGraduacao.get(escoAlunosGrad - 1);
     }
@@ -352,7 +456,18 @@ public class GerenciamentoColaboradores {
             System.out.println("## " + "["+(i+1)+"]" + AlunosMest.getNome());
         }
 
-        int escoAlunosMest = Integer.parseInt(teclado.nextLine());
+        // int escoAlunosMest = Integer.parseInt(teclado.nextLine());
+        int escoAlunosMest = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escoAlunosMest = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
 
         return ConjAlunosDeMestrado.get(escoAlunosMest - 1);
     }
@@ -363,7 +478,18 @@ public class GerenciamentoColaboradores {
             System.out.println("## " + "["+(i+1)+"]" + AlunosDout.getNome());
         }
 
-        int escoAlunosDout = Integer.parseInt(teclado.nextLine());
+        // int escoAlunosDout = Integer.parseInt(teclado.nextLine());
+        int escoAlunosDout = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escoAlunosDout = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
 
         return ConjAlunosDeDoutorado.get(escoAlunosDout - 1);
     }
@@ -374,7 +500,17 @@ public class GerenciamentoColaboradores {
             System.out.println("## " + "["+(i+1)+"]" + prof.getNome());
         }
 
-        int escoProf = Integer.parseInt(teclado.nextLine());
+        // int escoProf = Integer.parseInt(teclado.nextLine());
+        int escoProf = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escoProf = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
 
         return ConjProfessores.get(escoProf - 1);
     }
@@ -385,7 +521,17 @@ public class GerenciamentoColaboradores {
             System.out.println("## " + "["+(i+1)+"]" + pesq.getNome());
         }
 
-        int escoPesq = Integer.parseInt(teclado.nextLine());
+        // int escoPesq = Integer.parseInt(teclado.nextLine());
+        int escoPesq = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escoPesq = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
 
         return ConjPesquisadores.get(escoPesq - 1);
     }
@@ -393,7 +539,23 @@ public class GerenciamentoColaboradores {
     public boolean sizeProf() {
         if(ConjProfessores.size() == 0) return true;
         else return false;
-    } 
+    }
+
+    public int sizeAlunoGrad() {
+        return ConjAlunosDeGraduacao.size();
+    }
+
+    public int sizeAlunoMest() {
+        return ConjAlunosDeMestrado.size();
+    }
+
+    public int sizeAlunoDout() {
+        return ConjAlunosDeDoutorado.size();
+    }
+
+    public int sizeAlunoPesq() {
+        return ConjPesquisadores.size();
+    }
 
     public int totalDeColaboradores() {
         int total = 0;
@@ -405,5 +567,5 @@ public class GerenciamentoColaboradores {
 
         return total;
     }
-    
+
 }

@@ -30,31 +30,31 @@ public class Colaboradores {
         publicacaoG.add(publicacaoIns);
     }
 
-    public void mostrarPublic() { 
-        
+    public void mostrarPublic() {
+
         if(publicacaoG.size() >= 2) this.ordenarPublicacoes();
-         
-        System.out.println("## PUBLICACOES: ");  
+
+        System.out.println("## PUBLICACOES: ");
 
         for (int i = 0; i < publicacaoG.size(); i++) {
             Publicacao publicList = publicacaoG.get(i);
             System.out.println("## " + "["+(i+1)+"] - Titulo: " + publicList.getTitulo() + " Ano: " + publicList.getAnoAtual());
-            // System.out.println("## ----------------------------- ");            
+            // System.out.println("## ----------------------------- ");
         }
     }
 
     public void mostrarProjetos() {
 
         // System.out.println("## ********************* " + projG.size());
-        
+
         if(projG.size() >= 2) this.ordenar();
 
         // projG.sort(o1 > o2 ,compare(getAnoEnd() o1, getAnoEnd() o2));
-        
+
         for (int i = 0; i < projG.size(); i++) {
             Projeto proj = projG.get(i);
 
-            if(i == 0) 
+            if(i == 0)
                 System.out.println("##   Projetos em Elaboracao Cadastrados!             ##");
             if(proj.getEmElaboracao()) {
                 System.out.println("## - Titulo: " + proj.getTitulo() + "  *Status: " + proj.getStatus() + "  Ano de Termino: " + proj.getAnoEnd());
@@ -66,7 +66,7 @@ public class Colaboradores {
         for (int j = 0; j < projG.size(); j++) {
             Projeto proj = projG.get(j);
 
-            if(j == 0) 
+            if(j == 0)
                 System.out.println("##   Projetos em Andamento Cadastrados!             ##");
             if(proj.getEmAndamento()) {
                 System.out.println("## - Titulo: " + proj.getTitulo() + "  *Status: " + proj.getStatus() + "  Ano de Termino: " + proj.getAnoEnd());
@@ -78,7 +78,7 @@ public class Colaboradores {
         for (int l = 0; l < projG.size(); l++) {
             Projeto proj = projG.get(l);
 
-            if(l == 0) 
+            if(l == 0)
                 System.out.println("##   Projetos Concluidos!             ##");
             if(proj.getConcluido()) {
                 System.out.println("## - Titulo: " + proj.getTitulo() + "  *Status: " + proj.getStatus() + "  Ano de Termino: " + proj.getAnoEnd());
@@ -92,7 +92,7 @@ public class Colaboradores {
                 Projeto proj1 = projG.get(i);
                 Projeto proj2 = projG.get(i+1);
                 Projeto proj3;
-                
+
                 if(proj1.getAnoEnd() < proj2.getAnoEnd()) {
                     proj3 = proj1;
                     projG.remove(i);
@@ -110,7 +110,7 @@ public class Colaboradores {
                 Publicacao publi1 = publicacaoG.get(i);
                 Publicacao publi2 = publicacaoG.get(i+1);
                 Publicacao publi3;
-                
+
                 if(publi1.getAnoAtual() < publi2.getAnoAtual()) {
                     publi3 = publi1;
                     publicacaoG.remove(i);
@@ -126,12 +126,12 @@ public class Colaboradores {
 
         for (int i = 0; i < projG.size(); i++) {
             Projeto projL = projG.get(i);
-            System.out.println("## " + "["+(i+1)+"]" + projL.getTitulo());            
+            System.out.println("## " + "["+(i+1)+"]" + projL.getTitulo());
         }
     }
 
     public int getQntProjetos() {
         return projG.size();
     }
-    
+
 }

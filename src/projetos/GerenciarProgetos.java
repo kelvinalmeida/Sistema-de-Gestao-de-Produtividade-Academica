@@ -10,14 +10,14 @@ public class GerenciarProgetos {
     Scanner teclado = new Scanner(System.in);
     GerenciamentoColaboradores GerenColaboradores;
     GerenProducaoAcad GerenProdAcademica;
-    
+
     // ponteiro
 
     public void setar(GerenciamentoColaboradores GerenColaboradores, GerenProducaoAcad GerenProdAcademica) {
         this.GerenColaboradores = GerenColaboradores;
         this.GerenProdAcademica = GerenProdAcademica;
     }
-    
+
     ///////////////////////////////////////
     // Adicionar Projeto.
     public void adicionar() {
@@ -28,17 +28,17 @@ public class GerenciarProgetos {
             System.out.println("## press[ENTER]...");
             teclado.nextLine();
             return;
-        } 
+        }
 
         // clearBuffer(teclado);
 
         System.out.println("##          Digite as Informacoes do Projeto:        ##");
-        
+
         Projeto projeto = new Projeto();
-        
+
         System.out.print("## Titulo: ");
         projeto.setTitulo(teclado.nextLine());
-        
+
         System.out.print("## Dia de Inicio: ");
         projeto.setDiaStart(Integer.parseInt(teclado.nextLine()));
         System.out.print("## Mes de Inicio: ");
@@ -52,19 +52,19 @@ public class GerenciarProgetos {
         projeto.setMesEnd(Integer.parseInt(teclado.nextLine()));
         System.out.print("## Ano do final: ");
         projeto.setAnoEnd(Integer.parseInt(teclado.nextLine()));
-        
+
         System.out.print("## Agencia Financiadora: ");
         projeto.setAgenciaFinanciadora(teclado.nextLine());
-        
+
         System.out.print("## Valor Financiado: ");
         projeto.setValorFinanciado(Integer.parseInt(teclado.nextLine()));
-        
+
         System.out.print("## Objetivo: ");
         projeto.setObjetivo(teclado.nextLine());
-        
+
         System.out.print("## Descricao: ");
         projeto.setDescricao(teclado.nextLine());
-        
+
         System.out.println("#######################################################");
         System.out.println("##      Qual professor vai particiar do projeto?     ##");
 
@@ -109,10 +109,10 @@ public class GerenciarProgetos {
         }
 
         System.out.println("##               Qual projeto consultar?             ##");
-        
+
         Projeto projetoConsulta = projetList();
         // clearBuffer(teclado);
-        
+
         try {
             mostrarPojeto(projetoConsulta);
         } catch (NumberFormatException nfe) {
@@ -123,47 +123,47 @@ public class GerenciarProgetos {
     public void mostrarPojeto(Projeto projCons) {
         System.out.println("#######################################################");
         System.out.println("##            Dados do Projeto Escolhido:            ##");
-        
+
         System.out.println("## ---------------------------");
 
         System.out.println("## Status: " + projCons.getStatus());
-        
+
         System.out.println("## ---------------------------");
-        
+
         System.out.println("## Titulo: " + projCons.getTitulo());
-        
+
         System.out.println("## ---------------------------");
-        
-        System.out.println("## Data de Inicio: " + 
+
+        System.out.println("## Data de Inicio: " +
         projCons.getDiaStart() +"/"+ projCons.getMesStart() +"/"+ projCons.getAnoStart());
-        
+
         System.out.println("## ---------------------------");
-        
-        System.out.println("## Data de Termino: " + 
+
+        System.out.println("## Data de Termino: " +
         projCons.getDiaEnd() +"/"+ projCons.getMesEnd() +"/"+ projCons.getAnoEnd());
-        
+
         System.out.println("## ---------------------------");
-        
+
         System.out.println("## Agencia Financiadora: " + projCons.getAgenciaFinanciadora());
-        
+
         System.out.println("## ---------------------------");
-        
+
         System.out.println("## Valor Financiado: " + projCons.getValorFinanciado());
-        
+
         System.out.println("## ---------------------------");
-        
+
         System.out.println("## Objetivo: " + projCons.getObjetivo());
-        
+
         System.out.println("## ---------------------------");
-        
+
         System.out.println("## Descricao: " + projCons.getDescricao());
-        
+
         System.out.println("## ---------------------------");
 
         mostrarProducaoAcademica(projCons);
 
         System.out.println("## ---------------------------");
-        
+
         mostrarAlunosDeGraduacao(projCons);
         System.out.println("## ---------------------------");
         mostrarAlunosDeMestrado(projCons);
@@ -178,10 +178,10 @@ public class GerenciarProgetos {
         System.out.println("## press[ENTER]...");
         teclado.nextLine();
     }
-    
+
     public void mostrarAlunosDeGraduacao(Projeto projCons) {
-        
-        if(projCons.ConjAlunosDeGraduacao.size() == 0) 
+
+        if(projCons.ConjAlunosDeGraduacao.size() == 0)
                 System.out.println("## Alunos de graduacao: 0");
 
         else {
@@ -194,8 +194,8 @@ public class GerenciarProgetos {
     }
 
     public void mostrarAlunosDeMestrado(Projeto projCons) {
-        
-        if(projCons.ConjAlunosDeMestrado.size() == 0) 
+
+        if(projCons.ConjAlunosDeMestrado.size() == 0)
                 System.out.println("## Alunos de mestrado: 0");
 
         else {
@@ -208,8 +208,8 @@ public class GerenciarProgetos {
     }
 
     public void mostrarAlunosDeDoutorado(Projeto projCons) {
-        
-        if(projCons.ConjAlunosDeDoutorado.size() == 0) 
+
+        if(projCons.ConjAlunosDeDoutorado.size() == 0)
                 System.out.println("## Alunos de doutorado: 0");
 
         else {
@@ -222,8 +222,8 @@ public class GerenciarProgetos {
     }
 
     public void mostrarProfessores(Projeto projCons) {
-        
-        if(projCons.ConjProfessores.size() == 0) 
+
+        if(projCons.ConjProfessores.size() == 0)
                 System.out.println("## professores: 0");
 
         else {
@@ -236,8 +236,8 @@ public class GerenciarProgetos {
     }
 
     public void mostrarPesquisadores(Projeto projCons) {
-        
-        if(projCons.ConjPesquisadores.size() == 0) 
+
+        if(projCons.ConjPesquisadores.size() == 0)
                 System.out.println("## Pesquisadores: 0");
 
         else {
@@ -250,12 +250,12 @@ public class GerenciarProgetos {
     }
 
     public void mostrarProducaoAcademica(Projeto projCons) {
-        
+
         System.out.println("## PRODUCAO ACADEMICA DO PROJETO!");
-        
+
         System.out.println("## PUBLICACOES");
         projCons.publicacoesList();
-        
+
         System.out.println("## ---------------------------------");
 
         System.out.println("## ORIENTACOES");
@@ -294,9 +294,9 @@ public class GerenciarProgetos {
             System.out.println("## Este projeto esta Em Andamento.");
             System.out.println("## Deseja mudar para Concluido?");
             System.out.println("## [1] SIM OU [2] NAO");
-            
+
             int escolha = Integer.parseInt(teclado.nextLine());
-            
+
             if(proj.publiacacoesSize()) {
                 System.out.println("## Adicione uma publicacao ao projeto antes!");
                 return;
@@ -314,7 +314,7 @@ public class GerenciarProgetos {
             System.out.println("## press[ENTER]...");
             teclado.nextLine();
         }
-                
+
     }
 
     /////////////////////////////
@@ -325,6 +325,8 @@ public class GerenciarProgetos {
         if(TodosOsProjetos.size() == 0) {
             System.out.println("##  **Nao existe projeto Para alocar colaboradores!  ##");
             System.out.println("##  **Crie um.                                       ##");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
             return;
         }
 
@@ -336,17 +338,25 @@ public class GerenciarProgetos {
 
         int escolha = Integer.parseInt(teclado.nextLine());
 
-        if(escolha == 1) alocarAlunosGraduacao(); 
-        if(escolha == 2) alocarAlunosMestrado(); 
-        if(escolha == 3) alocarAlunosDoutorado(); 
-        if(escolha == 4) alocarProfessores(); 
-        if(escolha == 5) alocarPesquisadores(); 
+        if(escolha == 1) alocarAlunosGraduacao();
+        if(escolha == 2) alocarAlunosMestrado();
+        if(escolha == 3) alocarAlunosDoutorado();
+        if(escolha == 4) alocarProfessores();
+        if(escolha == 5) alocarPesquisadores();
     }
 
     public void alocarAlunosGraduacao() {
+
+        if(GerenColaboradores.sizeAlunoGrad() == 0) {
+            System.out.println("## **Adicine um aluno de Graduacao.");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
+            return;
+        }
+
         System.out.println("#######################################################");
         System.out.println("##             Qual Alu. de Grad. Alocar?            ##");
-        
+
         AlunosDeGraduacao AlunoGraduacao = GerenColaboradores.ReturnAlunosGrad();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
@@ -356,17 +366,17 @@ public class GerenciarProgetos {
 
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
             Projeto proj = this.projetList();
-            
+
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
                 System.out.println("## press[ENTER]... ");
                 teclado.nextLine();
-                return;   
+                return;
             } else {
                 proj.addAlunoGrad(AlunoGraduacao);
                 AlunoGraduacao.setProjeto(proj);
-    
+
                 System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
                 System.out.println("## press[ENTER]... ");
                 teclado.nextLine();
@@ -381,10 +391,10 @@ public class GerenciarProgetos {
                 teclado.nextLine();
                 return;
             }
-            
+
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
             Publicacao pubEsco = GerenProdAcademica.publicacaoList();
-            
+
             pubEsco.addAlunoGrad(AlunoGraduacao);
             AlunoGraduacao.setPublicacao(pubEsco);
 
@@ -395,9 +405,17 @@ public class GerenciarProgetos {
     }
 
     public void alocarAlunosMestrado() {
+
+        if(GerenColaboradores.sizeAlunoMest() == 0) {
+            System.out.println("## **Adicine um aluno de Mestrado.");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
+            return;
+        }
+
         System.out.println("#######################################################");
         System.out.println("##             Qual Alu. de Mest. Alocar?            ##");
-        
+
         AlunosDeMestado AlunoMestrado = GerenColaboradores.ReturnAlunosMest();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
@@ -412,16 +430,16 @@ public class GerenciarProgetos {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
                 System.out.println("## press[ENTER]... ");
                 teclado.nextLine();
-                return;   
+                return;
             }
-            
+
             proj.addAlunoMest(AlunoMestrado);
             AlunoMestrado.setProjeto(proj);
             System.out.println("## Aluno: " + AlunoMestrado.getNome() + "** AlOCADO!");
             System.out.println("## press[ENTER]... ");
             teclado.nextLine();
         }
-        
+
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
@@ -430,10 +448,10 @@ public class GerenciarProgetos {
                 teclado.nextLine();
                 return;
             }
-            
+
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
             Publicacao pubEsco = GerenProdAcademica.publicacaoList();
-            
+
             pubEsco.addAlunoMest(AlunoMestrado);
             AlunoMestrado.setPublicacao(pubEsco);
 
@@ -444,9 +462,17 @@ public class GerenciarProgetos {
     }
 
     public void alocarAlunosDoutorado() {
+
+        if(GerenColaboradores.sizeAlunoDout() == 0) {
+            System.out.println("## **Adicine um aluno de Doutorado.");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
+            return;
+        }
+
         System.out.println("#######################################################");
         System.out.println("##             Qual Alu. de Dout. Alocar?            ##");
-        
+
         AlunosDeDoutorado AlunoDoutorado = GerenColaboradores.ReturnAlunosDout();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
@@ -461,12 +487,12 @@ public class GerenciarProgetos {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
                 System.out.println("## press[ENTER]... ");
                 teclado.nextLine();
-                return;  
+                return;
             }
-            
+
             proj.addAlunoDout(AlunoDoutorado);
             AlunoDoutorado.setProjeto(proj);
-            
+
             System.out.println("## Aluno: " + AlunoDoutorado.getNome() + "** AlOCADO!");
             System.out.println("## press[ENTER]... ");
             teclado.nextLine();
@@ -479,10 +505,10 @@ public class GerenciarProgetos {
                 teclado.nextLine();
                 return;
             }
-            
+
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
             Publicacao pubEsco = GerenProdAcademica.publicacaoList();
-            
+
             pubEsco.addAlunoDout(AlunoDoutorado);
             AlunoDoutorado.setPublicacao(pubEsco);
 
@@ -493,9 +519,17 @@ public class GerenciarProgetos {
     }
 
     public void alocarProfessores() {
+
+        if(GerenColaboradores.sizeProf()) {
+            System.out.println("## **Adicine um aluno um Professor.");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
+            return;
+        }
+
         System.out.println("#######################################################");
         System.out.println("##                  Qual Prof. Alocar?               ##");
-        
+
         Professores professor = GerenColaboradores.ReturnProf();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
@@ -510,12 +544,12 @@ public class GerenciarProgetos {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
                 System.out.println("## press[ENTER]... ");
                 teclado.nextLine();
-                return;   
+                return;
             }
-            
+
             proj.addProfessor(professor);
             professor.setProjeto(proj);
-            
+
             System.out.println("## Aluno: " + professor.getNome() + "** AlOCADO!");
             System.out.println("## press[ENTER]... ");
             teclado.nextLine();
@@ -528,10 +562,10 @@ public class GerenciarProgetos {
                 teclado.nextLine();
                 return;
             }
-            
+
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
             Publicacao pubEsco = GerenProdAcademica.publicacaoList();
-            
+
             pubEsco.addProfessor(professor);
             professor.setPublicacao(pubEsco);
 
@@ -542,9 +576,17 @@ public class GerenciarProgetos {
     }
 
     public void alocarPesquisadores() {
+
+        if(GerenColaboradores.sizeAlunoPesq() == 0) {
+            System.out.println("## **Adicine um aluno um Pesquisador.");
+            System.out.println("## press[ENTER]...");
+            teclado.nextLine();
+            return;
+        }
+
         System.out.println("#######################################################");
         System.out.println("##                  Qual Pesq. Alocar?               ##");
-        
+
         // Escolhendo o colaborador
         Pesquisadores pesquisador = GerenColaboradores.ReturnPesq();
 
@@ -560,13 +602,13 @@ public class GerenciarProgetos {
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
                 System.out.println("## press[ENTER]... ");
-                teclado.nextLine();   
+                teclado.nextLine();
                 return;
             }
-            
+
             proj.addPesquisador(pesquisador);
             pesquisador.setProjeto(proj);
-            
+
             System.out.println("## Aluno: " + pesquisador.getNome() + "     ** AlOCADO!");
             System.out.println("## press[ENTER]... ");
             teclado.nextLine();
@@ -579,10 +621,10 @@ public class GerenciarProgetos {
                 teclado.nextLine();
                 return;
             }
-            
+
             System.out.println("##     Escolha o Publicacao para alocar o estudante!    ##");
             Publicacao pubEsco = GerenProdAcademica.publicacaoList();
-            
+
             pubEsco.addPesquisador(pesquisador);
             pesquisador.setPublicacao(pubEsco);
 
@@ -615,7 +657,6 @@ public class GerenciarProgetos {
     public Vector<Projeto> TodosProjetos() {
         return TodosOsProjetos;
     }
-
 
     public void clearBuffer(Scanner scanner) {
         System.out.println("## press[ENTER]...");
