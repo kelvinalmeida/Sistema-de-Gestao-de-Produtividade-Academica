@@ -25,8 +25,17 @@ public class GerenProducaoAcad {
         System.out.println("##           Qual tipo de producao academica?        ##");
         System.out.println("##           [1] Publicacao [2] Orientacao           ##");
 
-        int escolha = Integer.parseInt(teclado.nextLine());
         System.out.println("## ");
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
 
         System.out.println("## press[ENTER]...");
         teclado.nextLine();
@@ -50,7 +59,16 @@ public class GerenProducaoAcad {
         publi.setConferenciaAondeFoiPublicada(Conf);
 
         System.out.print("## Ano Atual - ");
-        int anoAtual = Integer.parseInt(teclado.nextLine());
+        int anoAtual = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                anoAtual = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
         publi.setAnoAtual(anoAtual);
         
         ConjPublicacoes.add(publi);
@@ -79,7 +97,16 @@ public class GerenProducaoAcad {
         orientacao.setOri(orient);
 
         System.out.print("## Ano da Orientacao - ");
-        int ano = Integer.parseInt(teclado.nextLine());
+        int ano = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                ano = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
         orientacao.setAno(ano);
         
         System.out.println("## Qual projeto vai a orientacao?");
@@ -163,8 +190,18 @@ public class GerenProducaoAcad {
             System.out.println("## " + "["+(i+1)+"] - Titulo:" + proj.getTitulo());
         }
 
-        int escolha = Integer.parseInt(teclado.nextLine());
         System.out.println("## ");
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                System.out.println("Digite um valor válido!");
+            }
+        }
+
         return ConjPublicacoes.get(escolha - 1);
     }
 

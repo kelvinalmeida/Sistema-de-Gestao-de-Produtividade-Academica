@@ -39,25 +39,102 @@ public class GerenciarProgetos {
         System.out.print("## Titulo: ");
         projeto.setTitulo(teclado.nextLine());
 
+
         System.out.print("## Dia de Inicio: ");
-        projeto.setDiaStart(Integer.parseInt(teclado.nextLine()));
+        int diadeInicio = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                diadeInicio = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
+        projeto.setDiaStart(diadeInicio);
+        
+
         System.out.print("## Mes de Inicio: ");
-        projeto.setMesStart(Integer.parseInt(teclado.nextLine()));
+        int mesdeInicio = 0;
+        stop = true;
+        while(stop) {
+            try {
+                mesdeInicio = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
+        projeto.setMesStart(mesdeInicio);
+
+
         System.out.print("## Ano de Inicio: ");
-        projeto.setAnoStart(Integer.parseInt(teclado.nextLine()));
+        int anodeInicio = 0;
+        stop = true;
+        while(stop) {
+            try {
+                anodeInicio = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
+        projeto.setAnoStart(anodeInicio);
 
         System.out.print("## Dia do final: ");
-        projeto.setDiaEnd(Integer.parseInt(teclado.nextLine()));
+        int diaFinal = 0;
+        stop = true;
+        while(stop) {
+            try {
+                diaFinal = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
+        projeto.setDiaEnd(diaFinal);
+
         System.out.print("## Mes do final: ");
-        projeto.setMesEnd(Integer.parseInt(teclado.nextLine()));
+        int mesFinal = 0;
+        stop = true;
+        while(stop) {
+            try {
+                mesFinal = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
+        projeto.setMesEnd(mesFinal);
+
         System.out.print("## Ano do final: ");
-        projeto.setAnoEnd(Integer.parseInt(teclado.nextLine()));
+        int anoFinal = 0;
+        stop = true;
+        while(stop) {
+            try {
+                anoFinal = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
+        projeto.setAnoEnd(anoFinal);
 
         System.out.print("## Agencia Financiadora: ");
         projeto.setAgenciaFinanciadora(teclado.nextLine());
 
         System.out.print("## Valor Financiado: ");
-        projeto.setValorFinanciado(Integer.parseInt(teclado.nextLine()));
+        int valorFinanciado = 0;
+        stop = true;
+        while(stop) {
+            try {
+                valorFinanciado = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
+        projeto.setValorFinanciado(valorFinanciado);
 
         System.out.print("## Objetivo: ");
         projeto.setObjetivo(teclado.nextLine());
@@ -277,7 +354,17 @@ public class GerenciarProgetos {
             System.out.println("## Este projeto esta em Elaboracao.");
             System.out.println("## Deseja mudar para Em Andamento?");
             System.out.println("## [1] SIM OU [2] NAO");
-            int escolha = Integer.parseInt(teclado.nextLine());
+            int escolha = 0;
+            boolean stop = true;
+            while(stop) {
+                try {
+                    escolha = Integer.parseInt(teclado.nextLine());
+                    stop = false;
+                } catch(Exception erro) {
+                    // System.out.println("Digite um valor válido!");
+                }
+            }
+            
             if(escolha == 1) {
                 proj.setEmElaboracao(false);
                 proj.setEmAndamento(true);
@@ -295,7 +382,17 @@ public class GerenciarProgetos {
             System.out.println("## Deseja mudar para Concluido?");
             System.out.println("## [1] SIM OU [2] NAO");
 
-            int escolha = Integer.parseInt(teclado.nextLine());
+            // int escolha = Integer.parseInt(teclado.nextLine());
+            int escolha = 0;
+            boolean stop = true;
+            while(stop) {
+                try {
+                    escolha = Integer.parseInt(teclado.nextLine());
+                    stop = false;
+                } catch(Exception erro) {
+                    // System.out.println("Digite um valor válido!");
+                }
+            }
 
             if(proj.publiacacoesSize()) {
                 System.out.println("## Adicione uma publicacao ao projeto antes!");
