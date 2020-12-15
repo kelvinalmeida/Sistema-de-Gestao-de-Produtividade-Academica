@@ -396,6 +396,8 @@ public class GerenciarProgetos {
 
             if(proj.publiacacoesSize()) {
                 System.out.println("## Adicione uma publicacao ao projeto antes!");
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
                 return;
             }
 
@@ -433,7 +435,16 @@ public class GerenciarProgetos {
         System.out.println("##  [3] alunos de doutorado  [4] professores         ##");
         System.out.println("##                [5] pesquisadores                  ##");
 
-        int escolha = Integer.parseInt(teclado.nextLine());
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
 
         if(escolha == 1) alocarAlunosGraduacao();
         if(escolha == 2) alocarAlunosMestrado();
@@ -457,9 +468,27 @@ public class GerenciarProgetos {
         AlunosDeGraduacao AlunoGraduacao = GerenColaboradores.ReturnAlunosGrad();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
-        int escolha = Integer.parseInt(teclado.nextLine());
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
+        
 
         if(escolha == 1) {
+
+            if(AlunoGraduacao.getQntProjetos() == 2) {
+                System.out.println("## ***"+ AlunoGraduacao.getNome() +" ja atingiu a participacao maxima de 2 projetos.");
+
+                System.out.println("## press[ENTER]... ");
+                teclado.nextLine();
+                return;
+            }
 
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
             Projeto proj = this.projetList();
@@ -516,7 +545,17 @@ public class GerenciarProgetos {
         AlunosDeMestado AlunoMestrado = GerenColaboradores.ReturnAlunosMest();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
-        int escolha = Integer.parseInt(teclado.nextLine());
+        // int escolha = Integer.parseInt(teclado.nextLine());
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
 
         if(escolha == 1) {
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
@@ -573,7 +612,17 @@ public class GerenciarProgetos {
         AlunosDeDoutorado AlunoDoutorado = GerenColaboradores.ReturnAlunosDout();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
-        int escolha = Integer.parseInt(teclado.nextLine());
+        // int escolha = Integer.parseInt(teclado.nextLine());
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
 
         if(escolha == 1) {
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
@@ -630,7 +679,17 @@ public class GerenciarProgetos {
         Professores professor = GerenColaboradores.ReturnProf();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
-        int escolha = Integer.parseInt(teclado.nextLine());
+        // int escolha = Integer.parseInt(teclado.nextLine());
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
 
         if(escolha == 1) {
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
@@ -688,7 +747,17 @@ public class GerenciarProgetos {
         Pesquisadores pesquisador = GerenColaboradores.ReturnPesq();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
-        int escolha = Integer.parseInt(teclado.nextLine());
+        // int escolha = Integer.parseInt(teclado.nextLine());
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
 
         if(escolha == 1) {
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
@@ -740,8 +809,19 @@ public class GerenciarProgetos {
             System.out.println("## " + "["+(i+1)+"] - Titulo:" + proj.getTitulo() + "  *Status: " + proj.getStatus());
         }
 
-        int escolha = Integer.parseInt(teclado.nextLine());
-        System.out.println("## ");
+        System.out.print("## ");
+        // int escolha = Integer.parseInt(teclado.nextLine());
+        int escolha = 0;
+        boolean stop = true;
+        while(stop) {
+            try {
+                escolha = Integer.parseInt(teclado.nextLine());
+                stop = false;
+            } catch(Exception erro) {
+                // System.out.println("Digite um valor válido!");
+            }
+        }
+        
         clearBuffer(teclado);
         return TodosOsProjetos.get(escolha - 1);
     }

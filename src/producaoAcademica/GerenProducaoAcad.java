@@ -133,11 +133,15 @@ public class GerenProducaoAcad {
     public void alocar() {
         if(gerencProj.getSize()){
             System.out.println("## ** Por favor, adicione um projeto antes!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
             return;
         }
 
         if(ConjPublicacoes.size() == 0) {
             System.out.println("## ** Por favor, adicione uma publicacao antes!");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
             return;
         }
 
