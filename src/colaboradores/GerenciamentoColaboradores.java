@@ -5,11 +5,11 @@ import java.util.Vector;
 public class GerenciamentoColaboradores {
 
     // Vai ficar todos os alunso da graduação!
-    Vector<AlunosDeGraduacao> ConjAlunosDeGraduacao = new Vector<AlunosDeGraduacao>();
-    Vector<AlunosDeMestado> ConjAlunosDeMestrado = new Vector<AlunosDeMestado>();
-    Vector<AlunosDeDoutorado> ConjAlunosDeDoutorado = new Vector<AlunosDeDoutorado>();
-    Vector<Professores> ConjProfessores = new Vector<Professores>();
-    Vector<Pesquisadores> ConjPesquisadores = new Vector<Pesquisadores>();
+    Vector<AlunosDeGraduacao> conjAlunosDeGraduacao = new Vector<AlunosDeGraduacao>();
+    Vector<AlunosDeMestado> conjAlunosDeMestrado = new Vector<AlunosDeMestado>();
+    Vector<AlunosDeDoutorado> conjAlunosDeDoutorado = new Vector<AlunosDeDoutorado>();
+    Vector<Professores> conjProfessores = new Vector<Professores>();
+    Vector<Pesquisadores> conjPesquisadores = new Vector<Pesquisadores>();
     Scanner teclado = new Scanner(System.in);
 
 
@@ -79,7 +79,7 @@ public class GerenciamentoColaboradores {
         aluno.setEmail(email);
 
         // Foi para a ultima posicao do array.
-        ConjAlunosDeGraduacao.add(aluno);
+        conjAlunosDeGraduacao.add(aluno);
 
         System.out.println("## **Adicionado! ");
         System.out.println("## press[ENTER]... ");
@@ -99,7 +99,7 @@ public class GerenciamentoColaboradores {
         alunoM.setEmail(email);
 
         // Foi para a ultima posicao do array.
-        ConjAlunosDeMestrado.add(alunoM);
+        conjAlunosDeMestrado.add(alunoM);
         System.out.println("## **Adicionado! ");
         System.out.println("## press[ENTER]... ");
         teclado.nextLine();
@@ -118,7 +118,7 @@ public class GerenciamentoColaboradores {
         alunoD.setEmail(email);
 
         // Foi para a ultima posicao do array.
-        ConjAlunosDeDoutorado.add(alunoD);
+        conjAlunosDeDoutorado.add(alunoD);
 
         System.out.println("## **Adicionado! ");
         System.out.println("## press[ENTER]... ");
@@ -138,7 +138,7 @@ public class GerenciamentoColaboradores {
         alunoP.setEmail(email);
 
         // Foi para a ultima posicao do array.
-        ConjProfessores.add(alunoP);
+        conjProfessores.add(alunoP);
 
         System.out.println("## **Adicionado! ");
         System.out.println("## press[ENTER]... ");
@@ -158,7 +158,7 @@ public class GerenciamentoColaboradores {
         alunoPes.setEmail(email);
 
         // Foi para a ultima posicao do array.
-        ConjPesquisadores.add(alunoPes);
+        conjPesquisadores.add(alunoPes);
 
         System.out.println("## **Adicionado! ");
         System.out.println("## press[ENTER]... ");
@@ -199,7 +199,7 @@ public class GerenciamentoColaboradores {
 
     public void listAlunosDeGraduacao() {
 
-        if(ConjAlunosDeGraduacao.size() == 0){
+        if(conjAlunosDeGraduacao.size() == 0){
             System.out.println("## 0 Alunos de graduacao! Cadastre alguns!");
             return;
         }
@@ -208,8 +208,8 @@ public class GerenciamentoColaboradores {
         System.out.println("##              Qual aluno de graduacao?             ##");
 
         // Listando os alunos de graduação!
-        for (int i = 0; i < ConjAlunosDeGraduacao.size(); i++) {
-            AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(i);
+        for (int i = 0; i < conjAlunosDeGraduacao.size(); i++) {
+            AlunosDeGraduacao aluno = conjAlunosDeGraduacao.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + aluno.getNome());
         }
 
@@ -228,7 +228,7 @@ public class GerenciamentoColaboradores {
 
 
         // Obtendo o aluno escolhido!
-        AlunosDeGraduacao aluno = ConjAlunosDeGraduacao.get(AlunoEscolhido - 1);
+        AlunosDeGraduacao aluno = conjAlunosDeGraduacao.get(AlunoEscolhido - 1);
 
         System.out.println("## ---------------------------------------");
         System.out.println("## Nome: " + aluno.getNome());
@@ -247,7 +247,7 @@ public class GerenciamentoColaboradores {
 
     public void listAlunosDeMestrado() {
 
-        if(ConjAlunosDeMestrado.size() == 0) {
+        if(conjAlunosDeMestrado.size() == 0) {
             System.out.println("## 0 Alunos de Mestrado! Cadastre alguns!");
             return;
         }
@@ -256,8 +256,8 @@ public class GerenciamentoColaboradores {
         System.out.println("##               Qual aluno de Mestrado?             ##");
 
         // Listando os alunos de Mestrado!
-        for (int i = 0; i < ConjAlunosDeMestrado.size(); i++) {
-            AlunosDeMestado alunoM = ConjAlunosDeMestrado.get(i);
+        for (int i = 0; i < conjAlunosDeMestrado.size(); i++) {
+            AlunosDeMestado alunoM = conjAlunosDeMestrado.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + alunoM.getNome());
         }
 
@@ -275,7 +275,7 @@ public class GerenciamentoColaboradores {
 
 
         // Obtendo o aluno escolhido!
-        AlunosDeMestado alunoM = ConjAlunosDeMestrado.get(AlunoEscolhido - 1);
+        AlunosDeMestado alunoM = conjAlunosDeMestrado.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoM.getNome());
         System.out.println("## Email: " + alunoM.getEmail());
 
@@ -290,7 +290,7 @@ public class GerenciamentoColaboradores {
 
     public void listAlunosDeDoutorado() {
 
-        if(ConjAlunosDeDoutorado.size() == 0) {
+        if(conjAlunosDeDoutorado.size() == 0) {
             System.out.println("## 0 Alunos de Doutorado! Cadastre alguns!");
             return;
         }
@@ -299,8 +299,8 @@ public class GerenciamentoColaboradores {
         System.out.println("##              Qual aluno de Doutorado?             ##");
 
         // Listando os alunos de Douturado!
-        for (int i = 0; i < ConjAlunosDeDoutorado.size(); i++) {
-            AlunosDeDoutorado alunoD = ConjAlunosDeDoutorado.get(i);
+        for (int i = 0; i < conjAlunosDeDoutorado.size(); i++) {
+            AlunosDeDoutorado alunoD = conjAlunosDeDoutorado.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + alunoD.getNome());
         }
 
@@ -318,7 +318,7 @@ public class GerenciamentoColaboradores {
 
 
         // Obtendo o aluno escolhido!
-        AlunosDeDoutorado alunoD = ConjAlunosDeDoutorado.get(AlunoEscolhido - 1);
+        AlunosDeDoutorado alunoD = conjAlunosDeDoutorado.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoD.getNome());
         System.out.println("## Email: " + alunoD.getEmail());
 
@@ -333,7 +333,7 @@ public class GerenciamentoColaboradores {
 
     public void listProfessores() {
 
-        if(ConjProfessores.size() == 0){
+        if(conjProfessores.size() == 0){
             System.out.println("## 0 Professores! Cadastre alguns!");
             return;
         }
@@ -342,8 +342,8 @@ public class GerenciamentoColaboradores {
         System.out.println("##                   Qual Professor?                 ##");
 
         // Listando os alunos de Douturado!
-        for (int i = 0; i < ConjProfessores.size(); i++) {
-            Professores alunoP = ConjProfessores.get(i);
+        for (int i = 0; i < conjProfessores.size(); i++) {
+            Professores alunoP = conjProfessores.get(i);
             System.out.println("## " + "["+(i+1)+"] - "+ alunoP.getNome());
         }
 
@@ -361,7 +361,7 @@ public class GerenciamentoColaboradores {
 
 
         // Obtendo o aluno escolhido!
-        Professores alunoP = ConjProfessores.get(AlunoEscolhido - 1);
+        Professores alunoP = conjProfessores.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoP.getNome());
         System.out.println("## Email: " + alunoP.getEmail());
 
@@ -378,7 +378,7 @@ public class GerenciamentoColaboradores {
 
     public void listPesquisadores() {
 
-        if(ConjPesquisadores.size() == 0){
+        if(conjPesquisadores.size() == 0){
             System.out.println("## 0 Pesquisadores! Cadastre alguns!");
             return;
         }
@@ -387,8 +387,8 @@ public class GerenciamentoColaboradores {
         System.out.println("##                  Qual pesquisador?                ##");
 
         // Listando os alunos de Douturado!
-        for (int i = 0; i < ConjPesquisadores.size(); i++) {
-            Pesquisadores alunoPes = ConjPesquisadores.get(i);
+        for (int i = 0; i < conjPesquisadores.size(); i++) {
+            Pesquisadores alunoPes = conjPesquisadores.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + alunoPes.getNome());
         }
 
@@ -406,7 +406,7 @@ public class GerenciamentoColaboradores {
 
 
         // Obtendo o aluno escolhido!
-        Pesquisadores alunoPes = ConjPesquisadores.get(AlunoEscolhido - 1);
+        Pesquisadores alunoPes = conjPesquisadores.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoPes.getNome());
         System.out.println("## Email: " + alunoPes.getEmail());
 
@@ -430,8 +430,8 @@ public class GerenciamentoColaboradores {
     }
 
     public AlunosDeGraduacao ReturnAlunosGrad() {
-        for(int i = 0; i < ConjAlunosDeGraduacao.size(); ++i) {
-            AlunosDeGraduacao AlunosGrad = ConjAlunosDeGraduacao.get(i);
+        for(int i = 0; i < conjAlunosDeGraduacao.size(); ++i) {
+            AlunosDeGraduacao AlunosGrad = conjAlunosDeGraduacao.get(i);
             System.out.println("## " + "["+(i+1)+"]" + AlunosGrad.getNome());
         }
 
@@ -447,12 +447,12 @@ public class GerenciamentoColaboradores {
             }
         }
 
-        return ConjAlunosDeGraduacao.get(escoAlunosGrad - 1);
+        return conjAlunosDeGraduacao.get(escoAlunosGrad - 1);
     }
 
     public AlunosDeMestado ReturnAlunosMest() {
-        for(int i = 0; i < ConjAlunosDeMestrado.size(); ++i) {
-            AlunosDeMestado AlunosMest = ConjAlunosDeMestrado.get(i);
+        for(int i = 0; i < conjAlunosDeMestrado.size(); ++i) {
+            AlunosDeMestado AlunosMest = conjAlunosDeMestrado.get(i);
             System.out.println("## " + "["+(i+1)+"]" + AlunosMest.getNome());
         }
 
@@ -469,12 +469,12 @@ public class GerenciamentoColaboradores {
         }
 
 
-        return ConjAlunosDeMestrado.get(escoAlunosMest - 1);
+        return conjAlunosDeMestrado.get(escoAlunosMest - 1);
     }
 
     public AlunosDeDoutorado ReturnAlunosDout() {
-        for(int i = 0; i < ConjAlunosDeDoutorado.size(); ++i) {
-            AlunosDeDoutorado AlunosDout = ConjAlunosDeDoutorado.get(i);
+        for(int i = 0; i < conjAlunosDeDoutorado.size(); ++i) {
+            AlunosDeDoutorado AlunosDout = conjAlunosDeDoutorado.get(i);
             System.out.println("## " + "["+(i+1)+"]" + AlunosDout.getNome());
         }
 
@@ -491,12 +491,12 @@ public class GerenciamentoColaboradores {
         }
 
 
-        return ConjAlunosDeDoutorado.get(escoAlunosDout - 1);
+        return conjAlunosDeDoutorado.get(escoAlunosDout - 1);
     }
 
     public Professores ReturnProf() {
-        for(int i = 0; i < ConjProfessores.size(); ++i) {
-            Professores prof = ConjProfessores.get(i);
+        for(int i = 0; i < conjProfessores.size(); ++i) {
+            Professores prof = conjProfessores.get(i);
             System.out.println("## " + "["+(i+1)+"]" + prof.getNome());
         }
 
@@ -512,12 +512,12 @@ public class GerenciamentoColaboradores {
             }
         }
 
-        return ConjProfessores.get(escoProf - 1);
+        return conjProfessores.get(escoProf - 1);
     }
 
     public Pesquisadores ReturnPesq() {
-        for(int i = 0; i < ConjPesquisadores.size(); ++i) {
-            Pesquisadores pesq = ConjPesquisadores.get(i);
+        for(int i = 0; i < conjPesquisadores.size(); ++i) {
+            Pesquisadores pesq = conjPesquisadores.get(i);
             System.out.println("## " + "["+(i+1)+"]" + pesq.getNome());
         }
 
@@ -533,37 +533,37 @@ public class GerenciamentoColaboradores {
             }
         }
 
-        return ConjPesquisadores.get(escoPesq - 1);
+        return conjPesquisadores.get(escoPesq - 1);
     }
 
     public boolean sizeProf() {
-        if(ConjProfessores.size() == 0) return true;
+        if(conjProfessores.size() == 0) return true;
         else return false;
     }
 
     public int sizeAlunoGrad() {
-        return ConjAlunosDeGraduacao.size();
+        return conjAlunosDeGraduacao.size();
     }
 
     public int sizeAlunoMest() {
-        return ConjAlunosDeMestrado.size();
+        return conjAlunosDeMestrado.size();
     }
 
     public int sizeAlunoDout() {
-        return ConjAlunosDeDoutorado.size();
+        return conjAlunosDeDoutorado.size();
     }
 
     public int sizeAlunoPesq() {
-        return ConjPesquisadores.size();
+        return conjPesquisadores.size();
     }
 
     public int totalDeColaboradores() {
         int total = 0;
-        total += ConjAlunosDeGraduacao.size();
-        total += ConjAlunosDeDoutorado.size();
-        total += ConjAlunosDeMestrado.size();
-        total += ConjPesquisadores.size();
-        total += ConjProfessores.size();
+        total += conjAlunosDeGraduacao.size();
+        total += conjAlunosDeDoutorado.size();
+        total += conjAlunosDeMestrado.size();
+        total += conjPesquisadores.size();
+        total += conjProfessores.size();
 
         return total;
     }

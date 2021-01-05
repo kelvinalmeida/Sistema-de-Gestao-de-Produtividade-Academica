@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class GerenProducaoAcad {
 
     
-    Vector<Publicacao> ConjPublicacoes = new Vector<Publicacao>();
-    Vector<Orientacao> ConjOrientacao = new Vector<Orientacao>();
+    Vector<Publicacao> conjPublicacoes = new Vector<Publicacao>();
+    Vector<Orientacao> conjOrientacao = new Vector<Orientacao>();
     GerenciamentoColaboradores gerencColab;
     GerenciarProgetos gerencProj;
     Scanner teclado = new Scanner(System.in);
@@ -71,7 +71,7 @@ public class GerenProducaoAcad {
         }
         publi.setAnoAtual(anoAtual);
         
-        ConjPublicacoes.add(publi);
+        conjPublicacoes.add(publi);
         System.out.println("## **PUBLICACAO ADICIONADA!");
         clearBuffer(teclado);
     }
@@ -119,7 +119,7 @@ public class GerenProducaoAcad {
         orientacao.setProf(prof);
         orientacao.setProj(proj);
         prof.setOri(orientacao);
-        ConjOrientacao.add(orientacao);
+        conjOrientacao.add(orientacao);
 
         System.out.println("## Nota do pefessor " + prof.getNome() + "  **ADICIONADO!");
         System.out.println("## **ORIENTACAO ADICIONADA!");
@@ -138,7 +138,7 @@ public class GerenProducaoAcad {
             return;
         }
 
-        if(ConjPublicacoes.size() == 0) {
+        if(conjPublicacoes.size() == 0) {
             System.out.println("## ** Por favor, adicione uma publicacao antes!");
             System.out.println("## press[ENTER]... ");
             teclado.nextLine();
@@ -176,21 +176,21 @@ public class GerenProducaoAcad {
     }
 
     public boolean publicacaoSize() {
-        if(ConjPublicacoes.size() == 0) return true;
+        if(conjPublicacoes.size() == 0) return true;
         else return false;
     }
     
     public int publicacaoQnt() {
-        return ConjPublicacoes.size();
+        return conjPublicacoes.size();
     }
 
     public int orientacaoQnt() {
-        return ConjOrientacao.size();
+        return conjOrientacao.size();
     }
 
     public Publicacao publicacaoList() {
-        for (int i = 0; i < ConjPublicacoes.size(); i++) {
-            Publicacao proj = ConjPublicacoes.get(i);
+        for (int i = 0; i < conjPublicacoes.size(); i++) {
+            Publicacao proj = conjPublicacoes.get(i);
             System.out.println("## " + "["+(i+1)+"] - Titulo:" + proj.getTitulo());
         }
 
@@ -206,7 +206,7 @@ public class GerenProducaoAcad {
             }
         }
 
-        return ConjPublicacoes.get(escolha - 1);
+        return conjPublicacoes.get(escolha - 1);
     }
 
 }

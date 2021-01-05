@@ -6,7 +6,7 @@ import src.producaoAcademica.*;
 
 public class GerenciarProgetos {
 
-    Vector<Projeto> TodosOsProjetos = new Vector<Projeto>();
+    Vector<Projeto> todosOsProjetos = new Vector<Projeto>();
     Scanner teclado = new Scanner(System.in);
     GerenciamentoColaboradores GerenColaboradores;
     GerenProducaoAcad GerenProdAcademica;
@@ -151,7 +151,7 @@ public class GerenciarProgetos {
         projeto.setEmAndamento(false);
         projeto.setConcluido(false);
 
-        TodosOsProjetos.add(projeto);
+        todosOsProjetos.add(projeto);
 
         System.out.println("## **PROJETO ADICIONADO! ");
         System.out.println("## press[ENTER]... ");
@@ -178,7 +178,7 @@ public class GerenciarProgetos {
     public void consultar() {
         System.out.println("#######################################################");
 
-        if(TodosOsProjetos.size() == 0) {
+        if(todosOsProjetos.size() == 0) {
             System.out.println("##               **Nao existe projetos!              ##");
             System.out.println("## press[ENTER]...");
             teclado.nextLine();
@@ -421,7 +421,7 @@ public class GerenciarProgetos {
 
     public void alocar() {
 
-        if(TodosOsProjetos.size() == 0) {
+        if(todosOsProjetos.size() == 0) {
             System.out.println("##  **Nao existe projeto Para alocar colaboradores!  ##");
             System.out.println("##  **Crie um.                                       ##");
             System.out.println("## press[ENTER]...");
@@ -804,8 +804,8 @@ public class GerenciarProgetos {
     // Listando projetos
 
     public Projeto projetList() {
-        for (int i = 0; i < TodosOsProjetos.size(); i++) {
-            Projeto proj = TodosOsProjetos.get(i);
+        for (int i = 0; i < todosOsProjetos.size(); i++) {
+            Projeto proj = todosOsProjetos.get(i);
             System.out.println("## " + "["+(i+1)+"] - Titulo:" + proj.getTitulo() + "  *Status: " + proj.getStatus());
         }
 
@@ -823,16 +823,16 @@ public class GerenciarProgetos {
         }
         
         clearBuffer(teclado);
-        return TodosOsProjetos.get(escolha - 1);
+        return todosOsProjetos.get(escolha - 1);
     }
 
     public boolean getSize() {
-        if(TodosOsProjetos.size() == 0) return true;
+        if(todosOsProjetos.size() == 0) return true;
         else return false;
     }
 
     public Vector<Projeto> TodosProjetos() {
-        return TodosOsProjetos;
+        return todosOsProjetos;
     }
 
     public void clearBuffer(Scanner scanner) {

@@ -1,4 +1,4 @@
-package src.app;
+package src;
 
 import java.util.Scanner;
 import src.colaboradores.*;
@@ -13,13 +13,13 @@ public class Main {
         System.out.println("#######################################################");
 
         // Instancias únicas que vão gerenciar!
-        GerenciamentoColaboradores GereColaboradores = new GerenciamentoColaboradores();
-        GerenciarProgetos GereProjetos = new GerenciarProgetos();
-        GerenProducaoAcad GereProdAcad = new GerenProducaoAcad();
-        RelatorioGeral RG = new RelatorioGeral(GereColaboradores, GereProjetos, GereProdAcad);
+        GerenciamentoColaboradores gereColaboradores = new GerenciamentoColaboradores();
+        GerenciarProgetos gereProjetos = new GerenciarProgetos();
+        GerenProducaoAcad gereProdAcad = new GerenProducaoAcad();
+        RelatorioGeral rg = new RelatorioGeral(gereColaboradores, gereProjetos, gereProdAcad);
 
-        GereProjetos.setar(GereColaboradores, GereProdAcad);
-        GereProdAcad.setar(GereColaboradores, GereProjetos);
+        gereProjetos.setar(gereColaboradores, gereProdAcad);
+        gereProdAcad.setar(gereColaboradores, gereProjetos);
 
 
         while (0 != 1) {
@@ -59,39 +59,39 @@ public class Main {
 
             // Quer adicionar um colaborador!
             if (escolha == 1)
-                GereColaboradores.adicionar();
+                gereColaboradores.adicionar();
 
             // Quer adicionar um Projeto!
             else if (escolha == 4)
-                GereProjetos.adicionar();
+                gereProjetos.adicionar();
 
             // Alocar colaborador!
             else if (escolha == 3)
-                GereProjetos.alocar();
+                gereProjetos.alocar();
 
             // Quer consultar um colaborador!
             else if (escolha == 2)
-                GereColaboradores.consultar();
+                gereColaboradores.consultar();
 
             // Quer consultar um projeto!
             else if (escolha == 5)
-                GereProjetos.consultar();
+                gereProjetos.consultar();
 
             // Mudar status projeto!
             else if (escolha == 6)
-                GereProjetos.mudarStatus();
+                gereProjetos.mudarStatus();
 
             // Cadastrar Prod. Acad.
             else if (escolha == 7)
-                GereProdAcad.adicionar();
+                gereProdAcad.adicionar();
             
             // ALOCAR PUBLI. PRO PROJETO
             else if (escolha == 8)
-                GereProdAcad.alocar();
+                gereProdAcad.alocar();
 
             // Relatorio geral
             else if (escolha == 9)
-                RG.show();
+                rg.show();
 
             else if (escolha == 0) {
                 System.out.println("## **PROGRAMA FINALIZADO!");
