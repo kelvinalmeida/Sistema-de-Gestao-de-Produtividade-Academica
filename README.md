@@ -6,12 +6,12 @@
 
 # Para executar o programa, baixe a pasta src e execute os seguintes comandos:
  
-  - javac src/app/*.java 
+  - javac src/*.java
   - javac src/colaboradores/*.java
   - javac src/producaoAcademica/*.java
   - javac src/projetos/*.java
  
 # Para executar o programa:
  
-  - java src.app.Main
+  - java src.Main
  

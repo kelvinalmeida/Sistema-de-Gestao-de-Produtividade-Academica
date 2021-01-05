@@ -4,10 +4,9 @@ import java.util.Vector;
 
 public class GerenciamentoColaboradores {
 
-    // Vai ficar todos os alunso da graduação!
-    Vector<AlunosDeGraduacao> conjAlunosDeGraduacao = new Vector<AlunosDeGraduacao>();
-    Vector<AlunosDeMestado> conjAlunosDeMestrado = new Vector<AlunosDeMestado>();
-    Vector<AlunosDeDoutorado> conjAlunosDeDoutorado = new Vector<AlunosDeDoutorado>();
+    Vector<Aluno> conjAlunosDeGraduacao = new Vector<Aluno>();
+    Vector<Aluno> conjAlunosDeMestrado = new Vector<Aluno>();
+    Vector<Aluno> conjAlunosDeDoutorado = new Vector<Aluno>();
     Vector<Professores> conjProfessores = new Vector<Professores>();
     Vector<Pesquisadores> conjPesquisadores = new Vector<Pesquisadores>();
     Scanner teclado = new Scanner(System.in);
@@ -19,7 +18,7 @@ public class GerenciamentoColaboradores {
     public void adicionar() {
         System.out.println("#######################################################");
         System.out.println("##              Quel o tipo de Colaborador?          ##");
-        System.out.println("##  [1] alunos de graduacao  [2] alunosde mestrado   ##");
+        System.out.println("##  [1] alunos de graduacao  [2] alunos de mestrado   ##");
         System.out.println("##  [3] alunos de doutorado  [4] professores         ##");
         System.out.println("##                [5] pesquisadores                  ##");
 
@@ -38,7 +37,7 @@ public class GerenciamentoColaboradores {
 
         clearBuffer(teclado);
 
-        // Cadastrando os alunos de graduacao!
+        // Cadastrando os aluno de graduacao!
         if(escolha == 1) casdAlunosDeGraduacao();
         if(escolha == 2) casdAlunosDeMestrado();
         if(escolha == 3) casdAlunosDeDoutorado();
@@ -48,7 +47,7 @@ public class GerenciamentoColaboradores {
     }
 
     public void casdAlunosDeGraduacao() {
-        AlunosDeGraduacao aluno = new AlunosDeGraduacao();
+        Aluno aluno = new Aluno();
 
         System.out.print("## Informe o nome: ");
         String nome = "nome";
@@ -88,7 +87,7 @@ public class GerenciamentoColaboradores {
     }
 
     public void casdAlunosDeMestrado() {
-        AlunosDeMestado alunoM = new AlunosDeMestado();
+        Aluno alunoM = new Aluno();
 
         System.out.print("## Informe o nome: ");
         String nome = teclado.nextLine();
@@ -107,7 +106,7 @@ public class GerenciamentoColaboradores {
     }
 
     public void casdAlunosDeDoutorado() {
-        AlunosDeDoutorado alunoD = new AlunosDeDoutorado();
+        Aluno alunoD = new Aluno();
 
         System.out.print("## Informe o nome: ");
         String nome = teclado.nextLine();
@@ -207,9 +206,9 @@ public class GerenciamentoColaboradores {
 
         System.out.println("##              Qual aluno de graduacao?             ##");
 
-        // Listando os alunos de graduação!
+        // Listando os aluno de graduação!
         for (int i = 0; i < conjAlunosDeGraduacao.size(); i++) {
-            AlunosDeGraduacao aluno = conjAlunosDeGraduacao.get(i);
+            Aluno aluno = conjAlunosDeGraduacao.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + aluno.getNome());
         }
 
@@ -228,7 +227,7 @@ public class GerenciamentoColaboradores {
 
 
         // Obtendo o aluno escolhido!
-        AlunosDeGraduacao aluno = conjAlunosDeGraduacao.get(AlunoEscolhido - 1);
+        Aluno aluno = conjAlunosDeGraduacao.get(AlunoEscolhido - 1);
 
         System.out.println("## ---------------------------------------");
         System.out.println("## Nome: " + aluno.getNome());
@@ -255,9 +254,9 @@ public class GerenciamentoColaboradores {
         // System.out.println("#######################################################");
         System.out.println("##               Qual aluno de Mestrado?             ##");
 
-        // Listando os alunos de Mestrado!
+        // Listando os aluno de Mestrado!
         for (int i = 0; i < conjAlunosDeMestrado.size(); i++) {
-            AlunosDeMestado alunoM = conjAlunosDeMestrado.get(i);
+            Aluno alunoM = conjAlunosDeMestrado.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + alunoM.getNome());
         }
 
@@ -275,7 +274,7 @@ public class GerenciamentoColaboradores {
 
 
         // Obtendo o aluno escolhido!
-        AlunosDeMestado alunoM = conjAlunosDeMestrado.get(AlunoEscolhido - 1);
+        Aluno alunoM = conjAlunosDeMestrado.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoM.getNome());
         System.out.println("## Email: " + alunoM.getEmail());
 
@@ -291,16 +290,16 @@ public class GerenciamentoColaboradores {
     public void listAlunosDeDoutorado() {
 
         if(conjAlunosDeDoutorado.size() == 0) {
-            System.out.println("## 0 Alunos de Doutorado! Cadastre alguns!");
+            System.out.println("## 0 Aluno de Doutorado! Cadastre alguns!");
             return;
         }
 
         // System.out.println("#######################################################");
         System.out.println("##              Qual aluno de Doutorado?             ##");
 
-        // Listando os alunos de Douturado!
+        // Listando os aluno de Douturado!
         for (int i = 0; i < conjAlunosDeDoutorado.size(); i++) {
-            AlunosDeDoutorado alunoD = conjAlunosDeDoutorado.get(i);
+            Aluno alunoD = conjAlunosDeDoutorado.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + alunoD.getNome());
         }
 
@@ -318,7 +317,7 @@ public class GerenciamentoColaboradores {
 
 
         // Obtendo o aluno escolhido!
-        AlunosDeDoutorado alunoD = conjAlunosDeDoutorado.get(AlunoEscolhido - 1);
+        Aluno alunoD = conjAlunosDeDoutorado.get(AlunoEscolhido - 1);
         System.out.println("## Nome: " + alunoD.getNome());
         System.out.println("## Email: " + alunoD.getEmail());
 
@@ -341,7 +340,7 @@ public class GerenciamentoColaboradores {
         System.out.println("#######################################################");
         System.out.println("##                   Qual Professor?                 ##");
 
-        // Listando os alunos de Douturado!
+        // Listando os aluno de Douturado!
         for (int i = 0; i < conjProfessores.size(); i++) {
             Professores alunoP = conjProfessores.get(i);
             System.out.println("## " + "["+(i+1)+"] - "+ alunoP.getNome());
@@ -386,7 +385,7 @@ public class GerenciamentoColaboradores {
         // System.out.println("#######################################################");
         System.out.println("##                  Qual pesquisador?                ##");
 
-        // Listando os alunos de Douturado!
+        // Listando os aluno de Douturado!
         for (int i = 0; i < conjPesquisadores.size(); i++) {
             Pesquisadores alunoPes = conjPesquisadores.get(i);
             System.out.println("## " + "["+(i+1)+"] - " + alunoPes.getNome());
@@ -429,9 +428,9 @@ public class GerenciamentoColaboradores {
         }
     }
 
-    public AlunosDeGraduacao ReturnAlunosGrad() {
+    public Aluno ReturnAlunosGrad() {
         for(int i = 0; i < conjAlunosDeGraduacao.size(); ++i) {
-            AlunosDeGraduacao AlunosGrad = conjAlunosDeGraduacao.get(i);
+            Aluno AlunosGrad = conjAlunosDeGraduacao.get(i);
             System.out.println("## " + "["+(i+1)+"]" + AlunosGrad.getNome());
         }
 
@@ -450,9 +449,9 @@ public class GerenciamentoColaboradores {
         return conjAlunosDeGraduacao.get(escoAlunosGrad - 1);
     }
 
-    public AlunosDeMestado ReturnAlunosMest() {
+    public Aluno ReturnAlunosMest() {
         for(int i = 0; i < conjAlunosDeMestrado.size(); ++i) {
-            AlunosDeMestado AlunosMest = conjAlunosDeMestrado.get(i);
+            Aluno AlunosMest = conjAlunosDeMestrado.get(i);
             System.out.println("## " + "["+(i+1)+"]" + AlunosMest.getNome());
         }
 
@@ -472,9 +471,9 @@ public class GerenciamentoColaboradores {
         return conjAlunosDeMestrado.get(escoAlunosMest - 1);
     }
 
-    public AlunosDeDoutorado ReturnAlunosDout() {
+    public Aluno ReturnAlunosDout() {
         for(int i = 0; i < conjAlunosDeDoutorado.size(); ++i) {
-            AlunosDeDoutorado AlunosDout = conjAlunosDeDoutorado.get(i);
+            Aluno AlunosDout = conjAlunosDeDoutorado.get(i);
             System.out.println("## " + "["+(i+1)+"]" + AlunosDout.getNome());
         }
 

@@ -34,29 +34,29 @@ public class Publicacao {
         return this.anoAtual;
     }
 
-    Vector<AlunosDeGraduacao> ConjAlunosDeGraduacao = new Vector<AlunosDeGraduacao>();
-    Vector<AlunosDeMestado> ConjAlunosDeMestrado = new Vector<AlunosDeMestado>();
-    Vector<AlunosDeDoutorado> ConjAlunosDeDoutorado = new Vector<AlunosDeDoutorado>();
-    Vector<Professores> ConjProfessores = new Vector<Professores>();
-    Vector<Pesquisadores> ConjPesquisadores = new Vector<Pesquisadores>();
+    Vector<Aluno> conjAlunosDeGraduacao = new Vector<Aluno>();
+    Vector<Aluno> conjAlunosDeMestrado = new Vector<Aluno>();
+    Vector<Aluno> conjAlunosDeDoutorado = new Vector<Aluno>();
+    Vector<Professores> conjProfessores = new Vector<Professores>();
+    Vector<Pesquisadores> conjPesquisadores = new Vector<Pesquisadores>();
 
-    public void addAlunoGrad(AlunosDeGraduacao alunoG) {
-        ConjAlunosDeGraduacao.add(alunoG);
+    public void addAlunoGrad(Aluno alunoG) {
+        conjAlunosDeGraduacao.add(alunoG);
     }
 
-    public void addAlunoMest(AlunosDeMestado alunoM) {
-        ConjAlunosDeMestrado.add(alunoM);
+    public void addAlunoMest(Aluno alunoM) {
+        conjAlunosDeMestrado.add(alunoM);
     }
 
-    public void addAlunoDout(AlunosDeDoutorado alunoD) {
-        ConjAlunosDeDoutorado.add(alunoD);
+    public void addAlunoDout(Aluno alunoD) {
+        conjAlunosDeDoutorado.add(alunoD);
     }
 
     public void addProfessor(Professores professor) {
-        ConjProfessores.add(professor);
+        conjProfessores.add(professor);
     }
 
     public void addPesquisador(Pesquisadores Pesquisador) {
-        ConjPesquisadores.add(Pesquisador);
+        conjPesquisadores.add(Pesquisador);
     }
 }

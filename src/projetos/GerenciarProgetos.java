@@ -258,13 +258,13 @@ public class GerenciarProgetos {
 
     public void mostrarAlunosDeGraduacao(Projeto projCons) {
 
-        if(projCons.ConjAlunosDeGraduacao.size() == 0)
+        if(projCons.conjAlunosDeGraduacao.size() == 0)
                 System.out.println("## Alunos de graduacao: 0");
 
         else {
             System.out.println("## Alunos de graduacao:");
-            for (int i = 0; i < projCons.ConjAlunosDeGraduacao.size(); i++) {
-                AlunosDeGraduacao AlunosGrad = projCons.ConjAlunosDeGraduacao.get(i);
+            for (int i = 0; i < projCons.conjAlunosDeGraduacao.size(); i++) {
+                Aluno AlunosGrad = projCons.conjAlunosDeGraduacao.get(i);
                 System.out.println("## " + (i+1) + "- " + AlunosGrad.getNome());
             }
         }
@@ -272,13 +272,13 @@ public class GerenciarProgetos {
 
     public void mostrarAlunosDeMestrado(Projeto projCons) {
 
-        if(projCons.ConjAlunosDeMestrado.size() == 0)
+        if(projCons.conjAlunosDeMestrado.size() == 0)
                 System.out.println("## Alunos de mestrado: 0");
 
         else {
             System.out.println("## Alunos de mestrado:");
-            for (int i = 0; i < projCons.ConjAlunosDeMestrado.size(); i++) {
-                AlunosDeMestado AlunosMest = projCons.ConjAlunosDeMestrado.get(i);
+            for (int i = 0; i < projCons.conjAlunosDeMestrado.size(); i++) {
+                Aluno AlunosMest = projCons.conjAlunosDeMestrado.get(i);
                 System.out.println("## " + (i+1) + "- " + AlunosMest.getNome());
             }
         }
@@ -286,13 +286,13 @@ public class GerenciarProgetos {
 
     public void mostrarAlunosDeDoutorado(Projeto projCons) {
 
-        if(projCons.ConjAlunosDeDoutorado.size() == 0)
+        if(projCons.conjAlunosDeDoutorado.size() == 0)
                 System.out.println("## Alunos de doutorado: 0");
 
         else {
             System.out.println("## Alunos de doutorado:");
-            for (int i = 0; i < projCons.ConjAlunosDeDoutorado.size(); i++) {
-                AlunosDeDoutorado AlunosDout = projCons.ConjAlunosDeDoutorado.get(i);
+            for (int i = 0; i < projCons.conjAlunosDeDoutorado.size(); i++) {
+                Aluno AlunosDout = projCons.conjAlunosDeDoutorado.get(i);
                 System.out.println("## " + (i+1) + "- " + AlunosDout.getNome());
             }
         }
@@ -300,13 +300,13 @@ public class GerenciarProgetos {
 
     public void mostrarProfessores(Projeto projCons) {
 
-        if(projCons.ConjProfessores.size() == 0)
+        if(projCons.conjProfessores.size() == 0)
                 System.out.println("## professores: 0");
 
         else {
             System.out.println("## professores:");
-            for (int i = 0; i < projCons.ConjProfessores.size(); i++) {
-                Professores Prof = projCons.ConjProfessores.get(i);
+            for (int i = 0; i < projCons.conjProfessores.size(); i++) {
+                Professores Prof = projCons.conjProfessores.get(i);
                 System.out.println("## " + (i+1) + "- " + Prof.getNome());
             }
         }
@@ -314,13 +314,13 @@ public class GerenciarProgetos {
 
     public void mostrarPesquisadores(Projeto projCons) {
 
-        if(projCons.ConjPesquisadores.size() == 0)
+        if(projCons.conjPesquisadores.size() == 0)
                 System.out.println("## Pesquisadores: 0");
 
         else {
             System.out.println("## Pesquisadores:");
-            for (int i = 0; i < projCons.ConjPesquisadores.size(); i++) {
-                Pesquisadores pesq = projCons.ConjPesquisadores.get(i);
+            for (int i = 0; i < projCons.conjPesquisadores.size(); i++) {
+                Pesquisadores pesq = projCons.conjPesquisadores.get(i);
                 System.out.println("## " + (i+1) + "- " + pesq.getNome());
             }
         }
@@ -465,7 +465,7 @@ public class GerenciarProgetos {
         System.out.println("#######################################################");
         System.out.println("##             Qual Alu. de Grad. Alocar?            ##");
 
-        AlunosDeGraduacao AlunoGraduacao = GerenColaboradores.ReturnAlunosGrad();
+        Aluno AlunoGraduacao = GerenColaboradores.ReturnAlunosGrad();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
         int escolha = 0;
@@ -542,7 +542,7 @@ public class GerenciarProgetos {
         System.out.println("#######################################################");
         System.out.println("##             Qual Alu. de Mest. Alocar?            ##");
 
-        AlunosDeMestado AlunoMestrado = GerenColaboradores.ReturnAlunosMest();
+        Aluno AlunoMestrado = GerenColaboradores.ReturnAlunosMest();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
         // int escolha = Integer.parseInt(teclado.nextLine());
@@ -609,7 +609,7 @@ public class GerenciarProgetos {
         System.out.println("#######################################################");
         System.out.println("##             Qual Alu. de Dout. Alocar?            ##");
 
-        AlunosDeDoutorado AlunoDoutorado = GerenColaboradores.ReturnAlunosDout();
+        Aluno AlunoDoutorado = GerenColaboradores.ReturnAlunosDout();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
         // int escolha = Integer.parseInt(teclado.nextLine());
