@@ -8,6 +8,7 @@
  
   - javac src/*.java
   - javac src/colaboradores/*.java
+  - javac src/colaboradores/Gerenciador/*.java
   - javac src/producaoAcademica/*.java
   - javac src/projetos/*.java
  

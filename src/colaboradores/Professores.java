@@ -5,6 +5,7 @@ import java.util.Vector;
 
 public class Professores extends Colaboradores {
 
+    public int tipoDeAluno = 0;
     Vector<Orientacao> ConjOrientacao = new Vector<Orientacao>();
 
     public void setProjeto(Projeto proj) {
