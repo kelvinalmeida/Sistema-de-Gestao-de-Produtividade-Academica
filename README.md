@@ -10,6 +10,7 @@
   - javac src/colaboradores/*.java
   - javac src/colaboradores/Gerenciador/*.java
   - javac src/producaoAcademica/*.java
+  - javac src/producaoAcademica/GerenProdAcad/*.java
   - javac src/projetos/*.java
  
 # Para executar o programa:

@@ -5,6 +5,8 @@ import src.colaboradores.*;
 import java.util.Vector;
 import java.util.Scanner;
 
+import src.producaoAcademica.GerenProdAcad.*;
+
 public class GerenProducaoAcad {
 
     
@@ -13,6 +15,9 @@ public class GerenProducaoAcad {
     GerenciamentoColaboradores gerencColab;
     GerenciarProgetos gerencProj;
     Scanner teclado = new Scanner(System.in);
+
+    AdPublicacao adPublicacao = new AdPublicacao();
+    AdOrientacao adOrientacao = new AdOrientacao();
 
     // Ponteiro
     public void setar(GerenciamentoColaboradores gerencColab, GerenciarProgetos gerencProj) {
@@ -48,43 +53,18 @@ public class GerenProducaoAcad {
     }
 
     public void addPublicacao() {
-        Publicacao publi = new Publicacao();
+        Publicacao publicacao = adPublicacao.adicionarPublicacao();
 
-        System.out.print("## Titulo - ");
-        String titulo = teclado.nextLine();
-        publi.setTitulo(titulo);
+        conjPublicacoes.add(publicacao);
 
-        System.out.print("## Conferencia Aonde Foi Publicada - ");
-        String Conf = teclado.nextLine();
-        publi.setConferenciaAondeFoiPublicada(Conf);
-
-        System.out.print("## Ano Atual - ");
-        int anoAtual = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                anoAtual = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
-        publi.setAnoAtual(anoAtual);
-        
-        conjPublicacoes.add(publi);
-        System.out.println("## **PUBLICACAO ADICIONADA!");
-        clearBuffer(teclado);
+        System.out.println("## **Adicionada! ");
+        System.out.println("## press[ENTER]... ");
+        teclado.nextLine();
+        System.out.println("#######################################################"); 
     }
 
     public void addOrientacao() {
-
-        Orientacao orientacao = new Orientacao();
-
-        // if(gerencColab.sizeProf()) {
-        //     System.out.println("## Por favor, adicione um professor antes!.");
-        //     return;
-        // }
-
+        
         if(gerencProj.getSize()) {
             System.out.println("## Por favor, adicione um projeto antes!.");
             System.out.println("## press[ENTER]...");
@@ -92,36 +72,10 @@ public class GerenProducaoAcad {
             return;
         }
 
-        System.out.print("## Escreva a Orientacao: - ");
-        String orient = teclado.nextLine();
-        orientacao.setOri(orient);
+        Orientacao orientacao = adOrientacao.adicionarOrientacao(gerencProj);
 
-        System.out.print("## Ano da Orientacao - ");
-        int ano = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                ano = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
-        orientacao.setAno(ano);
-        
-        System.out.println("## Qual projeto vai a orientacao?");
-        Projeto proj = gerencProj.projetList();
-        proj.setOrientacoes(orientacao);
-        
-        // Professor do projeto;
-        System.out.println("## Qual Professor deste proj vai fazer a Orientacao?");
-        Professores prof = proj.profList();
-        orientacao.setProf(prof);
-        orientacao.setProj(proj);
-        prof.setOri(orientacao);
         conjOrientacao.add(orientacao);
 
-        System.out.println("## Nota do pefessor " + prof.getNome() + "  **ADICIONADO!");
         System.out.println("## **ORIENTACAO ADICIONADA!");
         System.out.println("## press[ENTER]...");
         teclado.nextLine();

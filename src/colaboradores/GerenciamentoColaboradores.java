@@ -46,7 +46,14 @@ public class GerenciamentoColaboradores {
         else if(escolhaTipo == 5){
             Pesquisadores alunoPes = adicionarColaborador.casdPesquisadores();
             conjPesquisadores.add(alunoPes);
-        }  
+        }
+        
+        if(escolhaTipo != 0) {
+            System.out.println("## **Adicionado! ");
+            System.out.println("## press[ENTER]... ");
+            teclado.nextLine();
+            System.out.println("#######################################################");  
+        }
     }
 
     ///////////////////////////////////////////////////

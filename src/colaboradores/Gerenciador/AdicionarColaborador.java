@@ -39,8 +39,6 @@ public class AdicionarColaborador {
 
             System.out.println("Escolha um valor valido.");
         }
-
-        // return 0;
     }
 
     public Aluno casdAlunosDeGraduacao() {
@@ -74,17 +72,9 @@ public class AdicionarColaborador {
 
         aluno.setEmail(email);
 
-        // Foi para a ultima posicao do array.
-        // conjAlunosDeGraduacao.add(aluno);
-
         aluno.tipoDeAluno = 1;
 
         return aluno;
-
-        // System.out.println("## **Adicionado! ");
-        // System.out.println("## press[ENTER]... ");
-        // teclado.nextLine();
-        // System.out.println("#######################################################");
     }
 
     public Aluno casdAlunosDeMestrado() {
@@ -100,13 +90,6 @@ public class AdicionarColaborador {
 
         alunoM.tipoDeAluno = 2;
         return alunoM;
-
-        // Foi para a ultima posicao do array.
-        // conjAlunosDeMestrado.add(alunoM);
-        // System.out.println("## **Adicionado! ");
-        // System.out.println("## press[ENTER]... ");
-        // teclado.nextLine();
-        // System.out.println("#######################################################");
     }
 
     public Aluno casdAlunosDeDoutorado() {
@@ -122,14 +105,6 @@ public class AdicionarColaborador {
 
         alunoD.tipoDeAluno = 3;
         return alunoD;
-
-        // // Foi para a ultima posicao do array.
-        // conjAlunosDeDoutorado.add(alunoD);
-
-        // System.out.println("## **Adicionado! ");
-        // System.out.println("## press[ENTER]... ");
-        // teclado.nextLine();
-        // System.out.println("#######################################################");
     }
 
     public Professores casdProfessores() {
@@ -145,15 +120,6 @@ public class AdicionarColaborador {
 
         alunoP.tipoDeAluno = 4;
         return alunoP;
-
-        // Foi para a ultima posicao do array.
-        // conjProfessores.add(alunoP);
-
-
-        // System.out.println("## **Adicionado! ");
-        // System.out.println("## press[ENTER]... ");
-        // teclado.nextLine();
-        // System.out.println("#######################################################");
     }
 
     public Pesquisadores casdPesquisadores() {
@@ -168,15 +134,7 @@ public class AdicionarColaborador {
         alunoPes.setEmail(email);
 
         alunoPes.tipoDeAluno = 5;
-        return alunoPes;
-
-        // Foi para a ultima posicao do array.
-        // conjPesquisadores.add(alunoPes);
-
-        // System.out.println("## **Adicionado! ");
-        // System.out.println("## press[ENTER]... ");
-        // teclado.nextLine();
-        // System.out.println("#######################################################");
+        return alunoPes;        
     }
 
     public void clearBuffer(Scanner teclado) {
