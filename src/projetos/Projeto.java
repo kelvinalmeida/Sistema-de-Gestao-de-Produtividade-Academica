@@ -75,11 +75,11 @@ public class Projeto {
         return "Erro!";
     }
     
-    Vector<Aluno> conjAlunosDeGraduacao = new Vector<Aluno>();
-    Vector<Aluno> conjAlunosDeMestrado = new Vector<Aluno>();
-    Vector<Aluno> conjAlunosDeDoutorado = new Vector<Aluno>();
-    Vector<Professores> conjProfessores = new Vector<Professores>();
-    Vector<Pesquisadores> conjPesquisadores = new Vector<Pesquisadores>();
+    public Vector<Aluno> conjAlunosDeGraduacao = new Vector<Aluno>();
+    public Vector<Aluno> conjAlunosDeMestrado = new Vector<Aluno>();
+    public Vector<Aluno> conjAlunosDeDoutorado = new Vector<Aluno>();
+    public Vector<Professores> conjProfessores = new Vector<Professores>();
+    public Vector<Pesquisadores> conjPesquisadores = new Vector<Pesquisadores>();
 
     public void addAlunoGrad(Aluno alunoG) {
         conjAlunosDeGraduacao.add(alunoG);

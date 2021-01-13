@@ -6,12 +6,17 @@
 
 # Para executar o programa, baixe a pasta src e execute os seguintes comandos:
  
+  - javac src/*.java && javac src/colaboradores/*.java && javac src/colaboradores/Gerenciador/*.java && javac src/producaoAcademica/*.java && javac src/producaoAcademica/GerenProdAcad/*.java && javac src/projetos/*.java && javac src/projetos/GerenProjetos/*.java
+
+  OU
+
   - javac src/*.java
   - javac src/colaboradores/*.java
   - javac src/colaboradores/Gerenciador/*.java
   - javac src/producaoAcademica/*.java
   - javac src/producaoAcademica/GerenProdAcad/*.java
   - javac src/projetos/*.java
+  - javac src/projetos/GerenProjetos/*.java
  
 # Para executar o programa:
  

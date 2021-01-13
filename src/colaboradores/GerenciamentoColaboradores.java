@@ -1,3 +1,5 @@
+// Padrão de projeto Singleton e Low Coupling
+
 package src.colaboradores;
 import java.util.Scanner;
 import java.util.Vector;
@@ -15,10 +17,6 @@ public class GerenciamentoColaboradores {
 
     AdicionarColaborador adicionarColaborador = new AdicionarColaborador();
     ConsultarColaborador consultarColaborador = new ConsultarColaborador();
-
-
-    ///////////////////////////////////////////////////
-    // Parte de cadastro!
 
     public void adicionar() {
         int escolhaTipo = adicionarColaborador.adicionar();
@@ -56,8 +54,6 @@ public class GerenciamentoColaboradores {
         }
     }
 
-    ///////////////////////////////////////////////////
-    // Parte de consulta!
 
     public void consultar() {
         int escolhaAluno = consultarColaborador.consultar();
@@ -99,7 +95,6 @@ public class GerenciamentoColaboradores {
             System.out.println("## " + "["+(i+1)+"]" + AlunosGrad.getNome());
         }
 
-        // int escoAlunosGrad = Integer.parseInt(teclado.nextLine());
         int escoAlunosGrad = 0;
         boolean stop = true;
         while(stop) {
@@ -142,7 +137,6 @@ public class GerenciamentoColaboradores {
             System.out.println("## " + "["+(i+1)+"]" + AlunosDout.getNome());
         }
 
-        // int escoAlunosDout = Integer.parseInt(teclado.nextLine());
         int escoAlunosDout = 0;
         boolean stop = true;
         while(stop) {
@@ -185,7 +179,6 @@ public class GerenciamentoColaboradores {
             System.out.println("## " + "["+(i+1)+"]" + pesq.getNome());
         }
 
-        // int escoPesq = Integer.parseInt(teclado.nextLine());
         int escoPesq = 0;
         boolean stop = true;
         while(stop) {

@@ -12,13 +12,13 @@ public class Main {
         System.out.println("## Bem vindo, ao Sistema de Produtividade Academica! ##");
         System.out.println("#######################################################");
 
-        // Instancias únicas que vão gerenciar!
+        // Instancias únicas que vão gerenciar! - Singleton
         GerenciamentoColaboradores gereColaboradores = new GerenciamentoColaboradores();
         GerenciarProgetos gereProjetos = new GerenciarProgetos();
         GerenProducaoAcad gereProdAcad = new GerenProducaoAcad();
         RelatorioGeral rg = new RelatorioGeral(gereColaboradores, gereProjetos, gereProdAcad);
 
-        gereProjetos.setar(gereColaboradores, gereProdAcad);
+        gereProjetos.setar(gereColaboradores, gereProdAcad, gereProjetos);
         gereProdAcad.setar(gereColaboradores, gereProjetos);
 
 

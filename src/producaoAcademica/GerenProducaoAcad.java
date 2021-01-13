@@ -1,3 +1,5 @@
+// Padrão de projeto Singleton e Low Coupling
+
 package src.producaoAcademica;
 
 import src.projetos.*;
@@ -85,6 +87,7 @@ public class GerenProducaoAcad {
     // Alocar public. para algum projeto.
 
     public void alocar() {
+
         if(gerencProj.getSize()){
             System.out.println("## ** Por favor, adicione um projeto antes!");
             System.out.println("## press[ENTER]... ");
@@ -114,6 +117,7 @@ public class GerenProducaoAcad {
         } 
         
         projetoEscolhido.setPublicacao(publicEscolhida);
+
         System.out.println("## O Publicacao **" + publicEscolhida.getTitulo() + "  **ADICIONADA!");
         System.out.println("## press[ENTER]...");
         teclado.nextLine();
