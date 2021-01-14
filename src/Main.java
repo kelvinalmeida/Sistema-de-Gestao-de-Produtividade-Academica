@@ -21,6 +21,8 @@ public class Main {
         gereProjetos.setar(gereColaboradores, gereProdAcad, gereProjetos);
         gereProdAcad.setar(gereColaboradores, gereProjetos);
 
+        ClearBuffer clearBuffer = new ClearBuffer();
+
 
         while (0 != 1) {
 
@@ -55,7 +57,7 @@ public class Main {
                 }
             }
 
-            clearBuffer(teclado);
+            clearBuffer.clear();
 
             // Quer adicionar um colaborador!
             if (escolha == 1)
@@ -98,13 +100,6 @@ public class Main {
                 System.out.println("#######################################################");
                 break;
             }
-        }
-    }
-    
-    private static void clearBuffer(Scanner teclado) {
-        System.out.println("## press[ENTER]...");
-        if(teclado.hasNextLine()) {
-            teclado.nextLine();
         }
     }
 }

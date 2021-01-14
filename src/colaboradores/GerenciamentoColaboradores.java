@@ -3,6 +3,7 @@
 package src.colaboradores;
 import java.util.Scanner;
 import java.util.Vector;
+import src.*;
 
 import src.colaboradores.Gerenciador.*;
 
@@ -17,6 +18,7 @@ public class GerenciamentoColaboradores {
 
     AdicionarColaborador adicionarColaborador = new AdicionarColaborador();
     ConsultarColaborador consultarColaborador = new ConsultarColaborador();
+    ClearBuffer clearBuffer = new ClearBuffer();
 
     public void adicionar() {
         int escolhaTipo = adicionarColaborador.adicionar();
@@ -48,8 +50,7 @@ public class GerenciamentoColaboradores {
         
         if(escolhaTipo != 0) {
             System.out.println("## **Adicionado! ");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
             System.out.println("#######################################################");  
         }
     }
@@ -77,17 +78,13 @@ public class GerenciamentoColaboradores {
         else if(escolhaAluno == 5){
             consultarColaborador.listPesquisadores(conjPesquisadores);
         } 
+        else {
+            return;
+        }
     }
 
     //////////////////////////////////////
     // Parte de comunicacao com outro objetos.
-
-    public void clearBuffer(Scanner teclado) {
-        System.out.println("## press[ENTER]...");
-        if(teclado.hasNextLine()) {
-            teclado.nextLine();
-        }
-    }
 
     public Aluno ReturnAlunosGrad() {
         for(int i = 0; i < conjAlunosDeGraduacao.size(); ++i) {

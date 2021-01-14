@@ -6,6 +6,7 @@ import src.projetos.*;
 import src.colaboradores.*;
 import java.util.Vector;
 import java.util.Scanner;
+import src.*;
 
 import src.producaoAcademica.GerenProdAcad.*;
 
@@ -17,6 +18,7 @@ public class GerenProducaoAcad {
     GerenciamentoColaboradores gerencColab;
     GerenciarProgetos gerencProj;
     Scanner teclado = new Scanner(System.in);
+    ClearBuffer clearBuffer = new ClearBuffer();
 
     AdPublicacao adPublicacao = new AdPublicacao();
     AdOrientacao adOrientacao = new AdOrientacao();
@@ -44,8 +46,7 @@ public class GerenProducaoAcad {
             }
         }
 
-        System.out.println("## press[ENTER]...");
-        teclado.nextLine();
+        clearBuffer.clear();
 
         if (escolha == 1)
             this.addPublicacao();
@@ -60,8 +61,7 @@ public class GerenProducaoAcad {
         conjPublicacoes.add(publicacao);
 
         System.out.println("## **Adicionada! ");
-        System.out.println("## press[ENTER]... ");
-        teclado.nextLine();
+        clearBuffer.clear();
         System.out.println("#######################################################"); 
     }
 
@@ -69,8 +69,7 @@ public class GerenProducaoAcad {
         
         if(gerencProj.getSize()) {
             System.out.println("## Por favor, adicione um projeto antes!.");
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
@@ -79,8 +78,7 @@ public class GerenProducaoAcad {
         conjOrientacao.add(orientacao);
 
         System.out.println("## **ORIENTACAO ADICIONADA!");
-        System.out.println("## press[ENTER]...");
-        teclado.nextLine();
+        clearBuffer.clear();
     }
 
     ////////////////////////
@@ -90,15 +88,13 @@ public class GerenProducaoAcad {
 
         if(gerencProj.getSize()){
             System.out.println("## ** Por favor, adicione um projeto antes!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
         if(conjPublicacoes.size() == 0) {
             System.out.println("## ** Por favor, adicione uma publicacao antes!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
@@ -111,27 +107,18 @@ public class GerenProducaoAcad {
         // REGRA!
         if(projetoEscolhido.getEmAndamento() == false) {
             System.out.println("## O projeto precisa esta em andamento!");
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         } 
         
         projetoEscolhido.setPublicacao(publicEscolhida);
 
         System.out.println("## O Publicacao **" + publicEscolhida.getTitulo() + "  **ADICIONADA!");
-        System.out.println("## press[ENTER]...");
-        teclado.nextLine();
+        clearBuffer.clear();
     } 
 
     //////////////////////////
     // help
-
-    public void clearBuffer(Scanner scanner) {
-        if(scanner.hasNextLine()) {
-            // System.out.println("## ++");
-            scanner.nextLine();
-        }
-    }
 
     public boolean publicacaoSize() {
         if(conjPublicacoes.size() == 0) return true;

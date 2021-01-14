@@ -4,6 +4,7 @@ import src.projetos.*;
 import src.colaboradores.*;
 import java.util.Vector;
 import java.util.Scanner;
+import src.*;
 
 public class RelatorioGeral { 
         Scanner teclado = new Scanner(System.in);
@@ -13,6 +14,8 @@ public class RelatorioGeral {
         private int emElaboracao = 0;
         private int emAndamento = 0;
         private int concluido = 0;
+
+        ClearBuffer clearBuffer = new ClearBuffer();
 
     public RelatorioGeral(GerenciamentoColaboradores GereColaboradores, GerenciarProgetos GereProjetos, GerenProducaoAcad GereProdAcad) { 
         this.GereColaboradores = GereColaboradores;
@@ -55,8 +58,7 @@ public class RelatorioGeral {
 
         System.out.println("## ----------------------------------");
 
-        System.out.println("## press[ENTER]...");
-        teclado.nextLine();
+        clearBuffer.clear();
     }  
 }
 

@@ -2,6 +2,7 @@ package src.projetos.GerenProjetos;
 
 import src.projetos.*;
 import src.colaboradores.*;
+import src.*;
 import java.util.Vector;
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ import src.projetos.*;
 public class ConsultarProjeto {
 
     Scanner teclado = new Scanner(System.in);
+    ClearBuffer clearBuffer = new ClearBuffer();
     
     public void consultar(Projeto projetoConsulta) {
 
@@ -76,8 +78,7 @@ public class ConsultarProjeto {
         mostrarPesquisadores(projCons);
         System.out.println("## ---------------------------");
 
-        System.out.println("## press[ENTER]...");
-        teclado.nextLine();
+        clearBuffer.clear();
     }
 
     public void mostrarAlunosDeGraduacao(Projeto projCons) {

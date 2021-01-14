@@ -6,6 +6,8 @@ import src.producaoAcademica.*;
 import java.util.Vector;
 import java.util.Scanner;
 
+import src.projetos.Status.*;
+
 public class Projeto {
     private String titulo;
     private int diaStart;
@@ -21,7 +23,10 @@ public class Projeto {
 
     Scanner teclado = new Scanner(System.in);
 
-    private Boolean emElaboracao, emAndamento, concluido;
+    // private Boolean emElaboracao, emAndamento, concluido;
+    Concluido concluido = new Concluido();
+    EmAndamento emAndamento = new EmAndamento();
+    EmElaboracao emElaboracao = new EmElaboracao();
 
     public void setTitulo(String titulo) { this.titulo = titulo; }
     public String getTitulo() { return this.titulo; }
@@ -58,14 +63,14 @@ public class Projeto {
     public void setDescricao(String descricao) { this.descricao = descricao; }
     public String getDescricao() { return this.descricao; }
 
-    public void setEmElaboracao(Boolean emElaboracao) { this.emElaboracao = emElaboracao; }
-    public Boolean getEmElaboracao() { return this.emElaboracao; }
+    public void setEmElaboracao(Boolean emElaboracao) { this.emElaboracao.setStatus(emElaboracao); }
+    public Boolean getEmElaboracao() { return this.emElaboracao.getStatus(); }
     
-    public void setEmAndamento(Boolean emAndamento) { this.emAndamento = emAndamento; }
-    public Boolean getEmAndamento() { return this.emAndamento; }
+    public void setEmAndamento(Boolean emAndamento) { this.emAndamento.setStatus(emAndamento); }
+    public Boolean getEmAndamento() { return this.emAndamento.getStatus(); }
 
-    public void setConcluido(Boolean concluido) { this.concluido = concluido; }
-    public Boolean getConcluido() { return this.concluido; }
+    public void setConcluido(Boolean concluido) { this.concluido.setStatus(concluido); }
+    public Boolean getConcluido() { return this.concluido.getStatus(); }
 
     public String getStatus() {
         if(getEmElaboracao()) return "Em Elaboracao";

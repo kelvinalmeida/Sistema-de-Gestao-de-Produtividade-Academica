@@ -7,6 +7,7 @@ import src.colaboradores.*;
 import src.producaoAcademica.*;
 
 import src.projetos.GerenProjetos.*;
+import src.*;
 
 public class GerenciarProgetos {
 
@@ -26,13 +27,14 @@ public class GerenciarProgetos {
     ConsultarProjeto consultarProjeto = new ConsultarProjeto();
     AlocarColaProj alocarColaProj = new AlocarColaProj();
 
+    ClearBuffer clearBuffer = new ClearBuffer();
+
     public void adicionar() {
         System.out.println("#######################################################");
 
         if(GerenColaboradores.sizeProf()) {
             System.out.println("##     Por Favor Adicione um professor ao Sistema!   ##");
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
@@ -41,8 +43,7 @@ public class GerenciarProgetos {
         todosOsProjetos.add(projeto);
 
         System.out.println("## **PROJETO ADICIONADO! ");
-        System.out.println("## press[ENTER]... ");
-        teclado.nextLine();
+        clearBuffer.clear();
     }
 
     public void consultar() {
@@ -50,8 +51,7 @@ public class GerenciarProgetos {
 
         if(todosOsProjetos.size() == 0) {
             System.out.println("##               **Nao existe projetos!              ##");
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
@@ -91,8 +91,7 @@ public class GerenciarProgetos {
                 System.out.println("## **Continua em elaboracao!");
             }
 
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
         else if(proj.getEmAndamento() == true){
             System.out.println("## Este projeto esta Em Andamento.");
@@ -113,8 +112,7 @@ public class GerenciarProgetos {
 
             if(proj.publiacacoesSize()) {
                 System.out.println("## Adicione uma publicacao ao projeto antes!");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -127,8 +125,7 @@ public class GerenciarProgetos {
                 System.out.println("## **Continua em andamento!");
             }
 
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
 
     }
@@ -138,8 +135,7 @@ public class GerenciarProgetos {
         if(todosOsProjetos.size() == 0) {
             System.out.println("##  **Nao existe projeto Para alocar colaboradores!  ##");
             System.out.println("##  **Crie um.                                       ##");
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
@@ -181,7 +177,7 @@ public class GerenciarProgetos {
             }
         }
         
-        clearBuffer(teclado);
+        clearBuffer.clear();
         return todosOsProjetos.get(escolha - 1);
     }
 
@@ -192,12 +188,5 @@ public class GerenciarProgetos {
 
     public Vector<Projeto> TodosProjetos() {
         return todosOsProjetos;
-    }
-
-    public void clearBuffer(Scanner scanner) {
-        System.out.println("## press[ENTER]...");
-        if(scanner.hasNextLine()) {
-            scanner.nextLine();
-        }
     }
 }

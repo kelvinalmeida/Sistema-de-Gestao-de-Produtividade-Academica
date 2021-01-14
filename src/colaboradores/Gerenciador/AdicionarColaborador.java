@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import src.colaboradores.*;
 
+
 public class AdicionarColaborador {
 
     Scanner teclado = new Scanner(System.in);
@@ -135,13 +136,6 @@ public class AdicionarColaborador {
 
         alunoPes.tipoDeAluno = 5;
         return alunoPes;        
-    }
-
-    public void clearBuffer(Scanner teclado) {
-        System.out.println("## press[ENTER]...");
-        if(teclado.hasNextLine()) {
-            teclado.nextLine();
-        }
     }
     
 }

@@ -3,10 +3,12 @@ import java.util.Scanner;
 import java.util.Vector;
 
 import src.colaboradores.*;
+import src.*;
 
 public class ConsultarColaborador {
 
     Scanner teclado = new Scanner(System.in);
+    ClearBuffer clearBuffer = new ClearBuffer();
 
     public int consultar() {
         System.out.println("#######################################################");
@@ -85,8 +87,7 @@ public class ConsultarColaborador {
         aluno.mostrarPublic();
         System.out.println("## ---------------------------------------");
 
-        System.out.println("## press[ENTER]... ");
-        teclado.nextLine();
+        clearBuffer.clear();
     }
 
     public void listAlunosDeMestrado(Vector<Aluno> conjAlunosDeMestrado) {
@@ -128,8 +129,7 @@ public class ConsultarColaborador {
         alunoM.mostrarPublic();
         System.out.println("## -----------------------------------");
 
-        System.out.println("## press[ENTER]... ");
-        teclado.nextLine();
+        clearBuffer.clear();
     }
 
     public void listAlunosDeDoutorado(Vector<Aluno> conjAlunosDeDoutorado) {
@@ -171,8 +171,7 @@ public class ConsultarColaborador {
         alunoD.mostrarPublic();
         System.out.println("## -----------------------------------");
 
-        System.out.println("## press[ENTER]... ");
-        teclado.nextLine();
+        clearBuffer.clear();
     }
 
     public void listProfessores(Vector<Professores> conjProfessores) {
@@ -216,8 +215,7 @@ public class ConsultarColaborador {
         alunoP.mostrarOrientacao();
         System.out.println("## -----------------------------------");
 
-        System.out.println("## press[ENTER]... ");
-        teclado.nextLine();
+        clearBuffer.clear();
     }
 
     public void listPesquisadores(Vector<Pesquisadores> conjPesquisadores) {
@@ -259,14 +257,7 @@ public class ConsultarColaborador {
         alunoPes.mostrarPublic();
         System.out.println("## -----------------------------------");
 
-        System.out.println("## press[ENTER]... ");
-        teclado.nextLine();
+        clearBuffer.clear();
     }
 
-    public void clearBuffer(Scanner teclado) {
-        System.out.println("## press[ENTER]...");
-        if(teclado.hasNextLine()) {
-            teclado.nextLine();
-        }
-    }
 }

@@ -35,7 +35,6 @@ public class AdPublicacao {
             }
         }
         publi.setAnoAtual(anoAtual);
-        // clearBuffer(teclado);
 
         return publi;
     }

@@ -8,12 +8,16 @@ import java.util.Scanner;
 
 
 import src.projetos.*;
+import src.*;
 
 public class AlocarColaProj {
 
     Scanner teclado = new Scanner(System.in);
+    ClearBuffer clearBuffer = new ClearBuffer();
 
     public int alocar() {
+
+        clearBuffer.clear();
 
         System.out.println("#######################################################");
         System.out.println("##          Qual tipo de Colaborador Alocar?         ##");
@@ -43,8 +47,7 @@ public class AlocarColaProj {
 
         if(GerenColaboradores.sizeAlunoGrad() == 0) {
                 System.out.println("## **Adicine um aluno de Graduacao.");
-                System.out.println("## press[ENTER]...");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
         }
 
@@ -71,8 +74,7 @@ public class AlocarColaProj {
             if(AlunoGraduacao.getQntProjetos() == 2) {
                 System.out.println("## ***"+ AlunoGraduacao.getNome() +" ja atingiu a participacao maxima de 2 projetos.");
 
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -82,16 +84,14 @@ public class AlocarColaProj {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             } else {
                 proj.addAlunoGrad(AlunoGraduacao);
                 AlunoGraduacao.setProjeto(proj);
 
                 System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
             }
         }
 
@@ -99,8 +99,7 @@ public class AlocarColaProj {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -111,8 +110,7 @@ public class AlocarColaProj {
             AlunoGraduacao.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + AlunoGraduacao.getNome() + "** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
     }
 
@@ -120,8 +118,7 @@ public class AlocarColaProj {
 
         if(GerenColaboradores.sizeAlunoMest() == 0) {
             System.out.println("## **Adicine um aluno de Mestrado.");
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
@@ -150,24 +147,21 @@ public class AlocarColaProj {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
             proj.addAlunoMest(AlunoMestrado);
             AlunoMestrado.setProjeto(proj);
             System.out.println("## Aluno: " + AlunoMestrado.getNome() + "** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
 
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -178,8 +172,7 @@ public class AlocarColaProj {
             AlunoMestrado.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + AlunoMestrado.getNome() + "** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
     }
 
@@ -187,8 +180,7 @@ public class AlocarColaProj {
 
         if(GerenColaboradores.sizeAlunoDout() == 0) {
             System.out.println("## **Adicine um aluno de Doutorado.");
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
@@ -217,8 +209,7 @@ public class AlocarColaProj {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -226,15 +217,13 @@ public class AlocarColaProj {
             AlunoDoutorado.setProjeto(proj);
 
             System.out.println("## Aluno: " + AlunoDoutorado.getNome() + "** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -245,8 +234,7 @@ public class AlocarColaProj {
             AlunoDoutorado.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + AlunoDoutorado.getNome() + "** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
     }
 
@@ -254,8 +242,7 @@ public class AlocarColaProj {
 
         if(GerenColaboradores.sizeProf()) {
             System.out.println("## **Adicine um aluno um Professor.");
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
@@ -284,8 +271,7 @@ public class AlocarColaProj {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -293,15 +279,13 @@ public class AlocarColaProj {
             professor.setProjeto(proj);
 
             System.out.println("## Aluno: " + professor.getNome() + "** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -312,8 +296,7 @@ public class AlocarColaProj {
             professor.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + professor.getNome() + "** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
     }
 
@@ -321,8 +304,7 @@ public class AlocarColaProj {
 
         if(GerenColaboradores.sizeAlunoPesq() == 0) {
             System.out.println("## **Adicine um aluno um Pesquisador.");
-            System.out.println("## press[ENTER]...");
-            teclado.nextLine();
+            clearBuffer.clear();
             return;
         }
 
@@ -353,8 +335,7 @@ public class AlocarColaProj {
             // Regra!
             if(proj.getEmElaboracao() == false) {
                 System.out.println("## Pojeto Precisa esta em elaboracao! ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -362,15 +343,13 @@ public class AlocarColaProj {
             pesquisador.setProjeto(proj);
 
             System.out.println("## Aluno: " + pesquisador.getNome() + "     ** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
         if(escolha == 2) {
 
             if(GerenProdAcademica.publicacaoSize()) {
                 System.out.println("##  Adicione uma publicacao antes!   ##");
-                System.out.println("## press[ENTER]... ");
-                teclado.nextLine();
+                clearBuffer.clear();
                 return;
             }
 
@@ -381,8 +360,7 @@ public class AlocarColaProj {
             pesquisador.setPublicacao(pubEsco);
 
             System.out.println("## Aluno: " + pesquisador.getNome() + "** AlOCADO!");
-            System.out.println("## press[ENTER]... ");
-            teclado.nextLine();
+            clearBuffer.clear();
         }
     }   
     
