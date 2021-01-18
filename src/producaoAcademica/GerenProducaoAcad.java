@@ -1,4 +1,4 @@
-// Padrão de projeto Singleton e Low Coupling
+// Padrão de projeto Singleton e Extract Class.
 
 package src.producaoAcademica;
 

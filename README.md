@@ -22,7 +22,7 @@
  
   - java src.Main
 
-# Foi aplicado os padrões de projeto Singleton e Low Coupling. Os padrões foram aplicados nas seguintes classes:
+# Foi aplicado os padrões de projeto Singleton e Extract Class. Os padrões foram aplicados nas seguintes classes:
 
  - src/colaboradores/GerenciamentoColaboradores.java
  - src/producaoAcademica/GerenProducaoAcad.java
