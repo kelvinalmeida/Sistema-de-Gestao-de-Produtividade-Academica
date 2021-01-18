@@ -21,4 +21,14 @@
 # Para executar o programa:
  
   - java src.Main
+
+# Foi aplicado os padrões de projeto Singleton e Low Coupling. Os padrões foram aplicados nas seguintes classes:
+
+ - src/colaboradores/GerenciamentoColaboradores.java
+ - src/producaoAcademica/GerenProducaoAcad.java
+ - src/projetos/GerenciarProgetos.java
+
+ # Também foi aplicado o padrão state em:
+
+ - src/projetos/Status
  
