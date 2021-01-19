@@ -34,8 +34,8 @@
  
  # Diminuindo repetições de código:
   
-  - Os códigos de entrada de teclado e de limpar o Buffer estavam muito repetidos.
-  - Tive a ideia de Criar duas classes: uma para trabalhar com a entrada de teclado e outra para limpar Buffer.
+  Os códigos de entrada de teclado e de limpar o Buffer estavam muito repetidos.
+  Tive a ideia de Criar duas classes: uma para trabalhar com a entrada de teclado e outra para limpar Buffer.
 
   - Dessa forma consegui diminuir muito código repetido e o tamanho das classes.
 
