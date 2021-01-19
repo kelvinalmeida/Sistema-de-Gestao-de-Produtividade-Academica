@@ -3,15 +3,16 @@ package src.projetos.GerenProjetos;
 import src.projetos.*;
 import src.colaboradores.*;
 import src.*;
+import src.utilitarios.*;
 import java.util.Vector;
 import java.util.Scanner;
+import src.utilitarios.*;
 
 
 import src.projetos.*;
 
 public class ConsultarProjeto {
 
-    Scanner teclado = new Scanner(System.in);
     ClearBuffer clearBuffer = new ClearBuffer();
     
     public void consultar(Projeto projetoConsulta) {

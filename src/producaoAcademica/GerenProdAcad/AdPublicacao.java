@@ -4,6 +4,7 @@ import src.projetos.*;
 import src.colaboradores.*;
 import java.util.Vector;
 import java.util.Scanner;
+import src.utilitarios.*;
 
 
 import src.producaoAcademica.*;
@@ -11,6 +12,7 @@ import src.producaoAcademica.*;
 public class AdPublicacao {
 
     Scanner teclado = new Scanner(System.in);
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
 
     public Publicacao adicionarPublicacao() {
         Publicacao publi = new Publicacao();
@@ -25,15 +27,9 @@ public class AdPublicacao {
 
         System.out.print("## Ano Atual - ");
         int anoAtual = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                anoAtual = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
+        
+        anoAtual = entradaTeclado.entradaInt();
+
         publi.setAnoAtual(anoAtual);
 
         return publi;

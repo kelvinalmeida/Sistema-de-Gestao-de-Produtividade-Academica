@@ -5,6 +5,7 @@ import src.colaboradores.*;
 import java.util.Vector;
 import java.util.Scanner;
 import src.*;
+import src.utilitarios.*;
 
 public class RelatorioGeral { 
         Scanner teclado = new Scanner(System.in);

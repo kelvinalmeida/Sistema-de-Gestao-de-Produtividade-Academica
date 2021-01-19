@@ -3,11 +3,13 @@ import java.util.Scanner;
 import java.util.Vector;
 
 import src.colaboradores.*;
+import src.utilitarios.*;
 
 
 public class AdicionarColaborador {
 
     Scanner teclado = new Scanner(System.in);
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
 
     public int adicionar() {
         System.out.println("#######################################################");
@@ -19,17 +21,10 @@ public class AdicionarColaborador {
         System.out.print("## ");
 
         int escolha = 0;
-        boolean stop = true;        
+
+        escolha = entradaTeclado.entradaInt();  
 
         while(1 != 0) {
-            while(stop) {
-                try {
-                    escolha = Integer.parseInt(teclado.nextLine());
-                    stop = false;
-                } catch(Exception erro) {
-                    System.out.println("Digite um valor válido!");
-                }
-            }
 
             if(escolha == 1) return 1;
             else if(escolha == 2) return 2;
@@ -47,29 +42,15 @@ public class AdicionarColaborador {
 
         System.out.print("## Informe o nome: ");
         String nome = "nome";
-        boolean stop = true;
-        while(stop) {
-            try {
-                nome = teclado.nextLine();
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
+       
+        nome = entradaTeclado.entradaString();  
 
         aluno.setNome(nome);
 
         System.out.print("## Informe o email: ");
         String email = "email";
-        stop = true;
-        while(stop) {
-            try {
-                email = teclado.nextLine();
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
+
+        email = entradaTeclado.entradaString(); 
 
         aluno.setEmail(email);
 
@@ -82,11 +63,11 @@ public class AdicionarColaborador {
         Aluno alunoM = new Aluno();
 
         System.out.print("## Informe o nome: ");
-        String nome = teclado.nextLine();
+        String nome = entradaTeclado.entradaString(); 
         alunoM.setNome(nome);
 
         System.out.print("## Informe o email: ");
-        String email = teclado.nextLine();
+        String email = entradaTeclado.entradaString(); 
         alunoM.setEmail(email);
 
         alunoM.tipoDeAluno = 2;
@@ -97,11 +78,11 @@ public class AdicionarColaborador {
         Aluno alunoD = new Aluno();
 
         System.out.print("## Informe o nome: ");
-        String nome = teclado.nextLine();
+        String nome = entradaTeclado.entradaString(); 
         alunoD.setNome(nome);
 
         System.out.print("## Informe o email: ");
-        String email = teclado.nextLine();
+        String email = entradaTeclado.entradaString(); 
         alunoD.setEmail(email);
 
         alunoD.tipoDeAluno = 3;
@@ -112,11 +93,11 @@ public class AdicionarColaborador {
         Professores alunoP = new Professores();
 
         System.out.print("## Informe o nome: ");
-        String nome = teclado.nextLine();
+        String nome = entradaTeclado.entradaString(); 
         alunoP.setNome(nome);
 
         System.out.print("## Informe o email: ");
-        String email = teclado.nextLine();
+        String email = entradaTeclado.entradaString(); 
         alunoP.setEmail(email);
 
         alunoP.tipoDeAluno = 4;
@@ -127,11 +108,11 @@ public class AdicionarColaborador {
         Pesquisadores alunoPes = new Pesquisadores();
 
         System.out.print("## Informe o nome: ");
-        String nome = teclado.nextLine();
+        String nome = entradaTeclado.entradaString(); 
         alunoPes.setNome(nome);
 
         System.out.print("## Informe o email: ");
-        String email = teclado.nextLine();
+        String email = entradaTeclado.entradaString(); 
         alunoPes.setEmail(email);
 
         alunoPes.tipoDeAluno = 5;

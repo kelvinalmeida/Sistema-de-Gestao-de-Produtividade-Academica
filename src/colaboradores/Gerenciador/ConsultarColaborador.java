@@ -4,11 +4,14 @@ import java.util.Vector;
 
 import src.colaboradores.*;
 import src.*;
+import src.utilitarios.*;
+
 
 public class ConsultarColaborador {
 
     Scanner teclado = new Scanner(System.in);
     ClearBuffer clearBuffer = new ClearBuffer();
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
 
     public int consultar() {
         System.out.println("#######################################################");
@@ -23,14 +26,8 @@ public class ConsultarColaborador {
         boolean stop = true;
 
         while(1 != 0) {
-            while(stop) {
-                try {
-                    escolha = Integer.parseInt(teclado.nextLine());
-                    stop = false;
-                } catch(Exception erro) {
-                    System.out.println("Digite um valor válido!");
-                }
-            }
+            
+            escolha = entradaTeclado.entradaInt();
 
             if(escolha == 1) return 1;
             else if(escolha == 2) return 2;

@@ -4,6 +4,7 @@ import src.projetos.*;
 import src.colaboradores.*;
 import java.util.Vector;
 import java.util.Scanner;
+import src.utilitarios.*;
 
 
 import src.producaoAcademica.*;
@@ -11,26 +12,21 @@ import src.producaoAcademica.*;
 public class AdOrientacao {
 
     Scanner teclado = new Scanner(System.in);
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
 
     public Orientacao adicionarOrientacao(GerenciarProgetos gerencProj) {
 
         Orientacao orientacao = new Orientacao();
 
         System.out.print("## Escreva a Orientacao: - ");
-        String orient = teclado.nextLine();
+        String orient = entradaTeclado.entradaString();
         orientacao.setOri(orient);
 
         System.out.print("## Ano da Orientacao - ");
         int ano = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                ano = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
+        
+        ano = entradaTeclado.entradaInt();
+
         orientacao.setAno(ano);
         
         System.out.println("## Qual projeto vai a orientacao?");

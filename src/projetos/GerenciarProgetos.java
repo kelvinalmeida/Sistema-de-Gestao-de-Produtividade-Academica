@@ -8,6 +8,7 @@ import src.producaoAcademica.*;
 
 import src.projetos.GerenProjetos.*;
 import src.*;
+import src.utilitarios.*;
 
 public class GerenciarProgetos {
 
@@ -28,6 +29,7 @@ public class GerenciarProgetos {
     AlocarColaProj alocarColaProj = new AlocarColaProj();
 
     ClearBuffer clearBuffer = new ClearBuffer();
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
 
     public void adicionar() {
         System.out.println("#######################################################");
@@ -72,15 +74,8 @@ public class GerenciarProgetos {
             System.out.println("## Deseja mudar para Em Andamento?");
             System.out.println("## [1] SIM OU [2] NAO");
             int escolha = 0;
-            boolean stop = true;
-            while(stop) {
-                try {
-                    escolha = Integer.parseInt(teclado.nextLine());
-                    stop = false;
-                } catch(Exception erro) {
-                    // System.out.println("Digite um valor válido!");
-                }
-            }
+            
+            escolha = entradaTeclado.entradaInt();
             
             if(escolha == 1) {
                 proj.setEmElaboracao(false);
@@ -98,17 +93,9 @@ public class GerenciarProgetos {
             System.out.println("## Deseja mudar para Concluido?");
             System.out.println("## [1] SIM OU [2] NAO");
 
-            // int escolha = Integer.parseInt(teclado.nextLine());
             int escolha = 0;
-            boolean stop = true;
-            while(stop) {
-                try {
-                    escolha = Integer.parseInt(teclado.nextLine());
-                    stop = false;
-                } catch(Exception erro) {
-                    // System.out.println("Digite um valor válido!");
-                }
-            }
+            
+            escolha = entradaTeclado.entradaInt();
 
             if(proj.publiacacoesSize()) {
                 System.out.println("## Adicione uma publicacao ao projeto antes!");
@@ -165,17 +152,9 @@ public class GerenciarProgetos {
         }
 
         System.out.print("## ");
-        // int escolha = Integer.parseInt(teclado.nextLine());
         int escolha = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escolha = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+
+        escolha = entradaTeclado.entradaInt();
         
         clearBuffer.clear();
         return todosOsProjetos.get(escolha - 1);

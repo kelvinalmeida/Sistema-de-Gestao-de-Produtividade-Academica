@@ -9,11 +9,13 @@ import java.util.Scanner;
 
 import src.projetos.*;
 import src.*;
+import src.utilitarios.*;
 
 public class AlocarColaProj {
 
     Scanner teclado = new Scanner(System.in);
     ClearBuffer clearBuffer = new ClearBuffer();
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
 
     public int alocar() {
 
@@ -26,14 +28,8 @@ public class AlocarColaProj {
         System.out.println("##  [5] pesquisadores        [6] Voltar              ##");
 
         int escolha = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escolha = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-            }
-        }
+        
+        escolha = entradaTeclado.entradaInt();
 
         if(escolha == 1) return 1;
         if(escolha == 2) return 2;
@@ -58,15 +54,8 @@ public class AlocarColaProj {
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
         int escolha = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escolha = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        
+        escolha = entradaTeclado.entradaInt();
         
 
         if(escolha == 1) {
@@ -128,17 +117,8 @@ public class AlocarColaProj {
         Aluno AlunoMestrado = GerenColaboradores.ReturnAlunosMest();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
-        // int escolha = Integer.parseInt(teclado.nextLine());
         int escolha = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escolha = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        escolha = entradaTeclado.entradaInt();
 
         if(escolha == 1) {
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
@@ -190,17 +170,8 @@ public class AlocarColaProj {
         Aluno AlunoDoutorado = GerenColaboradores.ReturnAlunosDout();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
-        // int escolha = Integer.parseInt(teclado.nextLine());
         int escolha = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escolha = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        escolha = entradaTeclado.entradaInt();
 
         if(escolha == 1) {
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
@@ -252,17 +223,8 @@ public class AlocarColaProj {
         Professores professor = GerenColaboradores.ReturnProf();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
-        // int escolha = Integer.parseInt(teclado.nextLine());
         int escolha = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escolha = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        escolha = entradaTeclado.entradaInt();
 
         if(escolha == 1) {
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");
@@ -315,17 +277,8 @@ public class AlocarColaProj {
         Pesquisadores pesquisador = GerenColaboradores.ReturnPesq();
 
         System.out.println("##      Alocar Para [1]projeto ou [2]Publicacao?     ##");
-        // int escolha = Integer.parseInt(teclado.nextLine());
         int escolha = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escolha = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        escolha = entradaTeclado.entradaInt();
 
         if(escolha == 1) {
             System.out.println("##     Escolha o Projeto Para alocar o estudante!    ##");

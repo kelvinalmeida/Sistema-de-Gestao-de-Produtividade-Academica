@@ -4,6 +4,8 @@ import java.util.Scanner;
 import src.colaboradores.*;
 import src.projetos.*;
 import src.producaoAcademica.*;
+import src.utilitarios.*;
+
 
 public class Main {
 
@@ -22,6 +24,7 @@ public class Main {
         gereProdAcad.setar(gereColaboradores, gereProjetos);
 
         ClearBuffer clearBuffer = new ClearBuffer();
+        EntradaTeclado entradaTeclado = new EntradaTeclado();
 
 
         while (0 != 1) {
@@ -46,17 +49,8 @@ public class Main {
             Scanner teclado = new Scanner(System.in);
 
             int escolha = 0;
-            
-            boolean stop = true;
-            while(stop) {
-                try {
-                    escolha = Integer.parseInt(teclado.nextLine());
-                    stop = false;
-                } catch(Exception erro) {
-                    // System.out.println("Digite um valor válido!");
-                }
-            }
 
+            escolha = entradaTeclado.entradaInt();
             clearBuffer.clear();
 
             // Quer adicionar um colaborador!

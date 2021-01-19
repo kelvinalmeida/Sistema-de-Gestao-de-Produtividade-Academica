@@ -4,6 +4,7 @@ package src.colaboradores;
 import java.util.Scanner;
 import java.util.Vector;
 import src.*;
+import src.utilitarios.*;
 
 import src.colaboradores.Gerenciador.*;
 
@@ -19,6 +20,7 @@ public class GerenciamentoColaboradores {
     AdicionarColaborador adicionarColaborador = new AdicionarColaborador();
     ConsultarColaborador consultarColaborador = new ConsultarColaborador();
     ClearBuffer clearBuffer = new ClearBuffer();
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
 
     public void adicionar() {
         int escolhaTipo = adicionarColaborador.adicionar();
@@ -93,15 +95,8 @@ public class GerenciamentoColaboradores {
         }
 
         int escoAlunosGrad = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escoAlunosGrad = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
+
+        escoAlunosGrad = entradaTeclado.entradaInt();
 
         return conjAlunosDeGraduacao.get(escoAlunosGrad - 1);
     }
@@ -112,18 +107,10 @@ public class GerenciamentoColaboradores {
             System.out.println("## " + "["+(i+1)+"]" + AlunosMest.getNome());
         }
 
-        // int escoAlunosMest = Integer.parseInt(teclado.nextLine());
         int escoAlunosMest = 0;
         boolean stop = true;
-        while(stop) {
-            try {
-                escoAlunosMest = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
 
+        escoAlunosMest = entradaTeclado.entradaInt();
 
         return conjAlunosDeMestrado.get(escoAlunosMest - 1);
     }
@@ -135,16 +122,8 @@ public class GerenciamentoColaboradores {
         }
 
         int escoAlunosDout = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escoAlunosDout = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
 
+        escoAlunosDout = entradaTeclado.entradaInt();
 
         return conjAlunosDeDoutorado.get(escoAlunosDout - 1);
     }
@@ -158,14 +137,8 @@ public class GerenciamentoColaboradores {
         // int escoProf = Integer.parseInt(teclado.nextLine());
         int escoProf = 0;
         boolean stop = true;
-        while(stop) {
-            try {
-                escoProf = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
+
+        escoProf = entradaTeclado.entradaInt();
 
         return conjProfessores.get(escoProf - 1);
     }
@@ -178,14 +151,8 @@ public class GerenciamentoColaboradores {
 
         int escoPesq = 0;
         boolean stop = true;
-        while(stop) {
-            try {
-                escoPesq = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
+
+        escoPesq = entradaTeclado.entradaInt();
 
         return conjPesquisadores.get(escoPesq - 1);
     }

@@ -7,11 +7,11 @@ import src.colaboradores.*;
 import java.util.Vector;
 import java.util.Scanner;
 import src.*;
+import src.utilitarios.*;
 
 import src.producaoAcademica.GerenProdAcad.*;
 
 public class GerenProducaoAcad {
-
     
     Vector<Publicacao> conjPublicacoes = new Vector<Publicacao>();
     Vector<Orientacao> conjOrientacao = new Vector<Orientacao>();
@@ -19,6 +19,7 @@ public class GerenProducaoAcad {
     GerenciarProgetos gerencProj;
     Scanner teclado = new Scanner(System.in);
     ClearBuffer clearBuffer = new ClearBuffer();
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
 
     AdPublicacao adPublicacao = new AdPublicacao();
     AdOrientacao adOrientacao = new AdOrientacao();
@@ -36,15 +37,8 @@ public class GerenProducaoAcad {
 
         System.out.println("## ");
         int escolha = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escolha = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
+        
+        escolha = entradaTeclado.entradaInt();
 
         clearBuffer.clear();
 
@@ -141,15 +135,8 @@ public class GerenProducaoAcad {
 
         System.out.println("## ");
         int escolha = 0;
-        boolean stop = true;
-        while(stop) {
-            try {
-                escolha = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                System.out.println("Digite um valor válido!");
-            }
-        }
+
+        escolha = entradaTeclado.entradaInt();
 
         return conjPublicacoes.get(escolha - 1);
     }

@@ -5,6 +5,7 @@ import src.colaboradores.*;
 import src.producaoAcademica.*;
 import java.util.Vector;
 import java.util.Scanner;
+import src.utilitarios.*;
 
 import src.projetos.Status.*;
 
@@ -20,8 +21,9 @@ public class Projeto {
     private float valorFinanciado;
     private String objetivo;
     private String descricao;
-
-    Scanner teclado = new Scanner(System.in);
+    
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
+    
 
     // private Boolean emElaboracao, emAndamento, concluido;
     Concluido concluido = new Concluido();
@@ -131,7 +133,7 @@ public class Projeto {
             System.out.println("## " + "["+(i+1)+"] - Nome:" + peofEscol.getNome());
         }
 
-        int escolha = Integer.parseInt(teclado.nextLine());
+        int escolha = entradaTeclado.entradaInt();
         System.out.println("## ");
         return conjProfessores.get(escolha - 1);
     }

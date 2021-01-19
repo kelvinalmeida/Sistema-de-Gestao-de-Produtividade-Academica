@@ -4,6 +4,7 @@ import src.projetos.*;
 import src.colaboradores.*;
 import java.util.Vector;
 import java.util.Scanner;
+import src.utilitarios.*;
 
 
 import src.projetos.*;
@@ -11,6 +12,7 @@ import src.projetos.*;
 public class AdicionarProjetos {
 
     Scanner teclado = new Scanner(System.in);
+    EntradaTeclado entradaTeclado = new EntradaTeclado();
 
     public Projeto adicionar(GerenciamentoColaboradores GerenColaboradores) {
 
@@ -19,110 +21,56 @@ public class AdicionarProjetos {
         Projeto projeto = new Projeto();
 
         System.out.print("## Titulo: ");
-        projeto.setTitulo(teclado.nextLine());
+        projeto.setTitulo(entradaTeclado.entradaString());
 
 
         System.out.print("## Dia de Inicio: ");
         int diadeInicio = 0;
         boolean stop = true;
-        while(stop) {
-            try {
-                diadeInicio = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        diadeInicio = entradaTeclado.entradaInt();     
         projeto.setDiaStart(diadeInicio);
         
 
         System.out.print("## Mes de Inicio: ");
         int mesdeInicio = 0;
-        stop = true;
-        while(stop) {
-            try {
-                mesdeInicio = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        mesdeInicio = entradaTeclado.entradaInt();
         projeto.setMesStart(mesdeInicio);
 
 
         System.out.print("## Ano de Inicio: ");
         int anodeInicio = 0;
-        stop = true;
-        while(stop) {
-            try {
-                anodeInicio = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        anodeInicio = entradaTeclado.entradaInt();
         projeto.setAnoStart(anodeInicio);
 
         System.out.print("## Dia do final: ");
         int diaFinal = 0;
-        stop = true;
-        while(stop) {
-            try {
-                diaFinal = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        diaFinal = entradaTeclado.entradaInt();
         projeto.setDiaEnd(diaFinal);
 
         System.out.print("## Mes do final: ");
         int mesFinal = 0;
         stop = true;
-        while(stop) {
-            try {
-                mesFinal = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        mesFinal = entradaTeclado.entradaInt();
         projeto.setMesEnd(mesFinal);
 
         System.out.print("## Ano do final: ");
         int anoFinal = 0;
-        stop = true;
-        while(stop) {
-            try {
-                anoFinal = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        anoFinal = entradaTeclado.entradaInt();
         projeto.setAnoEnd(anoFinal);
 
         System.out.print("## Agencia Financiadora: ");
-        projeto.setAgenciaFinanciadora(teclado.nextLine());
+        projeto.setAgenciaFinanciadora(entradaTeclado.entradaString());
 
         System.out.print("## Valor Financiado: ");
         int valorFinanciado = 0;
-        stop = true;
-        while(stop) {
-            try {
-                valorFinanciado = Integer.parseInt(teclado.nextLine());
-                stop = false;
-            } catch(Exception erro) {
-                // System.out.println("Digite um valor válido!");
-            }
-        }
+        valorFinanciado = entradaTeclado.entradaInt();
         projeto.setValorFinanciado(valorFinanciado);
 
         System.out.print("## Objetivo: ");
-        projeto.setObjetivo(teclado.nextLine());
+        projeto.setObjetivo(entradaTeclado.entradaString());
 
         System.out.print("## Descricao: ");
-        projeto.setDescricao(teclado.nextLine());
+        projeto.setDescricao(entradaTeclado.entradaString());
 
         System.out.println("#######################################################");
         System.out.println("##      Qual professor vai particiar do projeto?     ##");
