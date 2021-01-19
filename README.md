@@ -38,7 +38,7 @@
   Tive a ideia de Criar duas classes: uma para trabalhar com entrada de teclado e outra para limpar Buffer.
 
   - As duas classes estão em:
-  - src/utilitarios
+     src/utilitarios
 
   - Dessa forma consegui diminuir muito código repetido e o tamanho das classes.
 
